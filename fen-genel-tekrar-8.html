@@ -132,6 +132,11 @@ footer{color:var(--ink2);font-size:.82rem;text-align:center;margin-top:8px}
 .svgtext{font-family:var(--f-body);fill:var(--ink)}
 .mono{font-family:var(--f-mono)}
 @media (max-width:560px){.read{grid-template-columns:1fr}.kbar{grid-template-columns:1fr}}
+.hright{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.ig{display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 6px;border:1.5px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);text-decoration:none;font-weight:700;font-size:.88rem}
+.ig:hover{border-color:#d62976;color:#d62976}
+.ig svg{display:block;flex:none}
+@media (max-width:560px){.hright{align-items:flex-start}.ig span{font-size:.8rem}}
 </style>
 </head>
 <body>
@@ -144,7 +149,12 @@ footer{color:var(--ink2);font-size:.82rem;text-align:center;margin-top:8px}
       <p class="sub">Mevsimler ve DNA: sınav öncesi bireysel çalışma. Her istasyonda önce tahmin et, sonra dene, karar ver ve gerekçeni seç.</p>
     </div>
   </div>
-  <div class="total"><span id="totTxt">0 / 0 görev</span><span class="bar"><i id="totBar"></i></span></div>
+  <div class="hright">
+    <a class="ig" href="https://www.instagram.com/sevilunaldogansegem/" target="_blank" rel="noopener" data-goatcounter-click="instagram" title="SEGEM Instagram sayfası" aria-label="Özel Sevil Ünal Doğan SEGEM Instagram sayfası">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><defs><linearGradient id="igG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".3" stop-color="#fa7e1e"/><stop offset=".6" stop-color="#d62976"/><stop offset=".85" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#igG)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="#fff"/></svg>
+      <span>@sevilunaldogansegem</span></a>
+    <div class="total"><span id="totTxt">0 / 0 görev</span><span class="bar"><i id="totBar"></i></span></div>
+  </div>
 </header>
 <nav class="tabs" role="tablist" aria-label="İstasyonlar" id="tabs"></nav>
 <main id="views"></main>
