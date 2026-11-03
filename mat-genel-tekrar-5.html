@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5. Sınıf Matematik, 1. Dönem 1. Yazılı Sınav - Genel Tekrar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Fen 8 Genel Tekrar — istasyonlu bireysel çalışma appleti.
+   Renkler: gece mavisi mürekkep, gündüz kâğıdı, Güneş turuncusu; DNA bazları: A kırmızı, T sarı, G yeşil, S camgöbeği. */
+:root{
+  --bg:#eef3f8; --panel:#ffffff; --paper:#fbfdff; --ink:#16223d; --ink2:#4a5878; --line:#d3dceb; --soft:#e7eef8;
+  --accent:#22346a; --accent2:#2f7fc0; --accent-ink:#ffffff; --sun:#f08a1c; --sunsoft:#ffe4c2;
+  --ok:#12715a; --okbg:#dff3ec; --bad:#c0301d; --badbg:#fde6e1; --warn:#9a5d00; --warnbg:#fff1d6;
+  --night:#2a3554; --day:#dbe9ff; --earth:#cfe3ff;
+  --bA:#f4a3a3; --bT:#f6dd6a; --bG:#9fdc9a; --bS:#93d7ee; --old:#c6cbd6; --new:#9fe3c3;
+  --f-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif; --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0b1120; --panel:#131c30; --paper:#0e1628; --ink:#e7eefc; --ink2:#a3b3d4; --line:#27345a; --soft:#1a2640;
+  --accent:#9db8ff; --accent2:#7cc0f0; --accent-ink:#0b1120; --sun:#ffab4a; --sunsoft:#3a2a12;
+  --ok:#52d1a6; --okbg:#10332b; --bad:#ff8672; --badbg:#3b1b17; --warn:#f2b552; --warnbg:#3a2b0d;
+  --night:#060a14; --day:#22345c; --earth:#1d3157;
+  --bA:#b85a5a; --bT:#a8902a; --bG:#4f8f4a; --bS:#3a8aa6; --old:#4a5470; --new:#2f8f68; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1120; --panel:#131c30; --paper:#0e1628; --ink:#e7eefc; --ink2:#a3b3d4; --line:#27345a; --soft:#1a2640;
+  --accent:#9db8ff; --accent2:#7cc0f0; --accent-ink:#0b1120; --sun:#ffab4a; --sunsoft:#3a2a12;
+  --ok:#52d1a6; --okbg:#10332b; --bad:#ff8672; --badbg:#3b1b17; --warn:#f2b552; --warnbg:#3a2b0d;
+  --night:#060a14; --day:#22345c; --earth:#1d3157;
+  --bA:#b85a5a; --bT:#a8902a; --bG:#4f8f4a; --bS:#3a8aa6; --old:#4a5470; --new:#2f8f68; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.45;padding-inline:16px;padding-block:16px 48px}
+.wrap{max-width:1180px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{background:#fff;border-radius:10px;padding:6px 10px;display:flex;align-items:center}
+.logo img{height:40px;width:auto;display:block}
+h1 .h1b{display:block;font-size:.55em;font-weight:600;color:var(--ink2);margin-top:4px;letter-spacing:0}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;margin:0;line-height:1.05;text-wrap:balance}
+.sub{margin:4px 0 0;color:var(--ink2);max-width:62ch;font-size:.95rem}
+.total{font-family:var(--f-mono);font-size:.85rem;color:var(--ink2);display:flex;align-items:center;gap:10px}
+.total .bar{width:140px;height:10px;border-radius:99px;background:var(--soft);overflow:hidden;border:1px solid var(--line)}
+.total .bar i{display:block;height:100%;background:var(--ok);width:0}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.tab{flex:0 0 auto;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-weight:700;padding:9px 14px;border-radius:10px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.tab small{font-family:var(--f-mono);font-weight:500;font-size:.75rem;color:var(--ink2)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tab[aria-selected="true"] small{color:var(--bg);opacity:.8}
+button:focus-visible,input:focus-visible,select:focus-visible,.tab:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.card{background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:14px;min-width:0}
+.grid2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:900px){.grid2{grid-template-columns:minmax(0,1fr)}}
+h2{font-family:var(--f-display);font-size:1.2rem;margin:0 0 6px;letter-spacing:-.01em}
+h3{font-family:var(--f-display);font-size:1.02rem;margin:0 0 6px}
+.lead{margin:0 0 10px;color:var(--ink2);font-size:.95rem}
+.kod{font-family:var(--f-mono);font-size:.75rem;color:var(--ink2);background:var(--soft);padding:2px 7px;border-radius:6px}
+.btn{border:1.5px solid var(--accent);background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;padding:8px 14px;border-radius:10px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.sm{padding:5px 10px;font-size:.88rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:.86rem;padding:5px 10px;border-radius:999px;cursor:pointer}
+.chip:hover{border-color:var(--accent2)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.seg{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+.ctl{display:flex;flex-direction:column;gap:2px;margin-bottom:8px}
+.ctl label{font-size:.85rem;color:var(--ink2);display:flex;justify-content:space-between;gap:8px}
+.ctl label output{font-family:var(--f-mono);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--accent2);height:28px}
+input[type=number],input[type=text],select{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:6px 8px}
+input[type=number]{width:90px;font-family:var(--f-mono)}
+svg{display:block;max-width:100%;height:auto}
+.stage{background:var(--paper);border:1.5px solid var(--line);border-radius:10px;width:100%}
+.read{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.92rem;margin:8px 0 0}
+.read dt{color:var(--ink2)}
+.read dd{margin:0;font-family:var(--f-mono);font-size:.88rem}
+.meter{height:12px;border-radius:99px;background:var(--soft);border:1px solid var(--line);overflow:hidden;margin-top:3px}
+.meter i{display:block;height:100%;background:var(--sun)}
+.daybar{display:flex;height:22px;border-radius:6px;overflow:hidden;border:1px solid var(--line);font-family:var(--f-mono);font-size:.75rem}
+.daybar span{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+.daybar .d{background:var(--sunsoft);color:var(--ink)}
+.daybar .n{background:var(--night);color:#e7eefc}
+.tasks{display:flex;flex-direction:column;gap:8px}
+.task{border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel)}
+.task.done{border-color:var(--ok);background:var(--okbg)}
+.task .head{display:flex;gap:8px;align-items:flex-start}
+.task .num{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-mono);font-size:.78rem;background:var(--soft);color:var(--ink2)}
+.task.done .num{background:var(--ok);color:var(--panel)}
+.task p{margin:0}
+.task .body{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:.92rem;padding:7px 10px;border-radius:9px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent2)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt:disabled{cursor:default}
+.fb{font-size:.9rem;padding:8px 10px;border-radius:9px}
+.fb.ok{background:var(--okbg);color:var(--ok)}
+.fb.bad{background:var(--badbg);color:var(--bad)}
+.fb.info{background:var(--warnbg);color:var(--warn)}
+.fb b{color:inherit}
+.status{font-size:.85rem;color:var(--ink2);font-style:italic}
+.hint{font-size:.85rem;color:var(--ink2)}
+.stations{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.st{display:flex;flex-direction:column;gap:6px}
+.st .ring{display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.82rem;color:var(--ink2)}
+.st .ring .bar{flex:1;height:8px;border-radius:99px;background:var(--soft);overflow:hidden}
+.st .ring .bar i{display:block;height:100%;background:var(--ok)}
+.rules{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.palette{display:flex;gap:6px;flex-wrap:wrap}
+.base{width:44px;height:38px;border-radius:8px;border:1.5px solid var(--line);font:inherit;font-weight:700;font-size:1.05rem;cursor:pointer;color:var(--ink)}
+.base.A{background:var(--bA)}.base.T{background:var(--bT)}.base.G{background:var(--bG)}.base.S{background:var(--bS)}
+.counts{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.counts label{display:flex;flex-direction:column;gap:3px;font-size:.85rem;color:var(--ink2)}
+.tbl{border-collapse:collapse;width:100%;font-size:.92rem}
+.tbl th,.tbl td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:middle}
+.tbl th{background:var(--soft)}
+.sentence{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.gen{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin:8px 0}
+.dnab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.72rem;color:var(--ink2);font-family:var(--f-mono)}
+.dnab .pair{display:flex;gap:3px}
+.dnab .pair span{width:18px;height:70px;border-radius:4px;border:1px solid var(--line)}
+.dnab .o{background:var(--old)}.dnab .n{background:var(--new)}
+.qcard{display:flex;flex-direction:column;gap:8px}
+.conf{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:.85rem;color:var(--ink2)}
+.kbar{display:grid;grid-template-columns:minmax(120px,220px) 1fr auto;gap:8px;align-items:center;font-size:.9rem;margin:4px 0}
+.kbar .bar{height:12px;border-radius:99px;background:var(--soft);overflow:hidden;border:1px solid var(--line)}
+.kbar .bar i{display:block;height:100%}
+footer{color:var(--ink2);font-size:.82rem;text-align:center;margin-top:8px}
+.hidden{display:none !important}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.svgtext{font-family:var(--f-body)}
+.svgtext:not([fill]){fill:var(--ink)}
+.mono{font-family:var(--f-mono)}
+@media (max-width:560px){.read{grid-template-columns:1fr}.kbar{grid-template-columns:1fr}}
+.hright{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.ig{display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 6px;border:1.5px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);text-decoration:none;font-weight:700;font-size:.88rem}
+.ig:hover{border-color:#d62976;color:#d62976}
+.ig svg{display:block;flex:none}
+@media (max-width:560px){.hright{align-items:flex-start}.ig span{font-size:.8rem}}
+.col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.olist{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:3px;font-size:.92rem;color:var(--ok)}
+.chip.placed{opacity:.35}
+.chip.shake,.chip.wrongc{border-color:var(--bad);background:var(--badbg)}
+.chip:disabled{cursor:default}
+.tbl.sen td.c,.tbl.sen th.c{text-align:center;font-family:var(--f-mono)}
+.tbl .hl{background:var(--warnbg);font-weight:700}
+.tbl select{max-width:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo"><img alt="Özel Sevil Ünal Doğan Sosyal Etkinlik ve Gelişim Merkezi" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAABoCAYAAADckmphAABoDElEQVR42u19eZgcVbn++51zqrp7tuwhkISEEAKZmQQlKAjiEDKTREAEtcfrdl2ugF5FBH9IyCT0tIQAIpugV3C57su04gYYyIQwKjtRIJlhC/sSCFln666qc77v90d1T2aSSVhk9fb7PP10T091V3WdU29959teoIwyyiijjDLKKKOMMsooo4wyyiijjDLKKKOMMsooo4wyyiijjDLKKKOM/6MQEQKEymeijDLKKOOtirY2XT4JZZRRRhlvIWT++fhIACr+QxQyospnpYwyyijjzSTmTEYBwB8ef/63H7/1xTUzcuvfX/pfQ2a1gZTdHmWUUUYZePN8z0DHhk13Xfl0IO/4/WPynmsfaZvz2wcPKm2Tfpu4PTKZjMqsXm3Ko1pGGWX8WxH0dU9uvGvlxm534nUPR4f8/kk5vO2h7Yf+7P5zj/jB36uL7PeWdXtkMhnVJlL2nZdRRhmvO95QEmxtbSUAcJBupY06cp8k8fatzgVBjU5UZkNTfcc7v3fXh5DNMrLE6TbRb5Vsj4yIahPR2WyWm4ncnx59dt8bn37+k2fc9lSquEnZPVNGGWW8pqA3YX/yxydeuB9+clZQyPPv1m1Vnc/1SkLDkfYNBJAw+oPNb19y35nzOoHY7ZFrbnZvFjHXAdRM5ADghqc3TWKRr42sTH761md7Rl14z+Z9t35u1tPIZBSyWS5PqTLKKOO1wpviQ7WAUQI4Fhw6sRLrN/QQWzYI+hnMUImKE0kn5r/j8r9fmg82fTPXfGIPMhkFtAJZ4jeMmHO5AWL+wxPP1WrjnWpZ/nNkTdXIR7f04/eP9W3fu6qCtpbnURlllPHvYkH/9rHnO1UiVbu9p4+VVurGdS/i3se3IakJ7Bji2BGgVaICrr/vYWE59/7Fx/wGABoyGdPR2upAJHhdUrPbNNJplIg59+jzs7XvfUURfSyRSlXk+/og1kY/f6jPPL493D6pgg647oSDNkGEXq9jKqOMMsoE/YYRdNujz3dSIlXb3dvHDFKb+yL87u9PIYgslAjEMYRFxDlWxteAAgf5myQstKxbfuI9AJBOt+lcrpkByGtlMQNAlmIL/ZePbpmtlDuTRD6eqq72+rq7ETnnKj2lbnmiFx3PWUppt2HzC0/ut/70Y4MyQZdRRhn/Fi4OJxASAQsQOEZNpYeDJtfg7s4XkPQIYhkQITjWLuxnsED5qflQrqHu7D9+R1t7Ue6SD29E7KDWyL16/3SbiE4DQkVi/vFDz73PeP7JDJf2U5WJvp5u9G3e6gCohFH6kc0hbnu8mxOpCnKOt67fu9fGt55yjLCMMsrA2zeLA4C0iWjH4jsWsAgEQCFizNh3JEakDKJCBDgHiRzEOoBZiXPK9fU4DsKENskzHem7a0/PnTxAzuk2/QqLXKhNREOEmokcEfHVj7xwxI8e2Xgta9NBydQnC6FNbN6y1QWWxQq0FVB3yFjZtRlRaEUJIJHtRnMzl1YG5elURhllvC0JupQDXfXI5koGKqxjsAAsQOQEiYSHg6aNhgstYDkmZ1skaceAYy3WStS73Yl1+yqTuGbmBHQceOrPjkauOfZJp1+iyEWEisUl0kzkQCRXP/LiCVev3/QHYXRQsuKkfBDJli1bXcGyREI6YFDBCUQR/v7QZjy/pQ+eSOwrt24bAIGUubmMMsr4N3Bx9IaO2QOzCJwATgARIAgtJk8ehYcf3oitm3thFMW+aBGAGWCBsBBENDvLTvKiTeJIIrP6oJN/9mMQFj94TfOGOG96V19wm4huJnJZwGZWrzajxh70EUD+W5Q5ipRGId+D/mCbI5AGSEvMvBAR+Ebjked6cf+jm+F7Bs46UU6AmKCRzuVUDnDl6VRGGWW8rQl6OwKfRHvCMmBBswCWBWQ0ps/YC3f9bTtEFwmaAbCLNxKBxM8KLHBhP0OYlF/xGRcWFs745A+XPfxz+s6g4KeUrHcichffeG+lmjjhk0L0OZ1IvptZsL27h0EQgBQALSIAxR8UAZQC+vsj3HrfBsAyoDg+hpiguwFg47hxZQd0GWWU8fYn6AozUvWhl2JSZnJCcCJgAGHgMG7iKIwdV40Xn90Co1UcURQuMnnJoo4fIqIgDNvf7RTpCSpRcdWMT3zvPXtP3/CZDoCRzQIiICI57+6n/ssl/HN0smJ/F0XYtr3bFWlcF2l8wFNRMr9ZBB5p3LX2OWzd2o9kygNbByiCOAfneAsA9D78cJmgyyijDLzdg4Tot8xcNEIZJCU3BxcLVxiEKbUToUTA1kGcjX3RLn7A8o7X7ABmkECLDcXluyPlVXziuUfGn4BsltOZdR6I5Nw1T302MWrMD0LQ/lu3bHU9PX0cMXTooEMnCJwgsMVnJwhYULAMKI1HntiMR9e/CF8DHFmItRDnwGEEWLcFAKqem1F2QpdRRhlvf4IGuuFEYqtZYit1gKQBhIFF9fgRGDtpNGx/EFvKjovEHD/ADEjxmTkmahESdgRmhpX3AUBnVxcAIHI4ubdQ4P7+QhQJ6VCgAo6JOHBA6ICAgZDj58AKLBQ2by/g/n88BRKBWBen/8XHQhJFgONtADC+7ugyQZdRRhlvXxdHa2ucihaxjHQk1U4crAjF5LyDpB0A5xgTaidj02MbwZGNncFFHzRQfC4+RIqV3zLgr1YQdgDQlWuOTrtjU03g+qZG+UA5J1TyL2MgsWOoW6Pos4YmYO2aJ9C3PQ8/5cfZJKq4f8UkNgIVCRrIlWdSGWWU8Ta2oFvjJ8fWsEC7QQHCkiVdyouOQofk6GqM3n8CXD4EDRD0YKuZIbzDN12yqoUtCO7ZgSBh2DspcBhdCG3RShYMuDWcICxa0iHHf+cjhtMajz34HDY8thGeVkOsZ3EMsQyJLGwYbSvzcxlllPFvEyRk1sYpaMscewuK7g4npXRngQMQRQ5jZk7G1keegy0EcaHeYKt5GGuaRAjOgq28UNpfXuwEz69JRPleLmZq7GI1DzwzoIxCz6YerL/ncSig6OsmQA/ajyKSyIFYNgNArjZddnGUUUYZb38fdGC0cSyGWcAYmmrHiB8CwFoHr7oCow+aBA7DOMuCGSIuZtKdrOnig8RFIHJPD+yPzcQIGqETia3mop+59BgcJGRBwQkeue1hRH2FHb5nN9h6dhAncGEQwQV95SlURhll/NtY0EaUsRT7mYu8t8NyZinG4AAWggtCjDhgIrY+/BTC7b0gpYrkPNRyji1pBkSUWGbhcFNpf6F1E+EEgUUxO1p2WMxFU1qKr03Cx/P3PoZtT70IL5UAWwfStGM/WkBMAlIkURRa5wpD/DdllFFGGW9HC7ouF9NjFNlK5SfJibADyCF2aXAxQFhyeUixnFolPIyaOQVi7TCZGwxInG4nzAIQxNlucrK91LwodDI9cILIiYSOETpGVHy28fuwliGksf3ZzXh+zSPQWhVdG7G/GdYBrlh6Xko/sdwbhdxfjICWXRxllFHGv4EP2iiPlBInxRgfA8wCu6Oiu5iwEReOuEKEin0nIDnuSQQvbAEZtZMFzbFFzCJQQsK81a+ItpcczdbxFIosIueIBnVX3dE+o7hdFOC52zrBkYXyvditIQJSClL6nMRF5OIMwC6vk92F8hQqo4wy3vYWdG6g1aj0RmFEjnfKgR4ULGQRMBetaGZAK9TM3G+QBe0gpYcUrWl2Enfg4G1dbdk+AEi3ibaWx0ZBCGeFnGU462Ctg3Mufh05iFJ48Z/r0b9hC7RRsbVcyhRxcQZHnIPtBixrZu57qOLpvnKr0TLKKOPtT9BpsIhQ5PS6Qj6/NjFipLYsEcuOQGGJnEvWc9x3A+AgQmLvsUjuPRYSBLHveOdAobjYLHZuU9xbA9gQra3hyO0TFQK4yJG1DGsZzjJcxAPk3P3EC9iy7lEoX4HdzkHIomlfChSyi+vS2fUj2yrFNqdlF0cZZZTxNs7iIJJWgLKHTuwXoz6c7+u7z68Z6TkRtsw8uOSbObacS7nRzAJhoOKg/eLuRex29UUX86AJXMqBRjKhx1rHY20QxkFJ6+Asw5asaBaEvQVsuquzVI1Y8mfv8L9IyZLmodkckcsDJCgqlZdRRhllvA0JWgjpNt3QkDHZ1lZkMhm17JDJj3Q/+uB78z3d15CXVJRIKuuci4k57lgXG7FFaxoAhxG8MaORnDwBEgSx0cqDmyjFHxLHz5f2HAXRXiykbGThHJMbsKAFzjowCFvWPIBwyzaQLrk2BlnnA8S/o0iGXan1Kb8IAOiqKxN0GWWUgbdfkDDdppEjhxxcBwB0AFkINWSONt9tntsL4NTPdTzxJ6f0paZ65IzCtm1xJyWBEikR9SB/tHVIHLAfgqefjbM6StUlAy4PAOyeK+3eRTKVjA9rQ1csNUGxTR3I95B/7Bn0PfIElOfF5FzyJTPFLUeJAIWix0TFeXpMIo5BljeWp08ZZZTx9iNoEUJzTiHX7CalL0lVJEfN5zA/VoT/+Wgb/aMjC9uQWW1wNPCjhqnXf/D3/7w1WTP6fPKT/60iiyjsd8xxb+aSJc0CcBRB1VTDmzoZQeeDIN+PszhiMidxEcAYqCIUJ/sxFJwTBkQPNHnWCq67F9v/0QkhAQnHff5LedaKdmjcckzUpFDUAlCAsAi7reXpU0YZZbytCDqdbtM5IgfAHfSpHx7PRN9SpA4kPwWO8jKj+Tu/Y7GZjuzcLmSBdKbNz530zm0AvvTBGx5e4Vhd5lWN3L+wdQvHfuhB1rQAHFp4U6cieuJJcL4QW73CIBEtNgR4h2Vro2gqBxFsZBWVIofCIBB6/7EO3NMDSiRifzMRiIt9+zm2nGPSjolaGKV9CYmQSHwjaNjYSR3leVRGGWW8tQlaKN2WU7nmZjf7kz8dH/g4X0CfV8zgMM8iTiCiyfgfoSg6bsaHL72UouiiXLa5B+k2PadxmvrjsTP+PO/artu8yC0jL/EFkAMH/Y5ZtJSyPawDUknoadPg7r0P5Jk4qggQc2hJqRdLRxQ5nqLDEM7GBAxmkO8jfPQJBE8+DfITRdeGAoh2WMqguGpGxRY0iACKixuV9j1X6GOPuB0AOjrA5WlURhll4C0bJEy3aYAk19zsDjr1ZyeFVfpOlaj4vNiI2QYMIgWQBgAX9TsIUsokWlipNQeceNHHkGt2a049NJp+2hWJVR+q3bzipAO/yPn88S6KHtKVNVqYmVlYeEfAUE2aBDWiBoiikgUNsOQpoTeWLHlneZINIzjnyEUWDoRoyzbk7+8EKRpUjcgDvuyBDnkoVtCwc2B2REoZk/IA6hcXfrHrF1/sAjIKyJYJuowyyngrErRQuq1NI9fspp/2s5q60397lfJT1xKpqa7QY0FQMTnvAIE0RMQG/Y6UPoDI++X+xy+/af/jvjFn/ZWnBwAw/bQrEu0fn339thc2HR719/6AvKSC9hSzWOFiAyPjgfbbfxDJCsC8vc/4fQDwz3dUjWbLI20UwUUuLlKJHPL33QfJ51FsrTf0UUqpY8fi2EKElElopT0tNnjahb2Xc7T9XY/85rRrkCmTcxlllPH6gv61DI1mBwCz/t8fGhl0BZGptb3buShRpWL1E1civR15ywPPjoUZSvtKokIgzn0HyF+4fsUFL6bbROeaiQHIu6658yTAu1zI2zfo2cZxTrMoZgHf8Xdg0wtMfkqxDf7xqcYr3pXNEtddeMtMR7iXSPninCDhEz/yMFxnJ+AnAELRsKeSi0OElCMiRcZXpH04WwgVqZug6BeS929Yv+L0bgBAJqOQLZNzGWWUgbeaD1oo3QaVayY3+2s/rXTJ0VlhfI0cw+Z7LAhmCO3LHotXFIjAUd5BJKG8xJkSyUf2b1x8Xq6ZfghA5pxyj3f3KYf+/l1X3Xl7xIVvkp/6FMIQEuYtkza83wGgTRuF4j7RG7NZYgAInR2r/ArfhXmGMko2boI8+MCOQhdSEGKAyEGJKDJGac+IMNgGXeKiXzngt09et+jBITel2k4pk3MZZZTx1iPotjaNZnK5ZrhZmRvfJ0p92yhzsO3ZJhJZISIjr67KUENEXJR3CrSv8pLf37+p5ZMSccuaaw69FUS4+8uHPQ/gP+su/tsfBOoSSlZPlZ5t7EaPgxo/QdTGFyCQgTajztFkYQJbFpAFrbsPCEMgTs2TuDZcadIJrZQBu2Ars1wP0M8TNby6K5cNB6zlrjpCLs3IkStPmTLKKOMtRtBCDZlbdEfzXHv4GW2p/r3HLYGVs4mhbX+PBWBA/3LHICLACFsWdqK01yAq+vv0oxf9oFAIWp+547JnkW7TnWcdde1+5/zxVlM54gKY5GfhGNG+B4Rm0yatbDhQReis20+0gyMN/VAnaNMLAj/JcA6kjSbtG2ELjoI7BNHPFeQP628+79kh6YJla7mMMsrAW9kH3dam0Rz7mt9xRccRgPdtBTPHdm+FhJaFWUlki7p98QOl147jNDbZjQ9aSj0vdn7PAY4dhJXSHnFYeBFwF43s6/v2mjXXRKVD23fJjR8RqEutXzE5cf9dUA/c8/XHOn9xMQBMXHTd91X12M/Ls4+F/j9uVWSMUToBEIHZPkeKroWoX6zv+OYdg5K4NQAgl+NyA6QyyigDb90sDqGGzGqD5mY3/YobEnO+e2eWVOIWpfQcm++2AASK1L92b6A9uz0I5KKCI8I4pRLf2ppM3bHfe75yfGmTp5Yt+G2hsPXdXMj/JJg0rSATJj9Q+rQTPcX19TnvgXt9rTwjzOyioF1s+KkgybPW3/Kt00rk3NCQMYAQcjmHXM6VybmMMsp4y1rQ6bY2nStaze/8wZr3KNJXKOW9K+reBgkjhnNKIgexRct58OudLejhsjiEB5oSxe+7HS1DB7aVgb/j7kaOibQWdoCNrkXPlnMffeDXnaVj3ufM30/2qke++GTr0QGIZNzXb7it8qkn3qMevPtRJCtyzPTrJ+666r4h1nJtbdmFUUYZZeBt44NuWL3a5ObOtXOuvsdTlamzwbwUQr7t67YAa1KkpNRXaOBRSlUrVuwNekjp9SApE+G4rScGGuDbwal3sdvDORANqKYQSGnmiAEBJSs+JKmKefvOWL7sqU+ccxlyOTx36UlFodiMAiBm26Zv0jMPmLz2bthwx3f6d3TWa1bI5bhoKZdRRhllvD0saEWx4frePzx0mLVyhTKpw8JtW8BBxHCsXGSB0IFtBIkcOLSQyIIjG/8dWcBakI3VTmAHWcEQKLWDu+M8ZIr7D2kFKAXSCqI1RBFAGqwUhBRYKTBpMAALbRmkVNVY5ba98OfnN7iTAAC1aUExxW6YBiEauVrZpbAkk1HprjrK5ZoHfM7pdJvOIYcygb+GKJ/nMsr4Fwg6VgUBiGTarx46q9r3zoMg4Xq6rXJOK8eknAM5B7IOxAwDgQKgis9UJFylil3hdPGhFMioAUtaEFvVjPg1I1b4ZhY4J0OfrQO7WAGFrWXnmMRUkM33dzt233p+yvwL8ctWQUfW7koKotCVIwwihWF+e9nX/MbMsfJ5LqOMV03QGVHIEmfvefrXPG7SR/s2PG0TzKIVPFW0rKn4DBUTqyupcA+8JlgAEQMhx2rZIQOhYzgnQxRN2DKcc/Gz5ZigXelZioRdJGbnxFphmIRm52DD8JdhIcg+d+FxD5d+xF5NX6t8YeUlfa/0x9fPW/QeMsmprkZ+15XLRoCgbl7Lh0Do7WxffmOZXF4bcp7VuPhwKG9aXm353foVV4ZAhurmRScJuK9r1YUryue5jDKw+ywOaYWICB2xt/enhVXd9540c6xpPGicN2dCkuv3SrnpY5OYPCqJ8TUJjKjwUJnQSPoavlbwCFCxFiAkspAwAkILRBYUWSgb+5rh4oZGBAERoIhAmqC0gtYKariHUk77PvkjRmqCu1fg3v9Ea+MnSuRcW5v2px96SsZMrv/HqAvv2XfIamC3q+2MAoDZ85a8U5TXob3UL2m7vRCA1DUu/YpJVv1Wm8SK+salxwGQuBFUGa/GrQFAapsWv0OU/qvxK36RdDXF8+xOM8mq3xqv4i/1jYuPAyDp8nkuowwMGyQkopL18svTbrjhdwtmH3YCO/6yTla8DyDku3uYBQKBVhJb0pridsmiipxYdHGAYmFBcgRSAnIl/0f8XtGTMsi+YghU3H4ZAEggIgwQ6ZoROurv2+rC/DcL/e7yJ7NzCxAhEMn+7zntiMCGl0vNmHfxxGnwNr94JICn0HqLBmB394OzwzvgNdJpTdtIx0dBEIpvXmnkBhTJXy8ia7gFavz4Lsm9tD+WkMkQuroozkBplfiEv/GWcTrdpjZu7KS43epuM2HIsCLWRcH1gTPOVDKZRSn6l3rCvIpz3TG+S17C9z3c8ZQt/DLe3CBhm4huph3lzH948vkTSHtfFWXmOih0d/dIJMKWSUcSuzEiAWzxOXKCiAURo/i843XIgOVYD1CKz8yxW8PaWCDWhU6YmeEltYssbBj+kvJYes+Z736s1Npzr9mfrKyqHp0RwRnKOVPY/6CC1L3b5y0bT99wyQeuQma1QXaufVlL7wVLj4KoyWtvyv6y9I+6+Ys/DIuw8+blf34rLb3T6TadKzan2lXzsVm9nsG2dLpNx2Tc6l7NDaF+wdL3gNT+iRc3/CYuNBKa1bTkI8TouX/V+SveLhdLQ0PGvAxyf6UnV6eRxo4Aakal03WUy3VKuVtiGTScXFUboJoBLpm6f3hi43ER1NeYaK6YBLq3b5eQwVag7TBkHLFg5/fD4rN1AsdFPzQXfc6xb9qJ0homgai//y4OonNvP+XQGwf7yKe998x5inAFKa+Ow36w0Ry9+2jWo8cbyfec+9SyBee9LIJOp/Xgi6x+fuYgER4j2m7tWnFB1+62ez38s3XzWz6qVWK2dcFzXSvP/86ePjBnzileftzeB8Da0Rq03UfVU2vaF21/oyfNQfOWj9Gq74tamaQTe0PnTeffNkyHv0FWdtbuifTGj6+TXC7Nr+NqgABIbWPLx4xJ1DsOnum86fz/2RNh7oyhN0choJVecwJ9fedbGf8WvTiIpDmO/6FNRKcBJqLrAVz/60c2zHXWfTWZSJyQ8hO6u7sHgFgBdFEPahDnS5yxUTRBufiOSDE3WlTxfuBYaUVe1Qhd6O3ZyFE+s891D30/l2t2temM35XLhgeu/HqlPfrrWQLOIADsQgdhhQlTlB5RzZoErGmv2AR+UV7SN5rNulkLlhzIQmcQYz7E7aNIJ8SpsL5p6QYQrnMsVzyQW/YIkNbA63DRZDKEbFZI8FkvWb2A+4KnAHxnV2IRACT1TYu/EpL3BeV4KimTYnFRAb0vzFrY2smRvapz1bLrXoc2qDGxNS1Ka5WoK0TR9x+5efmzCdM/geGdZ5JVcH3b8gBua7gFqgPgEsnUzW95z4Pb1v2aUgr1jUu/OHPUrBUDRFdMu1u7+d6DNyv3h229D6K2aemZXSvx292vFP6lk01AVojoc15yRKPrffFxAP8zdIUUr9Dqt874+UPmgSPZWiskA3OpvnHJBgH+AUW/77yJVgOQf/V819ZmfDXRXkTQNfDD/7c2d+HWWU2L3+8lR6ajfHf72vZlv8xkMipbLqZCudR7GDQTOSKStjbREKH/OGDv1Z/Yf/wHmbjB5vN/8rXCiJEjja8VaRJnFMQowCiCpwieAjxFMArwCAPvGaVQTHF2fmWVMgmfXJT/AYd2TsfHZ38vt7GTQISuXDacfszZH7Apc7fykmeIiDA7hlIaxieaPAVaKdKaYDw9HgDQmZbdGyhpjWyW6xqXfF5E3eGZ1KkmUbkfKZNgsZaU5xu/Yoo2yS9pre6qb2z5LJBz6VKPjtcDgh4bFawIbRvmgBVAUj9v8cUmUX0FaTNTaZNisVYp7RkvNclP1CxQij4FAOjqotfSrQFA6poWf8CYyjZjUpmEUm0AUAhhhaNeGxUskeSH+zwTKkh7k0l5k5kktTPp5nLNjlh7pM1kUt5kIa553We7oMdGeQsMc6533JMmkTKTldb7+YnqaaWHl6w+0ktUnaagbp61IPOnWQu/Pikm58yrbHeQUV1d2QiCuX7l6M9xYL5eN2/pu1joIuVVfFbAowHgllteI9WjMv59FVWam8mBSNra2nRGRH1m2vi/fnbG+A+yiw63Qf/3faMLI0aO0p5SZEicRzJA1GaAmAkeAUZBDMR5vk/JkaM12N5B1s696cQDT+741MHP1GbafHRk7T7HnD1m+vxzr4ZJ/ImUOdDZwEEpgjEKjoExY6HHjoUmgTYKWtOEl7Kcc7mcq5u3+L+1l/i+UnqkDft7oqD7UhE3X5w5mDlaYMO+y11U6FGkRyqT+FFtU8unc7mcK2YlDG4isrvHLhci0mld/DwNY6MqAgxB9C6Wfi7naucvmg6lvuqiwLENuiQKThTHB1viRhvkvx4Wuh9kSLTb1cKOfe+uGcpwpE4bN3bG/xPxFKk4IEySAoodW0GaACMy/BwiBgtHLGxZYfg2rUoP3kbZ3TRqofj4X4oIpbjdkCyeob+veK6x87ke+i0FEWHnoo1R2HuaDbq/HBV6T7NBz1VR0Ps4KQ2lvQ+Ak7e889iWKUBWhj+/GTXM8Qy6A3YVrXd1epjfGnjJ6kXaT9zlp0bMym/fcAdH3o+BjOroyLphx3XofBpuHIe+t+tnyvh36wfdXOzPISKx5jXRnQDuvOahrd+1+b5zjKaTktWjvJ7ubnBknRApKCJIrMgtgBOQTlSP0P19/RuDoG9Jorv/J7nm+rA20+Z3ZZvDrmxzOH3hNz4CyEVamWk26meIgLTWKK04SUHvOxUq4QFRSFoTxOjRsa96uKBeRiGblfqF58wmpy8TdiLiNojQiZ2rlt89aMMuADfNmr/05+zsH5U2E0nUd2Y2LrntgWz2kVcWNMwoZABkszw4DSSdTuuXka2BdFcd5QBoMe8g7elYFFe+sW7V8j8OOtZVkw4/46qaipr9ANCA/7Lky9zJJ4x0enAwUXZTTEIApOQ37my/4Nr6eYv/S3mJ2SGbb8fjr4uqui/pIVHF+UIvd5va2rQMHEvJhZDNDnJD7Jy5UgqSkovHPjvYlyuvRjmISCkCutfddN5VQ2IAjWcvCRxaidVXlfb3D8P899Pp9Ptzg8/l4KrVLOK8oRKBDx6PXM4h3abX5Zo7DjrmrCPA8jGAJluO7reVNVc+9Keze3fjo+Yh37N7v7Xs8JcDQ6psy4pA/96q3kTxYGdEVB1AzUT3AvjoFfc+804u9J3me+ajycrqip7ubgjYMoM0gbyqap0vFDjo6/6hK9jzfrfwgKcB0Jyrr/bWnNoc7rtg2d6eRxcr0p8QZ2Ft4EgZDeGivzrOt6aaETD77B3nVHsGSgEwunr66Dur1uPw7lIq3o4JCSALEafO1ibhOxs4J/Y/H1h1wd216Yxfhy6Xq62VdFcXdaJWr81l18w6ZvHJTPRn4yUqbVQ4HcCXGxoyia1+r/YSVcOTdKHgrWm/aPuAmGwWmLUwMwk2msRK5XsD/VAuly0Ug0x7PMclTmfhHiVCRCRKqXcC+E3pwpze816zfsXp+SJZ77gx5GKra9aCJQeKpdHKV5vv/0v24fhCzqiGBqjno/5UopJ5VFgV7BTEk+kLT0tUON8EfUo91FTRty6b/VHxkqc4ndKJvE7hvDvv/LZX2/DfnvFTcn8229fQkDEvpjDDOJO/f+XSx4uJksUbisT5mzm4g+YtGuOR2UfYbVyXu+AFAKhtyFTVBN3ujjsQvHJviOjadMYftxHc27uBqqr2lo727HYAZ9Q1Lh1Lyn1Ca6+pc8uMJmSzK2LfeacMnPuFmUlW3AgSvaErm92yKzFmVEkyrlKNebRXNl/2UPvFz5W2O3DTWdWuphCuX3FlsPO41s1t2V+IE3jeX9+Vy4aTDj8jVZOo0anefYI1a06NgIyaczyS+R6org7qBYDa+ZnpxM7rbF/2YHwMxXNXxr8fQZeQHUTUAHA60T8BfO7yB5+/PCj0nWU0fTRRPcoLrUNgLfr6+jqU0Ln/e/R+fwWAhVfckFhx+rHBmlNPjQ744AWfEablSnt7c9jPAGKruWQLiIBIQSILM2kiTFUlEIUgpUgpQEAjRgtqAHTvstTLZnlO49kjAqG5IBKCrH6g/YJVSLfprlxz2DWUFB3SbXptrvkv9Y0t98DQuwlyHIAvv+jbTxs96pygUIgEYqgoUiAiTnsJ38H8L4BzgSzXzW3Znzz1TQgayEuNUS5CdUIermtc/D+d7XQ5utr2vGTPNQsAOOF7yEVboL3RApxZ37hkLEH/4EO1uCubjUV2BwJrRQKoa1y6QCmVEXZzdCLhO1sozJrfek+E4BsP3pRdudW/OGU8dx10cspmr//x6QtPWxhX+AGz5mX2E+f+DJOs8iryv5l9W2/WNbXcabzKUVFT/sounHehI60J7rVOszAA8HS06XivYuKlLspvqW9cevUWJZ9XjmczJF/ftPSvVrlTHrxx+YZ4JUJuRsOZY32/cjmIjmVx45Wf3FrbuPjHivSzynhf6/ErH5/9yd7j7v85+ghCr8AKka5aWOSyPHBDSLdp5DoFxrayiz6svWSSXJQGsOKxUVsVkI3qGhcvUNo/U9gdokRGKsiGWQsyt3FYuKAzm72vOEYCZLn+mHNmk/ayAfUf6Uli7KwFmaeE+VK6zR2gx4w9IervvgHAFxsaMqajI2tnzVvUSDpxLos7mKCTmEwP101ccj4EzV6iYk7ef+oKAJfWzw9nBIG+TieUqWtsuQpQRxJkPoho1oLWTsvuyw+spDvLqvT/5gQ9HFEXLer7AXzqwvue+qYE/R92YbSPkP/7y98z5S8AMOfqe7xpox7jXPOxwYwPXLwfPLqEyJzELoKzgRtwZwjF3exQvNmLgJJJ+FMmQysBeXHyCCkBaa8SKAaaWgct2YvZEgH0AUIYG5fC4K8AqGFjJ3UM83uK7xOIbgfkMCFMmnXcolEcqhHaT04RsVBKQ7jUFtsDu3CbwP4AAA5ckJlKzKuNXzGZbQSOgqcFGO0lKmZAcFld05JRnbnmzEucVkYmox7MZjfXNy75IoBfKe15RPRfzgafvfZ2taa+qeXXiS3me7lcc3863aZz2WY3a97iD0Kba7XxlQ37YMP8E0rpqdpLvBeRXD+zaekH71951l/qm5asUFovJ0pN8a36AIDfxT8mOtkkampdVIAT+lWFqdJ91u6ntFehpH/M6z0hWbsRpM2+sNiXlP4fbRJwNgABnvISxyPo+1kmk5mf7erCrOMWjZLQazd+6mBhB2YFIjXeT1R/PQp6+wFUAKKCbvXaBNqKucqd1ekn6rfOeJhIHQzCTAC05ppTo1lNLV8i7V+llAcWC7YRlJeYTEQfheDYunktJ3Rms7cAwKz5S+cIqVVK+yMgAucCKO1PgZIrbNRfMCJJIkwCgI6OrJ11zJKPkDFtUJo0DNhF0CZZ72zhV8xRgRQlNWgcAEikE+Sp/UEEpdTF2q+EiwogRSDShyqOrqttyMzq6si+UCbpf4Mg4Ssh6mYilxFRGRG16OB9154za6/W7JxJpyw/ZPxfAKAhs9qsOfXQKNfc7GZ85PL/Ft+7S5nkSewiB2FRWuu4dWncaGnHQ0Mcw0wYD2/MqLhRk9EwRpHWiv1U0pBvqgEgXZfbYSkVMxsc6xQBXrHjaffLWuayDOQY236zDzn7E+v63udcdJRwfo4490NAOQEDYk/rar/oKQAwzi0zfsVkG/Ztcq5wwoeP1FOTST3Vhf3/y2yZgJa6xiUzi2nnu7fqsllGJqPWtS9rcxw1CbsO56JIm6RS2nuXNqlLwjHy15lzW6bkcp0yfWGmRhR9W2mtoqDvHyA9s/NIsz8JzYqC3n8ok/CU8IW16YzPob4yCnofA2km4dMByDsWnjNOhD4DZnEu/PUDq5b9Mw/UEKhPnGUhil7/CamsuIgBWGHX7YLeU9hGcx1Ht7socACOufaO6B3I5RwHplV7yYNdVICzhT85jua5KFwYBX1/1cavEBcyQYLX/CBjn293sfC1Ii56WnwISF8lInBR/lHnoo84kRku6P+KC/NbSZtqKPr5lIbTRwJCwvxdpcwIG+UjFxWWEclBNsh/wLnwEaVM0tmQBfH5nr7wnHGs5LsgIrZBr7WFs521h4Vhz5eFXTeBfGdDlrgdDoicQFwobBkgREHPRczBe50Nf8wuZGOSY7XnjgcgDQ3lLJF/ewt6j66PW25RdUcfLbkckOtslY7sXLvff1y+l2HzA2X84zkqFH3NSscrUAFJbC2LyIDlDInD/sn9psAYHW+naKC8XHsGYDtmmGRTAQBt7IvCKg8gRUqmAJDx4+uG9cEV3xdS2A8gkKCfWG9e17HsBQAvAMCM4zNjPeaFWnvahfmb1rVf8HMAVDs/Mwpsm4SdQHCPhvf47/7Oh5FxAYu6jlyYViaZdFFhPoAHQLLnFL5slpFO667c+TcDuLm+MXMoS/hhgXwShEnaS83R0nc1kF2YckuPhPL2ZWcFJH+GCv3aW9URAtpOhL8wR7OIaIbe4uru71j2z7rGlh8CfL7S3pF1jUtmRqEc4SUrJ9ioEIBwEQBSYSROE4Gw+4yE4W5uouilQnNESgaCjcUgYRwsFKW0p8SF569tP//7cYXnkuUA/qy0D7bhBGQyim51J4mABXz/upXmpJIlOOu4RXe5EPdr7U8S91obh0JTGloTAju5GBbZFt/M1ee18eFsEInl/+xcff5txQ88UjdvsVPirtImMbGKaF7dwiX3kph3Q0RI8NN17cuWFrd9qG7eohegvL8pUgmCGABIspqvTGJcXEmAb3SuPP/i4vZ31TcudWTM/8Qu+UHjIyTaSygbBb/vbD9/EQDUHvv/HuUoeZJWuoaJ9y/T3/9Rgt6JqHnAzSiCOWv2qdgu0XU6WXWoK3RHgBjSxUBg0dcMxMRcImqQgK2FN2YUkvuMhwIDngYRDWgBGM9Ai6qO/0oPJjgBgDGBv36z7x6HyEwIjqtNZxblALfLEi+TUbmuHA5Pn5Hq3UYNRero7OrARqTTurazVnd1ZUOvYL/v+RUTI1voA/DVUtDFaTfRCEa5qEDKmIXKpBYqEYAAbQTMEbxEFcQG+7/s9IJcG8+Zc6q3Zs3Vdl073QPgnoOPWXyV1eoPYqNDBJj3joXnjLOWJ2iVEBvl2XipDGmTgS6WuzADwlDJSi/Mbx8PgLwCfz+iwpeMV7G3cN+FUNiblIYI/7arffm9ABB4YPMqOE6RLQB+MbdNxal+XYNWNZmMktvhl1icSBUG+sKQAtsCk8hf0+m0zgGg7RRAGKQMSCScs6ZndECpiURQcGgHWmXhwtGJ9ViPtddfuLW+afFqZfxPORe8Vs5yqk1nvK4chVXe4galzRRhJlJ0a3FVVkdKiwg/kux+8e6GhowpBRe3GdxgbZT3EokUR0E9OWxXvifMlsC4rqEhY158Eaqurs7l2tL31DctfYC0eYdE8bUjLPVktNgwHxqNGxoaMubF8VDjNoK3RPnrmLwLPd8fwbJT0I8UiPiW+Nx3kdrsiSgJBnVlL+P/kotjj0i3KRDJtpHyPpOsOtSFfRGU9qA0xS4NPcidUVJooQH3BgRITp0EryI5kA6tdzzE+AZEtC8AbOy8ZfDkk3S6TXd0ZK0QfgmAlPJm0DbXEkfRs5xOt+nSI06Ly7merRVLSZspECEBfgFkeXrPBNPVlQ3r5i3+sNbeiQKA2F3c2b7sgcMPPzOJTEZpZ/MQCpX24Jy9xxZ6fmKD3t/YoPdXNuz7FbvwJzbo/aEAq4vxzz1G0mc3fa0SIIl7WLRSbTrj1zZkqu67efmzYP5f0lpp7Rln9QQBbQcJERG5KP/nqND7Cxt0/8YGvb9yUf+vXJT/sQ27fyRKPQoA9/79ghdJ5EoIE0AnkNLvisK+SCG2nl/d8r+22BdJPSVieylOdn4vslnuRKduaMiYWtTG55ntEUr7iJfn8lgxRDuo2EXilMRczgm7gbkqWtF2Wx0KEBaNxZp4qbUeI/atL6b80CiIgP6VvN9bUMwdTisA0pXLhrObvjaeSF9C0OJcwVq4X8W/V3riFR+N6J04ItnRkXXbxyVUR0fWhtaNIqV8ibOReq1SPQImIgJr2aujI2vHjYPK5Zp50nvOTAIYBWGgePciUv3Fq1Vbays6OrK25ulu3dGRtVB+JQGJ4dNqBCJQpTldWreUaa9sQe8WmmkcjGJSWpXoSYR3WM6Dg4NFl4cwQ1dWonLqRGiS2HpWakAkgAAxngf4Ji73PvroIW3r4j4PQhK0XuG8wseVl6hV4pbWNy5RivIX5nLNA72kDzzhomo/3/81AX9dkYGN8mu6e/t/hHRar8fzthgs/BYpAxv1/62zfXkWAO6447I87gDq0unHH9g24ynS3oHk7JZ17ed9Zhevy/wzRnetvGxL0YJ2u6t6zOVyziL1/lnzz/2ssM2sa8/e05VDiCIxgahJWJiddWTCrZJP3c8qEqV9YRvc09m+7BvYpZ9HpmLNmmx/nE3QCiqcc7VD4SsgGk/a0xzl29a1L19byhx4FesmRiajPgI8+9tb+R8QPooUfXpWU8vv1uayf8VAU6olB5Pgq7GbgB/WKNwXZ+6IG2QByuCsih2k45LrV5zXXde45GERqSdSJ9XPP+eyFSsueBAA6ua1HA2l5zobDORZv/KsEomFIIpR5FnHLRrlQjOPib5BpGaSNkAQXvDgqgvWFcfxZoCPU0pPNP3+WQDOXb/iymDOnFO8QMkSIl8JW4LQbRUIHyw46dPKTymo02Y3ZX7fsTK7EQBGVFWdQVpPYXYDdxZScju7kJTytAjOAPDxO+64LA8AYvA1pbxk3ABSyuRbJmj8i1F6s1UppaCUQ2yCgkTF/uYhPufiA4BYh9TkCUiOqoJEDmR07H8GQCqek9pTYKP2AoDxR+9slZIgk1Fd2Wzv7KZzPsou+ovWiUmieAlb+Y+6piWrwfKUIkyWfM88Mv7+inw4GzwuyvzHM3dclm9IxITl5rWcazx/inNBSEJRfVPL5SJklPaUILg/l1v+vbrGJZeC8H3lefPrmlruJ1COIFtYZBopsxDMW5HJvA/ZLAvISdwedScyTAPIQYvzvdSoY8P+rY11jS13AnQ3RLYS0VwQ5iqtyTn8Zd2Ki54FSOobW36j/Yr/EHHZuqaWwyCyUpEigdQqU3FcwfZ9H0DrnOs26KqGVunouHBrXdOSy4zxv2ldGBnyvjXMsFkBLEm85CalBc4NeW/nIptsrtnVNbWcL8I3KtIjWHBdXWPLnwHqIsKBRYt9RPGmvOT+9lhwgQhcPB9MgwiaiEWgrABQSqvYjcKXEdH/EqlxwvrmuqaWX0LIJ8LJilSSxVnBDsIXwW7O9ZCZwszOQmhcfeOSWwc+G2AfY7ypRHH8w0b573WuWrYU6Yc1cm2ckEU/LESFk42XPEiYl9Q3LjlMSB4uAIcr0odqYxAFfX/oHP3wXcjlXH3j4u8oz/u6iKtzbG+va1pyE4SnauMtZI6goCDFczu6YG7Z5NsO41U2OLYfq29cMgGQWwA6UpvkfBsVIq0MDR4fjsdMDzM+VgCLYcatjP/LLo7aTol9xfIEu8BBaQ2lBKQB0iBVfJAuZnAUXR6kQMZD9f6ToLWC9hS00cXXOn5tFGkSeFqNK+Yz8+4yIu5fecE65uBI58I/ijh4yerpfrLmZD9Vc55J1ZxiElX7s7PMHOYoKLyv66bs+pI1Wde09AN+qvqrpDRpk/S9VM0xfsWY0/3UiC8lqsZ+URx9BgA625f9wAZ95wlz6CdqZvmpkd8wqVFX+alRZyYqRtUC6N5RsCAjPb/CADR2qKegM+6SJPJ4FPQ8pb2E7ydHHOUnq8/0UzXnecmqY7SXIhcV7gl0+IViI22ihPtvG/RdR6ThJ0cem6gYfZmXGnmplxz5eeOl9iaiTaUUxLh9KCgpVde4KHQQXnnfyuy9yGRU3OcZcAYKwHjPrzBCqAIAJTBKe9XxcUvl8J3fMqpz5fk3WRueIkCv9pLVfrLm436yepmXqP6UMakRAHqdLXypc9Xy39WmM34xSJjy/AqjvZRPzN6OO7vxjVdpPL/CsDgDAGtXLv+JDfovIlIwiYq9/eSIryUqR50GiO84eshL1hgSjHVhoegqoFGeX2EIGLsHy3mM8VLG+BU1XsWII0oPk6icKuzgXLiWbfSZzpXLvggQkMsx0Epr2i/azoITnA3v1V6SvGT1fD854st+oubQeLVV+HMS9jMotg0omL3OtUH/j4kUvETVND814guJyjELnQseBsujpAwoVoRDR0fWscWnxRb+oU0SXrJqrpcamfUrRs63Nv8YEQp+ssYwKB4LZk8bv9LzKwwDA+NjIxoYSxBVlemvbEEPV3+6BUpvJ1KjxUWD3BkSq4ILxfVNEptTLrJI7TUalXuPAUSgjR5wbcQ50LGXUSlANI0bVEW4a1l2kaS7stmnAJxY37i0IeLe4wGqF8hYAjaLoFMb/fv7V2T/Xqrg6ril1YGygOPxwuGlLgycEBQFIogtPtZRXkGos/SZzvbsufULM7+Nwr6TiHEQk6sgMk+DaK0N+E+D7pC/iIK++0Xi7JAhxwrQulUX3l57eOadUhO939nwaECmA6gkUk8I0c09wZM/frLjJ3F1IhHWAlsBfGBW09L3By6cT5CpRMqC8bRSuJUDcyMAxD7tawBk1Jr2RdvrGhf/P0DfvcP33CpAFuK8HoJbFgV9lfEyHhCjN0ohf6EN+z0B/a3oVeKOjp1cHciorvbs9w+at6jDCH/aIZgj7MYqpV4QUf8k5X7WuXL5Q4BQurbVZuMhv9eGfZe4qCBa2acGiNPJemf7LhHnQ5Q8UMpx78xmF9XNX3ojh1FaIFOU0s84qB8pBjNHHwWwCShWEor8NAr61wDYsOvMLP5eqB/YKH+L2AIj7B+wqwW8AaTvlmfV3V1d2XBHwQkEyAog9EA7PbL3nFOOHDtmwicY4VEidjxIPSMsN3S2L7t2UOGUrI+P6bN1TS2/cjY6jrQeQUBXMmGuKhTsH0iZaQPur4aMfmB19slJh6ffO7pm5mcs8D4RpIjU7Z7mH4VONTtX2A+glQAQedjguegiG/YbKQYxAUBc1AtKnB8FfZUkvHr4cSsDb+l+0K8zGjKrzfPPPd1Fyj9AogJDRAkPdmnseE0AXBBiwhH1GDlzMiSwcc04ldLrUMrkYJNIKgmDR9T2fH2uuT7cpdwbO/XJwEupkZQa4LzKJP7Xrt/By+j/MaRs99WIDLx+wgS79ooYuq9/tQfym9BXYvf9VF6y6GOgF29t49n7UmCk82/nPz14g7rGJTNJ0e3GJEe4sP+8te3nnxuv4F6dWEIZZYJ+xRfTQV/8+QplUgtcoc9BoMESS19JLJdVImpxDK/Cx9TjDoNJeHH2naIdCuKlZ4gY4xGc3eb10H4/OWm/bXsm6B3k0LCxdpBSiFBDQ6verWpGOq3nPDZKVVXtLb29GwbOXenvadMaeUhbzZLE0tFgZFuloaFV73AtxMeWTqf1Y8Xv3H1QTiidzqkhjeNL3x13O5PhSGTjxloquSoaGqDixvi7UTmPg4bD3rRKKWNrjt+71ICJGhoyeqf3XlpqaufzfDR4189m1Jw5G3TxfLjBTX/mzDnVxNb/1XbIcQ4ax3Q6p4ruIcy5buB7bKkk/rHH2vd4rgdvs/MYF+cFv8TNjBoaMqU5xOl025BxK7nLaue3nGyUfwHb6A+iaJ0C+kV4XwF9Wmt/ErsoBNmD1910wYODbkLxdx8NRjYe09JvfuyxdvVyxmeYsSyjTNBDZZtmfvlXV2m/8ks232PBYiCCASuaBSIMAmDzIcYfPBV7H3YQOIygipkbqkjOaofiuBitieAKntP118yb8mgmIyo7uIPXm2lFvk4KIW9npe//qxdciaDrm5Z80kuN/Fm8WoyNE1IKwg7OBv3C9tR1K5f9vNx5ruyDfsOwsXYcFRsBPwLPAGFc1S3CIC6StBIQE8ACXZHAmOkTYQiAVlCqSMxEA+RcJOi4NweUrzRGAkDX4HLv3Vnzb7746r/gyh9qnZZ6NvwLN2J5RfqEr16bT15uxd5wK47h3AqlcuXdrSbeSigeI/VL9OeK/u7PkaajmN1MBaoQkc0grClWF659JeT8GozLmzWVX0FXvdexA9/Lu47+b1jQdWddezzI+7OEBRYRBY7zoEtWNInAFiKM2ncsDjhmNmBdsX5lJ8t5EFETRLxEgrgQNn77fVNXpdtE55p3bRS/W/9hibDLmnBvGbHZ3bkP3moX0Svyx+/o5fH6+9YHXD97VF5/I8atvPJ6id7xsQuyS3bmpjfFB1339WtnAtQJBglzLFTIjMHBQhdEOOjoOoybOg4cWWhFUMXS7h3W8xCC5kSqgqIgf9K3Dp/yx50Vyne+A9fOz0xXHI1kln7r/I0Pd2Q3vb3GND6Xsxa0NAp5DeJsd2+or3yyI1vYeTLPmXOKt6kq0F6qZpcJ7lePlr6NT6gnx/dHL0kcmYyqv82erMjb17nwH52rlv/uZfn6X02cYl5mhlb8cSIRUfLzzhXnPzqsMntj5nAoHMtsC1FkronH8S3Y63gQ4c5uurgS3DtRKBrNSuXF6Be6bsg+/6rJWYRmLTj3ZIKeIhLdu3bl+bm3QZc6AiAHLVi894M3ei+8nGOd3ZQZb0diW1cuG77mnDSv5WhtTKNjt932Bd976LaLe94K8+iNTbNrbRVks1Cj/Oel222G0WNho6L1TCCO+3G40KJq/AiMnzQamhlKl3zPO0h5yN+xm4MTRhklum/3WRnE9U1LPkmkTmfmmaT9SoXI+Zqfq59/7iPE/MO17ct++XZowVhSXBEnJ/qVI74U9m3iygR+CKBQEu8trViCUeOvGGESTewKUTE5Zge2Ojuy4gCvojs4+wHgj+l0m87Vdkq6q45ytZ1SCjoBkIZboDb5tMirHDXV9W68HsDv0No6nGVTFJs95yNGJ6dzWPjfdTdf8MLLIfMBJRlEs7xETQYQREH/PwA8+u6FmZp+604Wkm1jQ/OTjo6sZfAxidSIpbbQC9b9fwSwCZlWGl5Z5020/LJZntW4+HBoczJLz1FQbjIpP0lsQZF7vn7+0vUQ5MiPfrY2m932Mskh/u7mZsUy4+xk1dhpQc8LK+JSgLgvuOelDmHb9+v7V57/+MuwQuOb3jFLPkK+Nx2u+0f3r7xk42t+Ex7UBtg49YuZ86IrHliFP8b9tpuHMaqAOY2LagqwK8w2fBjA46/VNVoSOxbCsV5q5Fncu8kZ7f8aQE+s3P66ziMCIDOPbZniSerjYvvvXbty+V8Gj9Mb22qw2AZg7T/6u2HMUyqRBLQWMjquDjQGytMQRdhn2l6oSnnwFOBrQqL48PXQvxMa8AnhqDFjDAp99xmm20SEmglDJX6Q5fqmpV/RXupnSnuHas+vFHEg7WntJSb7FaOOEcjpg/Ti3i7os1HeCrBFe8GQyVTUFYSQTFHam07KzPQSVQd5yeqBh/Er6k2y5kDNPGHgM9lsnI0ynBUn2GajvCVBz57EZmctWPxBY1I5bRIXiNZxsIta6RWUUIU2Kth4X3E1YJ+1V5hk1bc8v/IHmzz71eKWoY0KljnqNfDtW85KzGQonW7T9Y1LvynK/F2Z5OeMlzpAaT8p4kBKQ3upCcareK+XqL6CQ7M8FgdoVq/QlbutKIjbCwB1TUuPVIpWQKvlDvjj4elLUntaNZfGrb5p8UmUSOSUSVzgkPz567TOjkU05lztgTBTKbUIADLF7Juhx5VTAEkB5mQvUf1OFhnzelyjROgvXUfGE36j3MvTF56WUBF+r7RZDuXdMHPBOUfF4x+7w9QbHtxqi++SyuhnVCIBMpqhDUokzaSQrE5h8n5joEV2kLIh+IqQUDEpJzTBIxGfwKPGjPa5v/uORAIfyh46sb+1tXVoXnA2y4fPz4wG+Fxxlp0NnnFh8GlHUi/OHR1FhTNtoecewW6lkV6mcOng7WTPIp4v73/D7Xc3Qqik9zATCiLMzHazDfsWR2HfGWHQe2YU9p1hw/6vhv2bz2bHfwNA48d3Se38xe+um585fmbT0sPij2cG7U9isVjaZe4QdojNgllSRBoSt4+tRlcXQVqlOOdo6Mpm1/MqoigW0yUDMBWbs8XVb6RApao54uLvhxFx9DJFcV/q/3sWAX65Aqyxlchd2+7/vvFTZymltYvyT9mgZ5lY2+giqYeL3uPCvi9GYe+fmENAsNfuNS53v19CcVyK80CJTZIyxZRVquzf9pwa2pur9F1Dv49EpYh0qcVvze7n6LDj9jKvk3g+9dc8tY9ARmrtHT5rQUtjNhs3Lhv8fblcmuc0nj0CoNOFnRBRXSyqUUvD7nvP+6eh16XQi+OL81hK4s3Qr2CevNS47EFcOkOAoFBtFAFVsWKUhrEqMbgf5xteSdjQOY46ALBnHtWejlVRGAMVhewYEyaPxqiRKbjIQetSYJDiyu+iW4OE2fMTyvM8cv3d39nY+8RZlx1xRF5i/b7BopoKuZzrEZ5JglGkjWJXuLxr1QU/HXRYHXPmnHKVHb133dAgTpx/XLQmBwg/nW5TuaFLsR3vDWyXHVKY8BJLpV1cBLt835DKtVd4V4wb3Cki9K27adkF2GMv+pyrb1pyiZesem+Y33Y7gCPiSrmXF10fEJtdufw39Y0tI5VJHKQIVyCXc3F1EXhQUYcMXaYOf2G54mrIqIr/tmH/Y8JuezJpLo8JZRjF8K66Qft5Wed856XsnvLEeXAjrt0V2gwo3DQt+QyZxGedCyHsbrHKffzB9uU7VzLeAeB7tfMzCxVJbVEAmHfst1gwld0l2M3DEDUDwNr2C1bVzlv0SYPKw8m5799/8yV9sfJ5yf0z9PtKrQXWHql/XXdr3whtkgeyw2WDjL2hIrQoXWNCQCshXQywD7pOYhLadRWWTndRLgcogwOV0sn4ho7zMpnMzdls50AVcDqdVrkcuQJavqSNP6mYjli722KobFZ2Xr3stAqU0iVZkkwrNh/bDfYwjwYLAWd3m4Swh+smK0AWz+SQHzN3yUms7RecDe7qXHV+e3xjir/jDSfo8XVHx74VrR8mowFtiDRDHIFEoBPAtGljkVAEpwmaisQsgCo2SFIQm6quNmyjbTYqfPms2RN/URIIGELOg1fMzuVZE4swEfSswYM7ZWOttyYOrt27s886l4OrbchUkbJ7WW3yD7Vnnyv1mhg0+SSXa3a1DZkqbYLxpLQozb33rrjgRQCYc3ymIgp6CQDuX3lJ387kVtvwpUrj7yfbw15XDPJJLtfsZjd9rdLpkROstfmHstnnSkKoqWrwxo3jwldO1FC1h2dGdy3ANnTVEWo7JRbBrqNcLs3TF37br3BPGQZZcZZBZOccn6nYvnGLmZga3T9+fJ1s2nbfMGRIvPfxp1ToTZVSU1OT6hrRtR05cuva8b2dLcrZt/VW2LCKujqyvQAwa96iacok+L4bs08AWd64cbUZRqRYAOCDhy3enM3S2aV84qFd7oZIUzlkMmr2bb2pIBXLXT30p4sHu2TowBPOqkrkmft1aHcIs+4g186Nt6TciEp66J0VfciWSu+zOHBBZmpSMD4CtnTdlF1f6q2xs4J6LtfMkw4/IyWQcwgQYfdMGPalH+64dFNtbcbvqutyJUuwt3cDrZm2lbty2RUAVuykRs8A8M7GzD6BwiRi15PcunF9LndNtMcqzHRad+Uu/AWAXwzTQgC1jZl9dQJG5aPAbN+0cU02G5X6p3cC/7PzvWzO8a0Vg0VoZx7bMsV3hu67kZ4AIMgBUxo+naxKTZ8o1kZd7dmnijf2Xfy4G4vWLzEOVF4CLuwLtZc6/Le3BicCy65Np9M6V1sruWwr1zacNYGIvsYucsp4WkgdGBsCGHQDK4rpLmzZ37AZI2JfvH/l+Y8jm5XBRT6Hp89Ibn3WmNkTn+jP5XJudtPXxotKjVp7uH4Et0XDxFGaHdJteva2O5P9ukr7eXBXR7Z38HjH4xJNIlY7xqXIDbXpjI+NL/qp6nHDctJ2C7N+Rbb7vtXLOgGcNpyx8IYT9MCv99RjUATlKQIrkBJEocX48TWYOL4aEIbRaiDXWREBwqKU4ppRo03Q17MmyOf/86xDpnZlVq822aOPdtnhyDm2Mijv93QmXM3jEDmAiD5Z33SuJ5DvdubOu+1JoDC4iKBoEXL9MefsRcZbLJCFEEw3Ynvr55+7VoGvuf+m7E9LpsWcOaeYwujxS7SiTzKbaUIE5+iFWQta1zuX/3gU8N5MFb9WyuPaxiXf7Wpfdsn0hacl1q+4MqhrPPd0bSacJtwj1Sb8FIDbpy+8IpG0Ly5ipT8BF0z1lOqra2y5lhRuJkg2KHC+kLr+RACPirwiNxWZapjaLpiwZwP5XRCkgdzGTgaaJWlbzoOpOVFcsLezeQXIofnA3lMxepy32Ra+2pFrvr6+aYkeYjnnyNXPb/kEIu9c1KBC4G5o2Fj7pRcWLN5bs1qhjT/KRdG3O9vP+1bd7fZwocqfkm+5tqnlCkV0nABNjp2dtSBzO+C+2HHj3Id2ubmy0gDwu1sXf2T2wm9c7GzAWxR/BMAawQ5FGla+AoDaw88YTbe5a0VVT/byLoCz/wHg/h1WT6t4+SWXivbnJVzYO6cxc/ya9uzTAFCbznhdW++7zquYMF31B+um37klvR5XBnVzW44gz3wD7I4U7SfJhlw//9y7nbMXPJDN/nEISRdXbSOqk4cQ6RkEAov7ycMdl26aM+dqb82aU8OSeMFAG4w1w5eN188/5yCixAUR22OM8mtEGMGYCWvr5y2+fF1u+Y+K6aGDaYUAoHZjbYqaFv/FeJVTOOr/5dqV5y8CSOqOWfwBMqYFbN8Ja3yrqEfGTnp8VuOSK9e2L/tBbWNmXwX3R+2nxkRR/rKulcsumz3vnAOCwLtBJ0C185ZcRYSjyNL7nTDVz8/c7DE+H4prVMY7W1wwA4qC2fMzd0jkvrR29bKHdg7oDSgZaToIEAgpKqZwtTQ0ZP6Uy4EbGqA6QJa8lq9oLzXaRv02TsfFgaXrE+m0RjbrZjYuOtaoxBJ29l2itWHnwlnzz73NRkHmgWzc4nbWexeN7NlmbkiMSk3o2jZjWV3T0jGiva+JC0fOWYOJBaGgZF1HytMA5J2NmX3Cbet+y6pqQsK5HknoDwOZx+Iso0UzPJ24MAIfY1RyhCBCMGbC2rrGJd/ubM/+AABhqzvDVOxzchDkQwFpEigQSISdNslkygXfAfDNuqbFFxiv8hM27H/G9ocLBmeQvOF6ZLlcc+mye1Y4DMn3FJmiq8MoTJ86GpW+hkeEhIn9z7G/mTnle1RdmdIu33t179NPzzvrkKldbSI6O3eu3UOUWYAMrV9xZaAY/83M/cr4Whnv4wT8rX7+uffMmn/u2QcecVZ1R0fWxs55klnzMtNgvL8pL/kVbZIzQEpp49cYL3kkmeRP6hoXX1JyXQSjxn/FT1SfK8A0iAQQ6dHK28tPjTySxEw7cOSD94AFyiSmEcmpMTl/O2xoyBgCf157yWnMLt9jE/9Euk0n7MbfmERlq1bmAK19T2tvpJ+s+RyEvg+i/UFSC5v0X0kESdiBhMY6cWvUNvdI0r34sNrqHjY96pH6BM8t0u2BXqLqAIKqEnFQpFPGpGZ6icrpTKVue/ESN5ZjIpnVuPhwQF9tTHKGiOtz5Fo7OrJWOc8DZLrSickEGVd0l1eSMvsr0gdo0lcZv+r9SvlGKZNUOjGXHf4Q+xsBrXdtLM/ACKW9fZX2pjrm1E6jTGSdAABVVfzU8ysalNLTGPLNdTdfcH+JQNOxxS8i6rcE2s/zq2YVYL8wYLVscydoL9VEyuwnCn9Zv+LKoO6YpXPJN+3GS84jUkm24dNEUMZLHeYZ/w+zG5d8qCRNNtg/SmJmkTJgjqChbwGE1kxrHyCqw9OXpGrnnzH64A9mRh7ckBk567hFo6Y1nj0i/p6s1M/PHASYDu0lT1Taq3EufFaEQ+OlZulExQ/r5y39CrJZnvNY4y7XcZiCgtD+SvuTBbQPAMxcsKQORv9Oa/8wEDxmtx2EKj81YraQzC0GZ32BHKC0P1kVu/4JmYTSZn+QmqYUXeolq05S2ksqbRJam/eHZO9WWv1Ee4lapX2jlK4kLzGPtfzxwBPOqo773uzw/cb92QGIzCwKDRScC63xkods8uzHgCx3dIBrj81MANEX2AaAIIwrjGWfg49p2afkiqybv/jDRieuV17yPQQy8dgoX3upo42furG+8ZwGABCffIjUkshUCLLaeBdp449XyvOjYIeRIyBygE2n23QI9yvPT75HkdoPgmzXTdn1mQxw0LxFM4zyOrSXOkkpM8K58FlhCYyXnGX81Pfrmlq+DkCIMNX4Vfsrk5zp+RUzlPGmE6n9jVcxg13kieOfFC+p8Ur7kwHsX1UxVOD4jReMbGuL/YmVqWeg1VblJ0BGCROhZkQK+0+sBgnH5KyAhCIYEltdVaVSCa8PYfjJL8wY/4VFTYduz4ioXXOdd99Efu2q89udFI5hF61yNoy08Ulr7xBl/Av96so7Dmo6px61tTLnlFM8VvZH2iQO4CgfcpS/yDk5xFm70Ib5u9hFMF7FmXXzWj5apKwTmV3Ezj5oDE8u6O2TnM2/O8xvvURp1ZOL/a+XsQ2gyExP2JFHA4RNCT4KSs90UQECfPvJjmyhftt9nzd+xQddlIe1wT+sDT/IttAQBt1tSvspYcsQ9JNyr9wXTeJ5yapJJlG9r0lU7WsSlVO8RPW+ZGVEcYNFNux9rxCt0V4Kwnyvc/kjo6D/KJsw16fTbVoELpZIQM/0hZkaIfUr7SUrbdj3pEg4/8EbY/+ql/AcEeWLrpKouKRlcRFzLNhoXdCz1NrgKMf2eraB055/UAgvvqAGKagMFZS1LC5iUjv7BgmBcZvqGhe3mETlccwWHAZndq1c9uOipcVDWqG2n3cju+BGEWYQPl07PzO6eCc7nUi7KOy7X0aYH9bWZnwovlxrPxWFvQ+xk3eva182BeRm2rDv76Q9OOBbs5suriyt1nZY9DKiZDiwibpLfvqSe6Zn67ZzjB51n+1z/3C+vU8if20FzE21qE3FnVftt4xXMd4GPc8z2/mdR+h9KYr2t2H/tcIsQrL84GMWT1yz5lQrNIxSCiEvzpb6a0M7mmt0wjhbsIB8eHtP394sdGBQ2HYGYqV7GLGOBj5XHDdywi6KhSGUQlToucBGwVFsw+uYHSvS+wihL8p3f8na4Ch29nqOQtbaP9AUdANAUuolE58fkoaGTFKAKUp5gMjvAPoDaU9E5Jw5x2cqgCyryC7yEtWjROwDBPomxS2IqyNF+5VEFCB0hVIeXNh3NztXF4+NnROFffdr4ydB+uJ0uk0nnO8IFLiowNr4E9lGT4RBz9escx/v16O3E2SgtW3V1g3burbed7GXqHifsyE4Cv6rs33ZtXNOOcXLZrOslf6m8SsmRGHvC87xgs4j9L4e9DQb5X8r7IRArbWNmX2N0hfZoHCUjQpHhVHvYWzDX0NpK2xF4E5dd/MFLxS9dIE4y0SUx5vdbrTUCnTNqYduP+R7d76gvMReIk5CdjR94giMrvAQWo4LU+JYvqsaMcqE+f71Ub7/E6fU73tXZvVq03r00W53/uY9ia8+kLvwTgCNsxZkDnFh4UOi6BNENFWbRK1x9mfIZg8J5y+dTYQGYWaAfxwvD2PUNmTuU567D8ofS4RTAfyGgMeJ6L0g7G2dakmg5obkthdXr1lzTal9J1mOfqEhiz2/YryE+Y8DuJGEP278KhUFfU+mYNtiwxQfFQGLyGan+PgS4QH4a33T0qlKJ97N7pUKVZMQKZBgW1To/YYSzgMaIBbnCuSUvqvYx/qBOEVryVYiA4Zs7bppQPwUezdkDDyKFXBIjUxY92PjV0y1Yf4ZIny4a+VFTxWX8BG7iCRe0g3JaBGI0iYBDvPfX7tq+TIAqD3mnK9D07GAEQEOiLfUw0Y7QYiT4neN8fUlnD6TiM4SZ61zhW91rlp+WUNDxnTkdqo6bIBCB5ggV7CLFhgvtY8N88fNalxyL7Q5UiQiBbpsbS4b1s9b+h4iNUvYCkSuV0a66xYuPRSsegjuWnbR4aRosuVt7wTw93Q6rYHiEl7keQgTkQKxmQhk1qRRh43oLB32RONVTop/CgOk4JhN6rENwcHHLJ7ohN5X3G+H4ujJ+lvVIU6n+smFOQd8QJtEyrrgKAC/xnCurtL5L4rJkrinQSAQQVidPLKmusKSf/PaFUsuL30kUFY8Z9QwIsFkvGRJhHYxAMxqXLJdhBdo7ZGNCj/sXLX8uwBQv/CcxeKoSZmER1bvNzjls5T/vDmBqWDaK7ZZsZadW+GiQtr4FTPzhfwHZx23aIWE6mQIQ6CvgpJbRbhVa59ECgcC+LtEpkFrbyJzJAB+r4zPtfMXvwtQ2wm4zrGrhWD2Q9vu2xd+YSOQJKU8xc5ucSLzH2g//5GB67pxcTGmgf5g1LhWpcwZbKNQXJRZt2r5j2rTGX/NNdnw4GMWT7Sgo4vj8jcteKL+1uiQgL1+ELXBhSconfDhgvfdd+OynwN4AgBmLcxMEuF5Whljg75rO1ct/3NtOuN35bKhoCjKPMwYvjmS65nihPH0epXwwVpJIuWhdlINDAEJreATOGGUjBo10kghnwu2bnrPyfX73lVyadCrSZzP5dycOad4gNDaG7P/WLfq/CXKrzxEhFays0zavKN+/jkHQnia1gkRtoocft/QkDG16Yw/55RTvK6O7PNCcjuIFEAzGhoyxgnOs1H/U55fMcJL1JxuTPLGcPSEJ+ubWs6Mpe0z+sFVF25Wwr8AiESkqW5hy/4COqbYM/XHa9ov2j676eIKgGYQkYLwnQ/euHzDnFNO8RYuvCIBZBSEf6+0h1elhhGXYPZ2ti+7Yu2q5desXXXeNWvbz//+2hXZa+KADgC06XQ6reO0NQGBTDrdpkvnrOjaUMwWEBxCJB9kdg4iD6+96bw1c+ac4q1Z084vfSgEpXEjMhmVTqc1+RWBCMdON3p1c1KIFAEnk1JaOGKwvna3G3dkLTIZtXbl8hXM0d+IjBDwJYZktUnA2WDt1p6+38RZZzKFtAFHgRgvdabxqh/0TOVdnl/xgPIrLgWR8VMjDKAnlwJgpW562tIdzkURKSVgHA9k+bHHtqqOjtiaF60uiYK+D0Y238g2+rUiw4Dk16y5Jgrg7aW0qXZRXpRJflRXjHrIJGvuTlRUdHqpml8pbTzjp9SOG9qecj/jVWbe61nhovy1xksZL1n1fm2SPzcSrq+fv/Sn71h4zrh45WJo92IzBALfDMTjZjUY4hxAJISHY13PtHainQhHRIoginYuRIq/LNpPG6+SXQBh2tR18wVdzoU3KW2EiP4fB/rb2ktW2KBvg4Sbf2osbxJng5jLUA8A7LAfkRbmyGkvtdzzKx7w/Zo7jVf9oPZSixVgTLIqIRaT+/W+VoREaR8ifMMD7cseqU1n/IULT0sUz5EgTglNCfB5IgKLjcjR7wcffwDspZQe4aI8tPE/oisqB8bF91NtpD3f+Ckdj4vQpMPPSCHdpp21PzVeclwUFba6ROrMl5td/qYQdANuUcWmSY/pZBKWtEwZX4lJIxNQADwlriLpq4pEgmxPb8snpo1pPvXQgzYNX7798nD44XGiftyonlCbzvizmy6uXHv9OVvB/G0ipYgUi9PTwdgaX/IKjjCuoyNrx22EWvPQ3lKcqWMBEYH09vZuoAfalz1SUPZQF+XPiwo9d1mbt6T13sarvKRu/pL/HAg8anWNjfoLRDQBjr5HwFQb9vWKqB8BgB3ZGwHIAyI8SPHigfyWUrrSaMirL2wSgXrHe88ZN2fO1V5tbZs/Z87V3pw5V3s7cjjTXEzvkZJeYi7XKfn83gPaq0JwWvsAcJOAFpEirYx/TF3j4kvWrLkmqq2FfpmpfyouiMk5toF6TbruKP4vZvsCad8nhdzBxyyeGJ/7XdP30l1dBEA0YTm7gKDUYUR0ErMlAn3zmVjzT5SgHyJEypCzhRvDQs8voqCnLSp0/9qGfW3i7E+joOdnIHoAAAZaqGYy6kOr9SMAbhEhAtHH6+a3HLFmzakRMhk0NGRM14ps19obz/3TA+0XrBJF60iZYr4SyNcIhR2TNuRscHtU6PlZab9R2NvGNvx5FPT9QpG7o8gvLzkx1q+4Mli38vwP26j/v2zQf6OL+rcQqQrjV34qcuoHAJB8qcxERQTE4ybsCEJFwlVeLtfsBt7fDQENFE9BzyRSYGfhiB8GhLTWy1xYEAIdQkp9EhCwkm93dXy3t8/3ekD0DJGGCB0US55RHgSCKHJR/5+ioPuX8Tnq+Y2N+tucDX5mw76fOW2e0N3P+CBwkeA3AELjNoLz+dFuSJIiUV6BPsPserT2K8Wj389676JRXbnYTeRrCYXZkTbkouiOqNA9zLj0/AJCtwGEZ+64LD9r2/2fMiYxVyAQlvMeuGHpk9MXnua/JRVVAABHx2nCyjePQRPIMzh4YhWSmhAI25qaGmPD8EWOgs999IC9rxMR1draildFzsVUpL7qLe+qX3DuOcTugrUrz/9rsZ4/LBqXCwGwCCuAXohgHzM2KCjt+0Tqq7XzM9d33JTdAgD1jUuaoXBYHAPA7WvWXBPVLszUdlV3PYRc7lwA59bNbdmfYVeR8iYRy0cA/HTOnFPNmhuveaiusWWF8VInOlto1CYJGwW/7WrPxq6B3KlhbWPLfVp4ugIdPnNBS+Oaa85vBxDNbmrZj6E+5lwIAWl6VaVLJJwa3X/v30+NhvxjzTC9WUREgBogy11dQ3NFJebvqs6Vyy6ua2yZq73k+7VOnFk/b0nnulXLflTMjX35x6W0gO2/2tyvSiK5AwqfFnYrlPamOMivatOZxq5aWGSHlk7ncjmXyWRUNpu9sa6x5W/K+O8Fizhb6JRnTVspqOig71XOBspLeBzxQ53ty07fee/TGs8e8Vj7RdtLRVEAkEErsiCupcVL2IVzSekUGL+dNW/xF9dms3/s2Cm/lkTGxasIcQ0NmcRWVD3Osu05oyv2ES5sWLfyvP/EcOLDN122Bem0pq27X1VJcfVz8DGLJxZUJOtuWvYjAD+a0pBJVvv2R+yiZgLNPWjeojGhkoLmlye0G2tTDrr9D3n/pVLnpRZxQcwWw/I4QLL2Rvytrqllhdb+seycc1HwjBea7yGd1utz2e66piVPANifSCYDQkytd5ANobVPzoV3dbYvO3+ni18feMTUioduu7jnHe89Z5wtRiTjzB8SILPLmSKR6tGRuWmT704RkV9p7c+0Kf450Ho80Eo2bH1CefZppSv3Zc4/P9y4zDpu0ajOGy/cGqfQnjWBQRcapcRG+b90rTr/stLN8i1L0ONfjHOhPV8/GkQRJoxI6ANG+wJhGTd2jAny/beFvf2f/VjtpIdXrxZDRP9yCS8zlJ+oWBgFvQvrm5bcBsjdItgI4FBAPkhKKQ7De6v7+tbdccdl+fqmJZcqbRaLuEMU29vr5y9pF5GxAE5QyjfOBn3a0bfiHGt73uze2Qdy4wHXC2idItSwcJJIacQSVMhP25uwBgSlvs1sPwCAnQsVwX1nSCUXqcuY3YdJ6aQRtNU1tfyCQN0M+rQ2/kTrAgsIE+mSNV8MAonbQyUhs7AVkZEO2/5S17gkouJFKwTWOqHZBqvXtdM3ih94DMBcgtTXNS1pU0rlxcmPOtpb/1rXtFQEsBIrSFOUNP9JQXib0uYAGPXtuvktD3beRLdZ1aKVoyECpURKGNbGly4PuqCNgK0t2mdcYqzi79px8RPH+4agJChbEpklSKA0xt2/cvmNdY0t5xkvsVRp7yjZGn0b2WVfyGSgsjv15+iKrWgGYRnY/YWUp4ijyzq7smHDLRlzdCaDbDb7VH3jkh8p7X1R2H6lvnHJQQL6iyKOGDhIe6n3u6hwAyCnz5lzqolXaEDcizyjum7K3lXb1PJ5TfS/yvh7i4v+UNe45K8AbiPIdhBVA5gDyJHMIQEY/bRXSDy2Mru9vrHlO0TqAqX0h+obW+4QwrUk0i2KZmjlNzoXPopM5sNzrtugCqOK4sOD3F8CKYnkAgCsVkcldM1ldU1L/qCAOxnRZghNKPZgCKXShclelbS6KBJMO0RohcUWVeh4x1zVInCxOK2SIe8DNt43Db1xFNutQkimgsgS8Pho528upeKRUsuY3QJtPO2i/IX3dZy3bfrC0xLrAUeQx0XYQrD3QQtaJnTduPzeunktf/KSFSewRMvqmlreLcBNCqJFVK3xksfaKP89ABeEOtKEhIvnyjCGXnEeCSh40SuM71p50a/rGhcfoU3yNK39Y+uallzQufL8RV0d6K2b3/IdIrpYK3NifVPLXST0OwFvF+AA7SUbOQieRCZzIrLE5LVcoLW3l7NhBCGqb2q5XEBKkfKc2Du7Vi7/cXH5M0Tg+E0l6FxnqwBASuOJ3shx/V5JjKnwFXsJCvt7r9zySPfXPzt3v0KbiJ77r5JzrlYAwME8F4V9j2iTOEBp/wgQHRGn7RCYLdiGj4Ldp++447I80mn94Zxe+rvG/hHKmC9pv3oGKTUj9ntFYBc9J+w+d9/q5Z2x3w7WS1TXsUnU7ajnsrBR/kUmuQwAdaHOAZCxgfrbJhM+ZpJVB9iwb1Vn+/J7Ykvu1AiZjOrMZm+ta1r8JaW8y5WXGmWU+TKRgo364WzQZbxkLbuo2iJfCmpUGi9lOOwb7aIE7caCqjEmYSCuWpvkUUMNGYbxKpDvfWGgepJ46RXOFU4yicrRAKW9RBX6e57/K0AdwJIxxksZG/RUApCHr8tuqpu36BNC+KvnV1VGYc+qusYlhwj0VoIbZ7wUgrA/LssW9oyXMtpLIgoL/o5KQasTJulrL4nAhqmi/LtvkkkTK2j3FbdVCeMlDYHANu8VXSUp4yWNdbYqgpWiHmSmvrHlnSZRfbz2Kk6tn7/4xSyQ2bnVbK5YZNKZzd5U19TSCct7bR/V/2tAqKODbEeHEAClqOosG3SPVtp81KQq5wM0fyAKp31w2L89tshO2SV7KN7n+T+Z1bR4IwMXKWVm+X7yfYC8T2I/f8x6LoKzwXYQXf7YyMd6kU7rdTnzzbrGnn2U9r/sJUccBqLDSsFRpT243k33IZvlfG3a0OhxI42XMi7oqQYAtgUimFHGSxkb9laV+psYv2KCluQX2IVfUACUMmC2EJFLH/rTxT218zN7KbajjJfSUdBXUfQXG2OqjfISCAuFgfRGi9AkdbLSeEkENj/k/YTyq42Xgg37UztXnB7ckBnpJDpMm6SxQe+Wjo6sTafbdG1tRmWz2dvrmlpucZbfsa03/xMgo0a8uKFI8vSYMr4BaDRsTz2ADVqZk23Yn1DGX6BN8gRATijVepDSsFF+KwBh9skAo+Nz1Fs5jPuvIv5f3+hi6a6S5/D/3D7hwV6y6n3aJM+um9+yqfMmc2nne3Bp/W19E0mZr3iJmneB1LsGj0vBBg8im+XaxpaPecmaz4gLobXnKd9/Pyn9fhYHz6tEX/fz0wD8mICaeJz6RtmiwPGb6+IodrVbvz21cdIY9/yRB+y1j5Eg3x8UPn/CvuN+WVxhK3qV/uZdUuwAenBV9uHpCzOHpmy0wNmgCVDTRVyNUvp5Af09DHp+8HDHpZtKxRdZAGjHl+sWZH7LYV8zINMAVQDRHRH3//Sh9oufK13wYl1LkN96qzj3bkDGK6VDkF4XBYXvPdRx0RPxxGwGAHrRs4drZaYIWwD8AwC4JW4UPuC77Mxmv1vbtPg2sfJpFjoA4B4W90vN/JCzwVcA7tdWbwIA0rgxKnRDlNqW8uOCm5JB3nE0GB0ACL8JC72PgKPARaHsFPoRF+V9EN1Tak6Tyy1bW3vMOUcB6otg3o9tPk+O7y5+83fC/LYpCrh9oLhnVfbuuqbFzTbqm08wBio6pHpL97V91RUXRYXtNQS1Kr4K1OPO5q9wbD0mHqiuqOzHlsAvXO4KkS/g24oz80EX9F0Z5zfoh2OfI/8zLPR+B2JtCDwdUyTfFhZ6vysc5T2YF0sFEazMp23UfzYgCQhVz1mD0bnrcpt2rtRKd3VRDoACfcORVD6TuyyfTj+jczkM9EK+fyX6APzHrHktP4icOw7C+xfp5lkCbqUEXw+A1qy5xg5XOo90Wq/NLf/LpMPPuGXkiMoPcBAdB8h+EKkWojyJPAltOgTu+s6VAxqFBEA62/GVmU1Lf4Gg90RADmKCT8LPkTJ3Oi3XA0BXutbW3WavDvPbpoHpLgBwUTIgz14R5rdPEMHfAMAU9M2BbP00GO8mwgchGOEUtUHc9Z3ty0vBsC0CfDMsbBuliW6J60n0xsDmr3AuMkpw1wB5KH+ji+wlXOhNkfCdg98XF30rzHdXKsidO4vTGsBY4JqwsD0J8KqBUvN4RUMCLAdkv2fuuCyfTrfpXFurBV0DOH29DXr2AQPCZls8NtmNABbOblr6gcgFC0UwBfGq4SkF+ZtE5i8AoJTXA0SXhIVtY0nLTQPXR7FaSJNaHea7qwTYlgK2l1x7B+6T+ZiK8meSsCHG+OkLUbU+m+1eB5xROz/zK4T9J0J4JpMkSORZIn2XL+b6oktxvIsKV4qEFgLlXIGFRYjALsj7AO4EACb5c5jf3g3IxpEYWXiT5GJ3vmPFRTLn3P10xy1betf/6fHn3wMAq1evNiJCb4Q4wUC58O56QWT20PQlk1EvXwUCyBS3r2tq+c07jrtQ6hpbHp0zJ1Mx7LG97O9+PVUuXlnDceDfWgaOXvk52U2z/kGIs2NeYl69DnPhoHnLx8xa0Cr1TS0PH/i+s2e9hceQXvu5+hrt/w26RulNJGgiIlm9YevU9Y8/233yEfVb/pUsjZdLPOl0TsVqEUV5pF0ETfcgLJtuVkNFZoeTXWp1yLRS/J1FJYtiwKkY6PuH9hIjnC2cv+6mZUt3lJfvRmj1aBSr33LI5dp4hwzU0OMvCsK6PSlr7OnM7CLgOnBewKVeHXHBQVFtY+ftB+2j9LtLN8BB2w5SRBlyDge9X1L/GE7yavB7JXmr3Ule7dh2j+fmlai4l+ZC0fIadN75ZTaxonS6rTT/7E6tPpHLdcqw+y+NxfguQW2t7NhvPCZDRIIHSV7tMlZF0ePC6L3erQQLhOQ/jV8xJQrzX+pced53S3NxmDEeZnx2N257fH8X42h44eC4EmrX63G3MmiUTqfVxtLYdHVRw8Za2nlsdjt3B53jXefK4Hm0k+LJS43LIBmtPV5ze7iG3zJ9j2UPjY7e7jI6xcb5XNe09AfJyjGfC/s2wQpmPNC+bP3uOn6Vgf9Lgs3yRs31dDqtu7Yf+EOlTF6cTfsVo8YE/VuynSvPb92tsVDG/w1NwuFXCqJaWyFEJP/uas6bPbtYJyrHukLfI+tWnX/l/3WF6zLeHHWXuqaWVqXMxyHSzexu6I3M8uGk0sooo3xzLKOMMsoo461hRZce5bNRBt40cfEdAcui/7tsLJRRRhlllFdxZZRRRhlllFFGGWWUUUYZZZRRRhlllFFGGWWUUcZbAf8foe8QwzQMghIAAAAASUVORK5CYII="></div>
+    <div>
+      <h1>5. Sınıf Matematik<span class="h1b">1. Dönem 1. Yazılı Sınav - Genel Tekrar</span></h1>
+      <p class="sub">Geometrik şekiller: çizimler, açılar, doğrular, çokgenler ve çemberle üçgen inşası. 1. yazılının bütün senaryolarını kapsar. Her istasyonda önce tahmin et, sonra dene, karar ver ve gerekçeni seç.</p>
+    </div>
+  </div>
+  <div class="hright">
+    <a class="ig" href="https://www.instagram.com/sevilunaldogansegem/" target="_blank" rel="noopener" data-goatcounter-click="instagram" title="SEGEM Instagram sayfası" aria-label="Özel Sevil Ünal Doğan SEGEM Instagram sayfası">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><defs><linearGradient id="igG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".3" stop-color="#fa7e1e"/><stop offset=".6" stop-color="#d62976"/><stop offset=".85" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#igG)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="#fff"/></svg>
+      <span>@sevilunaldogansegem</span></a>
+    <div class="total"><span id="totTxt">0 / 0 görev</span><span class="bar"><i id="totBar"></i></span></div>
+  </div>
+</header>
+<nav class="tabs" role="tablist" aria-label="İstasyonlar" id="tabs"></nav>
+<main id="views"></main>
+<footer>Hazırlayan: Yunus Emre Doğan · Özel Sevil Ünal Doğan Sosyal Etkinlik ve Gelişim Merkezi · İlerleme yalnızca bu tarayıcıda saklanır. Kazanımlar: MEB Matematik Dersi Öğretim Programı (Maarif Modeli).</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+/* ---------------- yardımcılar ---------------- */
+const $=s=>document.querySelector(s);
+const el=(tag,attrs={},...kids)=>{const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==='class')e.className=v;else if(k==='html')e.innerHTML=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else if(v!==false&&v!=null)e.setAttribute(k,v===true?'':v)}for(const c of kids.flat()){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(c))}return e};
+const NS='http://www.w3.org/2000/svg';
+const sv=(tag,attrs={},txt)=>{const e=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(txt!=null)e.textContent=txt;return e};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const fmt=(x,d=1)=>(Math.round(x*10**d)/10**d).toLocaleString('tr-TR',{minimumFractionDigits:0,maximumFractionDigits:d});
+const RAD=Math.PI/180;
+
+/* ---------------- kayıt ---------------- */
+const KEY='mat5-genel-tekrar-v1';
+let S={done:{},karma:null,check:{},sen:null};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}updateProgress()};
+/* anonim kullanım sayacı (GoatCounter; kişisel veri yok) */
+const GC=ev=>{try{const g=window.goatcounter;if(g&&g.count)g.count({path:'mat5/'+ev,title:ev,event:true})}catch(e){}};
+const markDone=id=>{if(!S.done[id]){S.done[id]=true;save();GC('gorev/'+id)}};
+
+/* ---------------- istasyonlar ---------------- */
+const STATIONS=[
+  {id:'harita',ad:'Harita',kod:''},
+  {id:'cizim',ad:'Çizim Atölyesi',kod:'MAT.5.3.1 · 5.3.2'},
+  {id:'aci',ad:'İletki',kod:'MAT.5.3.3'},
+  {id:'dogru',ad:'Doğrular ve Açılar',kod:'MAT.5.3.4'},
+  {id:'cokgen',ad:'Çokgenler',kod:'MAT.5.3.5 · 5.3.6'},
+  {id:'cember',ad:'Pergel',kod:'MAT.5.3.7'},
+  {id:'karma',ad:'Karma Tur',kod:'Hepsi'},
+];
+const TASKS={}; // istasyon -> görev id listesi (her modül kendi görevlerini kaydeder)
+const regTask=(st,id)=>{(TASKS[st]=TASKS[st]||[]);if(!TASKS[st].includes(id))TASKS[st].push(id)};
+
+const tabsEl=$('#tabs'),viewsEl=$('#views');
+const views={};
+STATIONS.forEach((s,i)=>{
+  const b=el('button',{class:'tab',role:'tab','aria-selected':i===0?'true':'false','aria-controls':'v-'+s.id,id:'t-'+s.id,onclick:()=>show(s.id)},s.ad,el('small',{id:'tc-'+s.id},''));
+  tabsEl.append(b);
+  const v=el('section',{id:'v-'+s.id,role:'tabpanel','aria-labelledby':'t-'+s.id,class:i===0?'':'hidden'});
+  viewsEl.append(v);views[s.id]=v;
+});
+function show(id){
+  STATIONS.forEach(s=>{$('#t-'+s.id).setAttribute('aria-selected',String(s.id===id));views[s.id].classList.toggle('hidden',s.id!==id)});
+  try{sessionStorage.setItem(KEY+'-tab',id)}catch(e){}
+  if(id==='harita')renderHarita();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------------- genel görev bileşeni ----------------
+   g = {id, text, hint?, check?:()=>bool, status?:()=>string, options?:[], correct?, expl?, why?:{q,options,correct,expl}} */
+function makeTask(st,g,n){
+  regTask(st,g.id);
+  const box=el('div',{class:'task'+(S.done[g.id]?' done':'')});
+  const head=el('div',{class:'head'},el('span',{class:'num'},String(n)),el('p',{html:g.text}));
+  const body=el('div',{class:'body'});
+  box.append(head,body);
+  const finish=()=>{box.classList.add('done');markDone(g.id)};
+  const mc=(q,opts,correct,expl,onRight)=>{
+    const wrap=el('div',{class:'body'});
+    if(q)wrap.append(el('p',{html:'<b>'+q+'</b>'}));
+    const order=g.fixed?opts.map((o,i)=>i):shuffle(opts.map((o,i)=>i));
+    const fb=el('div',{class:'fb hidden'});
+    const btns=order.map(i=>el('button',{class:'opt',type:'button',onclick:()=>{
+      if(i===correct){btns.forEach(b=>b.disabled=true);btn(i).classList.add('right');fb.className='fb ok';fb.innerHTML='<b>Doğru.</b> '+(expl||'');onRight&&onRight()}
+      else{btn(i).classList.add('wrong');btn(i).disabled=true;fb.className='fb bad';fb.innerHTML='<b>Tekrar düşün.</b> '+(g.hint||'Simülasyona dönüp dene.')}
+    }},opts[i]));
+    const btn=i=>btns[order.indexOf(i)];
+    wrap.append(...btns,fb);
+    return wrap;
+  };
+  if(g.check){
+    const stt=el('p',{class:'status'},S.done[g.id]?'Tamamlandı.':'Simülasyonda dene; koşul sağlanınca burada görünecek.');
+    body.append(stt);
+    let unlocked=false;
+    const why=()=>{if(unlocked)return;unlocked=true;stt.textContent='Buldun! '+(g.status?g.status():'');stt.style.fontStyle='normal';stt.style.color='var(--ok)';
+      body.append(mc(g.why.q,g.why.options,g.why.correct,g.why.expl,finish))};
+    g._tick=()=>{if(!unlocked&&g.check())why()};
+    if(S.done[g.id]){unlocked=true;body.append(el('p',{class:'hint',html:'Gerekçe: '+g.why.expl}))}
+  }else{
+    body.append(mc(null,g.options,g.correct,g.expl,finish));
+  }
+  return box;
+}
+
+/* ---------------- ek bileşenler ---------------- */
+/* sıralama görevi: items doğru sırada verilir, karışık gösterilir */
+function orderTask(st,id,n,text,items,expl,hint){
+  regTask(st,id);
+  const box=el('div',{class:'task'+(S.done[id]?' done':'')});
+  box.append(el('div',{class:'head'},el('span',{class:'num'},String(n)),el('p',{html:text})));
+  const body=el('div',{class:'body'});box.append(body);
+  const ol=el('ol',{class:'olist'});const fb=el('div',{class:'fb hidden'});let k=0;
+  const order=shuffle(items.map((s,i)=>i));
+  const wrap=el('div',{class:'chips'});
+  const btns=order.map(i=>el('button',{class:'chip',type:'button',onclick:e=>{
+    const b=e.currentTarget;
+    if(i===k){b.disabled=true;b.classList.add('placed');ol.append(el('li',{},items[i]));k++;fb.className='fb hidden';
+      if(k===items.length){fb.className='fb ok';fb.innerHTML='<b>Doğru.</b> '+(expl||'');box.classList.add('done');markDone(id)}}
+    else{b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),500);fb.className='fb bad';fb.innerHTML='<b>Bu değil.</b> '+(hint||'Tekrar düşün.')}
+  }},items[i]));
+  wrap.append(...btns);
+  body.append(el('p',{class:'hint'},'Doğru sırayla tıkla.'),wrap,ol,fb);
+  return box;
+}
+/* seçmeli tablo görevi: rows = [[etiket, doğru yanıt], ...]; cols = [[başlık, seçenekler, rows içindeki sütun no]] */
+function selTable(st,id,n,text,head,rows,okMsg){
+  regTask(st,id);
+  const box=el('div',{class:'task'+(S.done[id]?' done':'')});
+  box.append(el('div',{class:'head'},el('span',{class:'num'},String(n)),el('p',{html:text})));
+  const body=el('div',{class:'body'});box.append(body);
+  const t=el('table',{class:'tbl'});t.append(el('tr',{},...head.map(h=>el('th',{},h[0]))));
+  const sels=[];
+  rows.forEach(r=>{const tr=el('tr',{},el('td',{html:r[0]}));
+    head.slice(1).forEach((h,j)=>{const s=el('select',{},el('option',{value:''},'— seç —'),...h[1].map(o=>el('option',{value:o},o)));s._a=r[j+1];if(S.done[id])s.value=s._a;sels.push(s);tr.append(el('td',{},s))});t.append(tr)});
+  const fb=el('div',{class:'fb hidden'});
+  body.append(el('div',{style:'overflow-x:auto'},t),el('div',{class:'row'},el('button',{class:'btn sm',type:'button',onclick:()=>{let k=0;sels.forEach(s=>{const ok=s.value===s._a;s.style.borderColor=s.value===''?'':(ok?'var(--ok)':'var(--bad)');if(ok)k++});
+    const all=k===sels.length;fb.className='fb '+(all?'ok':'bad');fb.innerHTML=all?'<b>Hepsi doğru.</b> '+(okMsg||''):`<b>${k} / ${sels.length} doğru.</b> Kırmızı olanları yeniden düşün.`;if(all){box.classList.add('done');markDone(id)}}},'Kontrol et')),fb);
+  return box;
+}
+const segChips=(opts,val,on)=>{const w=el('div',{class:'chips'});const bs=opts.map(([k,t])=>el('button',{class:'chip',type:'button','aria-pressed':String(k===val),onclick:()=>{bs.forEach(b=>b.setAttribute('aria-pressed','false'));bs[opts.findIndex(o=>o[0]===k)].setAttribute('aria-pressed','true');on(k)}},t));w.append(...bs);w._set=k=>bs.forEach((b,i)=>b.setAttribute('aria-pressed',String(opts[i][0]===k)));return w};
+const arrowPath=(x1,y,x2,col,w=4)=>{const g=sv('g');const d=Math.sign(x2-x1)||1;g.append(sv('line',{x1,y1:y,x2:x2-d*9,y2:y,stroke:col,'stroke-width':w,'stroke-linecap':'round'}),sv('path',{d:`M${x2},${y} l${-d*12},-7 v14 z`,fill:col}));return g};
+const parseQ=s=>{s=String(s).trim().replace(/\s/g,'').replace(/[−–]/g,'-').replace(',','.');if(!s)return NaN;if(s.includes('/')){const[p,q]=s.split('/');return Number(p)/Number(q)}return Number(s)};
+/* sayısal görev: kesir ya da ondalık kabul eder */
+function numTask(st,id,n,text,ans,expl,hint,unit){
+  regTask(st,id);
+  const box=el('div',{class:'task'+(S.done[id]?' done':'')});
+  box.append(el('div',{class:'head'},el('span',{class:'num'},String(n)),el('p',{html:text})));
+  const body=el('div',{class:'body'});box.append(body);
+  const inp=el('input',{type:'text',inputmode:'decimal',style:'width:120px;font-family:var(--f-mono)','aria-label':'Yanıtın'});
+  const fb=el('div',{class:'fb hidden'});let tries=0;
+  const sol=el('button',{class:'btn ghost sm hidden',type:'button',onclick:()=>{fb.className='fb info';fb.innerHTML='<b>Çözüm:</b> '+expl;sol.classList.add('hidden')}},'Çözümü gör');
+  const go=()=>{const v=parseQ(inp.value);if(!isFinite(v))return;
+    if(Math.abs(v-ans)<1e-6){inp.style.borderColor='var(--ok)';fb.className='fb ok';fb.innerHTML='<b>Doğru.</b> '+expl;sol.classList.add('hidden');box.classList.add('done');markDone(id)}
+    else{tries++;inp.style.borderColor='var(--bad)';fb.className='fb bad';fb.innerHTML='<b>Tekrar düşün.</b> '+(hint||'');if(tries>=2)sol.classList.remove('hidden')}};
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+  body.append(el('div',{class:'row'},inp,unit?el('span',{},unit):null,el('button',{class:'btn sm',type:'button',onclick:go},'Yanıtla'),sol),el('p',{class:'hint',style:'margin:0'},'Kesir (3/4) ya da ondalık (0,75) yazabilirsin.'),fb);
+  return box;
+}
+/* sayaçlı görev: k / hedef */
+function counterBox(st,id,n,text,goal){
+  regTask(st,id);
+  const box=el('div',{class:'task'+(S.done[id]?' done':'')});
+  const prog=el('span',{class:'mono'},S.done[id]?'Tamamlandı':'0 / '+goal);
+  box.append(el('div',{class:'head'},el('span',{class:'num'},String(n)),el('p',{html:text})),el('div',{class:'body'},prog));
+  return {box,set:k=>{if(S.done[id])return;prog.textContent=Math.min(k,goal)+' / '+goal;if(k>=goal){box.classList.add('done');markDone(id);prog.textContent='Tamamlandı'}}};
+}
+/* ---------------- geometri yardımcıları ---------------- */
+const G=(x,y)=>({x,y});
+const gsub=(a,b)=>G(a.x-b.x,a.y-b.y),gadd=(a,b)=>G(a.x+b.x,a.y+b.y),gmul=(a,k)=>G(a.x*k,a.y*k);
+const gdot=(a,b)=>a.x*b.x+a.y*b.y,glen=a=>Math.hypot(a.x,a.y),gdist=(a,b)=>glen(gsub(a,b));
+const gang=(V,A,B)=>{const u=gsub(A,V),w=gsub(B,V);return Math.acos(Math.max(-1,Math.min(1,gdot(u,w)/(glen(u)*glen(w)))))/RAD};
+const svgPt=(svg,e)=>{const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(svg.getScreenCTM().inverse())};
+const gridBg=(svg,W,H,s=20)=>{const g=sv('g');for(let x=0;x<=W;x+=s)g.append(sv('line',{x1:x,y1:0,x2:x,y2:H,stroke:'var(--soft)','stroke-width':1}));for(let y=0;y<=H;y+=s)g.append(sv('line',{x1:0,y1:y,x2:W,y2:y,stroke:'var(--soft)','stroke-width':1}));svg.append(g)};
+const lineSV=(g,a,b,stroke,w=2,dash)=>g.append(sv('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke,'stroke-width':w,'stroke-linecap':'round','stroke-dasharray':dash||'none'}));
+const dotSV=(g,p,fill,r=5)=>g.append(sv('circle',{cx:p.x,cy:p.y,r,fill,stroke:'var(--paper)','stroke-width':1.5}));
+const txt=(g,p,t,o={})=>g.append(sv('text',Object.assign({x:p.x,y:p.y,'text-anchor':o.anchor||'middle','dominant-baseline':'middle','font-size':o.size||13,'font-weight':o.bold?700:400,class:'svgtext'+(o.mono?' mono':'')},o.fill?{fill:o.fill}:{}),t));
+const arrowHead=(g,tip,dir,col)=>{const d=gmul(dir,1/glen(dir));const n=G(-d.y,d.x);g.append(sv('path',{d:`M${tip.x},${tip.y} L${tip.x-d.x*12+n.x*6},${tip.y-d.y*12+n.y*6} L${tip.x-d.x*12-n.x*6},${tip.y-d.y*12-n.y*6}Z`,fill:col}))};
+/* açı yayı: V köşe, A ve B kollar */
+function arcSV(g,V,A,B,r,col,w=2){const a1=Math.atan2(A.y-V.y,A.x-V.x),a2=Math.atan2(B.y-V.y,B.x-V.x);let d=a2-a1;while(d>Math.PI)d-=2*Math.PI;while(d<-Math.PI)d+=2*Math.PI;
+  const p1=G(V.x+r*Math.cos(a1),V.y+r*Math.sin(a1)),p2=G(V.x+r*Math.cos(a1+d),V.y+r*Math.sin(a1+d));g.append(sv('path',{d:`M${p1.x},${p1.y} A${r},${r} 0 0 ${d>0?1:0} ${p2.x},${p2.y}`,fill:'none',stroke:col,'stroke-width':w}));return a1+d/2}
+const fmtD=x=>fmt(x,0)+'°';
+
+/* =====================================================================
+   1) TEMEL ÇİZİMLER — MAT.5.3.1 · MAT.5.3.2
+   ===================================================================== */
+(function(){
+  const v=views.cizim;
+  const st={tool:'dp',pts:[],objs:[],pend:null,made:{}};
+  v.append(el('div',{class:'card'},el('h2',{},'Çizim Atölyesi ',el('span',{class:'kod'},'MAT.5.3.1 · 5.3.2')),
+    el('p',{class:'lead'},'Bir araç seç ve kareli kâğıda tıkla. Doğru parçası, ışın, doğru ve çember için iki noktaya; dikme için önce bir doğruya, sonra bir noktaya tıkla.')));
+  const g=el('div',{class:'grid2'});v.append(g);
+  const left=el('div',{class:'card'}),right=el('div',{class:'card'});g.append(left,right);
+  const W=560,H=340;const svg=sv('svg',{viewBox:`0 0 ${W} ${H}`,class:'stage',style:'cursor:crosshair;touch-action:none'});
+  const TOOLS=[['nokta','Nokta'],['dp','Doğru parçası'],['isin','Işın'],['dogru','Doğru'],['cember','Çember'],['dikme','Dikme']];
+  const msg=el('p',{class:'status',style:'margin:6px 0 0'},'');
+  const tools=segChips(TOOLS,st.tool,k=>{st.tool=k;st.pend=null;hint();draw()});
+  left.append(tools,el('div',{style:'height:8px'}),svg,msg,el('div',{class:'row',style:'margin-top:6px'},el('button',{class:'btn ghost sm',type:'button',onclick:()=>{const o=st.objs.pop();if(!o&&st.pts.length)st.pts.pop();st.pend=null;draw()}},'Geri al'),el('button',{class:'btn ghost sm',type:'button',onclick:()=>{st.pts=[];st.objs=[];st.pend=null;draw()}},'Temizle')));
+  const list=el('div');
+  right.append(el('h3',{},'Çizdiklerin'),list,el('div',{style:'height:10px'}),el('h3',{},'Hatırla'),
+    el('table',{class:'tbl'},el('tr',{},el('th',{},'Çizim'),el('th',{},'Uç noktası'),el('th',{},'Gösterim')),
+      el('tr',{},el('td',{},'Doğru parçası'),el('td',{},'2 (başı ve sonu var)'),el('td',{},'[AB]')),
+      el('tr',{},el('td',{},'Işın'),el('td',{},'1 (başlangıç noktası)'),el('td',{},'[AB')),
+      el('tr',{},el('td',{},'Doğru'),el('td',{},'yok (iki yönde sınırsız)'),el('td',{},'AB doğrusu'))));
+  const NM='ABCDEFGHKLMNPRSTUVYZ';
+  const nameOf=p=>NM[st.pts.indexOf(p)%NM.length]+(st.pts.indexOf(p)>=NM.length?'′':'');
+  const hint=()=>{msg.textContent=({nokta:'Bir nokta koymak için tıkla.',dp:'Uç noktaları seç.',isin:'Önce başlangıç noktasını, sonra yönü gösteren noktayı seç.',dogru:'Doğrunun geçtiği iki noktayı seç.',cember:'Önce merkezi, sonra çember üzerindeki bir noktayı seç.',dikme:'Önce bir doğruya ya da doğru parçasına, sonra dikmenin geçeceği noktaya tıkla.'})[st.tool]};
+  const snap=p=>G(Math.round(p.x/20)*20,Math.round(p.y/20)*20);
+  const getPt=p=>{let q=st.pts.find(x=>gdist(x,p)<12);if(!q){q=snap(p);const ex=st.pts.find(x=>x.x===q.x&&x.y===q.y);if(ex)return ex;st.pts.push(q)}return q};
+  const lineObjs=()=>st.objs.filter(o=>o.t==='dp'||o.t==='isin'||o.t==='dogru'||o.t==='dikme');
+  const segDist=(p,o)=>{const a=o.a,b=o.b;const d=gsub(b,a);let t=gdot(gsub(p,a),d)/gdot(d,d);if(o.t==='dp')t=Math.max(0,Math.min(1,t));else if(o.t==='isin')t=Math.max(0,t);return gdist(p,gadd(a,gmul(d,t)))};
+  svg.addEventListener('click',e=>{const p=svgPt(svg,e);
+    if(st.tool==='nokta'){getPt(p);draw();return}
+    if(st.tool==='dikme'){
+      if(!st.pend){let best=null,bd=14;lineObjs().forEach(o=>{const d=segDist(p,o);if(d<bd){bd=d;best=o}});if(!best){msg.textContent='Önce bir doğruya, ışına ya da doğru parçasına tıkla (yoksa önce bir tane çiz).';return}st.pend={line:best};msg.textContent='Şimdi dikmenin geçeceği noktaya tıkla.';draw();return}
+      const P=getPt(p);const L=st.pend.line;const d=gsub(L.b,L.a);const t=gdot(gsub(P,L.a),d)/gdot(d,d);const F=gadd(L.a,gmul(d,t));
+      const dir=G(-d.y,d.x);st.objs.push({t:'dikme',a:P,b:gadd(P,dir),foot:F,base:L});st.made.dikme=true;st.pend=null;hint();draw();return}
+    const P=getPt(p);
+    if(!st.pend){st.pend={a:P};msg.textContent='İkinci noktayı seç.';draw();return}
+    if(P===st.pend.a){return}
+    st.objs.push({t:st.tool,a:st.pend.a,b:P});st.made[st.tool]=true;st.pend=null;hint();draw()});
+  function full(g,a,b,col,both,w=2.5){const d=gsub(b,a);const u=gmul(d,1/glen(d));const far=gadd(a,gmul(u,900));const back=both?gadd(a,gmul(u,-900)):a;lineSV(g,back,far,col,w)}
+  function draw(){
+    svg.innerHTML='';gridBg(svg,W,H);const gg=sv('g');svg.append(gg);
+    st.objs.forEach(o=>{
+      if(o.t==='dp')lineSV(gg,o.a,o.b,'var(--accent)',3);
+      else if(o.t==='isin'){full(gg,o.a,o.b,'#2f7fc0',false);const d=gsub(o.b,o.a);const u=gmul(d,1/glen(d));const tip=gadd(o.b,gmul(u,40));arrowHead(gg,tip,u,'#2f7fc0')}
+      else if(o.t==='dogru'){full(gg,o.a,o.b,'#12715a',true);const d=gsub(o.b,o.a);const u=gmul(d,1/glen(d));arrowHead(gg,gadd(o.b,gmul(u,40)),u,'#12715a');arrowHead(gg,gadd(o.a,gmul(u,-40)),gmul(u,-1),'#12715a')}
+      else if(o.t==='cember'){gg.append(sv('circle',{cx:o.a.x,cy:o.a.y,r:gdist(o.a,o.b),fill:'none',stroke:'#9a5d00','stroke-width':2.5}));lineSV(gg,o.a,o.b,'#9a5d00',1.5,'5 4')}
+      else if(o.t==='dikme'){full(gg,o.a,o.b,'#c0301d',true,2);const F=o.foot,P=o.a;const u=gsub(o.base.b,o.base.a),w=gsub(P,F);const lu=glen(u),lw=glen(w)||1;const s=12;const p1=gadd(F,gmul(u,s/lu)),p3=gadd(F,gmul(w,s/lw)),p2=gadd(p1,gmul(w,s/lw));gg.append(sv('path',{d:`M${p1.x},${p1.y} L${p2.x},${p2.y} L${p3.x},${p3.y}`,fill:'none',stroke:'#c0301d','stroke-width':1.5}))}
+    });
+    if(st.pend&&st.pend.line){const o=st.pend.line;lineSV(gg,o.a,o.b,'var(--sun)',6)}
+    st.pts.forEach(p=>{const sel=st.pend&&st.pend.a===p;dotSV(gg,p,sel?'var(--sun)':'var(--ink)',sel?7:5);txt(gg,G(p.x+11,p.y-11),nameOf(p),{bold:true})});
+    list.innerHTML='';
+    if(!st.objs.length)list.append(el('p',{class:'hint'},'Henüz bir çizim yok.'));
+    const N=p=>nameOf(p);
+    const ul=el('ul',{style:'margin:0;padding-left:18px'});
+    st.objs.forEach(o=>ul.append(el('li',{html:o.t==='dp'?`Doğru parçası <b>[${N(o.a)}${N(o.b)}]</b> · uzunluk ${fmt(gdist(o.a,o.b)/20,1)} birim`:o.t==='isin'?`Işın <b>[${N(o.a)}${N(o.b)}</b> · başlangıç noktası ${N(o.a)}`:o.t==='dogru'?`<b>${N(o.a)}${N(o.b)}</b> doğrusu`:o.t==='cember'?`Merkezi <b>${N(o.a)}</b>, yarıçapı |${N(o.a)}${N(o.b)}| = ${fmt(gdist(o.a,o.b)/20,1)} birim olan çember`:`<b>${N(o.a)}</b> noktasından geçen dikme (90°)`})));
+    list.append(ul);
+    TL.forEach(x=>x._tick&&x._tick());
+  }
+  const TL=[
+    {id:'c1',text:'Bir <b>ışın</b> çiz.',check:()=>st.made.isin,status:()=>'',why:{q:'Işın için hangisi doğrudur?',options:['Bir başlangıç noktası vardır; diğer yönde sınırsız uzar.','İki uç noktası vardır.','Hiç uç noktası yoktur ve ölçülebilir.'],correct:0,expl:'[AB ışını A’dan başlar ve B yönünde sınırsız uzar. Bu yüzden uzunluğu ölçülemez.'}},
+    {id:'c2',text:'Bir <b>doğru</b> çiz.',check:()=>st.made.dogru,status:()=>'',why:{q:'Doğru için hangisi doğrudur?',options:['Başlangıç ve bitiş noktası yoktur; iki yönde sınırsız uzar.','Bir başlangıç noktası vardır.','Uzunluğu cetvelle ölçülebilir.'],correct:0,expl:'Doğrunun iki ucundaki oklar, iki yönde sınırsız uzadığını gösterir.'}},
+    {id:'c3',text:'Bir <b>çember</b> çiz.',check:()=>st.made.cember,status:()=>'',why:{q:'Çember üzerindeki noktalar için hangisi doğrudur?',options:['Hepsi merkeze eşit uzaklıktadır (yarıçap).','Hepsi merkezde birleşir.','Merkeze uzaklıkları farklıdır.'],correct:0,expl:'Pergelin açıklığı yarıçaptır; çember üzerindeki her nokta merkezden yarıçap kadar uzaktadır.'}},
+    {id:'c4',text:'Çizdiğin bir doğruya ya da doğru parçasına <b>dikme</b> çiz.',check:()=>st.made.dikme,status:()=>'',why:{q:'Dikme için hangisi doğrudur?',options:['Doğruyla 90°’lik açı yapar; gönye ile çizilebilir.','Doğruya paraleldir.','Doğruyla 45°’lik açı yapar.'],correct:0,expl:'Dik kesişen iki doğru dört dik açı oluşturur.'}},
+    {id:'c5',text:'Farklı iki noktadan kaç doğru geçer?',options:['Yalnız bir','İki','Sonsuz çoklukta','Hiç'],correct:0,expl:'Cetveli iki noktaya dayadığında yalnızca bir doğru çizebilirsin.'},
+    {id:'c6',text:'Bir noktadan kaç doğru geçer?',options:['Sonsuz çoklukta','Yalnız bir','İki','Hiç'],correct:0,expl:'Cetveli bir noktanın etrafında döndürerek istediğin kadar doğru çizebilirsin.'},
+    {id:'c7',text:'[AB ışını ile [BA ışını için hangisi doğrudur?',options:['Farklı ışınlardır: başlangıç noktaları ve yönleri farklıdır.','Aynı ışındır.','İkisi de doğru parçasıdır.','İkisi de doğrudur.'],correct:0,expl:'[AB A’dan başlar, B yönüne gider; [BA ise B’den başlar, A yönüne gider. [AB] ile [BA] ise aynı doğru parçasıdır.'},
+  ];
+  const tc=el('div',{class:'card'},el('h2',{},'Görevler'));const tl=el('div',{class:'tasks'});TL.forEach((t,i)=>tl.append(makeTask('cizim',t,i+1)));
+  tl.append(selTable('cizim','c8',8,'<b>Hangi araç?</b> Her çizim için kullanılacak aracı seç.',[['Çizim'],['Araç',['Cetvel','Gönye','Pergel','İletki']]],[['Çember çizmek','Pergel'],['Bir doğruya dikme çizmek','Gönye'],['Bir açıyı ölçmek','İletki'],['4 cm uzunluğunda doğru parçası çizmek','Cetvel']],'Gönye ile dik açı, pergel ile çember, iletki ile açı ölçüsü, cetvel ile uzunluk.'));
+  tc.append(tl);v.append(tc);
+  hint();draw();
+})();
+
+/* =====================================================================
+   2) AÇI ÖLÇME — MAT.5.3.3
+   ===================================================================== */
+(function(){
+  const v=views.aci;
+  const st={mode:'olc',base:'sag',th:50,target:120,arm:90,olcOk:0,cizOk:0,answered:false};
+  v.append(el('div',{class:'card'},el('h2',{},'İletki Laboratuvarı ',el('span',{class:'kod'},'MAT.5.3.3')),
+    el('p',{class:'lead',html:'İletkinin <b>merkezi</b> açının köşesine, <b>0 çizgisi</b> bir kola gelir. İki ölçek vardır: açının kolu hangi taraftaki 0’dan başlıyorsa o ölçeği oku.'})));
+  const g=el('div',{class:'grid2'});v.append(g);
+  const left=el('div',{class:'card'}),right=el('div',{class:'card'});g.append(left,right);
+  const W=560,H=320,C=G(280,280),R=236;
+  const svg=sv('svg',{viewBox:`0 0 ${W} ${H}`,class:'stage',style:'touch-action:none'});
+  const mode=segChips([['olc','Açıyı ölç'],['ciz','Açıyı oluştur']],st.mode,k=>{st.mode=k;newQ();});
+  left.append(mode,el('div',{style:'height:8px'}),svg);
+  const panel=el('div');right.append(panel);
+  const tOlc=counterBox('aci','a-olc',1,'<b>Açıyı ölç</b> modunda <b>3</b> açıyı doğru ölç.',3);
+  const tCiz=counterBox('aci','a-ciz',2,'<b>Açıyı oluştur</b> modunda istenen <b>3</b> açıyı doğru oluştur.',3);
+  const P=(deg,r)=>G(C.x+r*Math.cos(deg*RAD),C.y-r*Math.sin(deg*RAD));
+  const type=a=>a===0?'sıfır açı':a<90?'dar açı':a===90?'dik açı':a<180?'geniş açı':'doğru açı';
+  function draw(){
+    svg.innerHTML='';
+    svg.append(sv('path',{d:`M${C.x-R},${C.y} A${R},${R} 0 0 1 ${C.x+R},${C.y} Z`,fill:'rgba(47,127,192,.10)',stroke:'#2f7fc0','stroke-width':1.5}));
+    svg.append(sv('path',{d:`M${C.x-R+58},${C.y} A${R-58},${R-58} 0 0 1 ${C.x+R-58},${C.y}`,fill:'none',stroke:'#2f7fc0','stroke-width':.8}));
+    for(let d=0;d<=180;d++){const L=d%10===0?16:d%5===0?11:6;lineSV(svg,P(d,R),P(d,R-L),'#2f7fc0',d%10===0?1.4:.8)}
+    for(let d=0;d<=180;d+=10){txt(svg,P(d,R-28),String(180-d),{size:11,fill:'#9a5d00'});txt(svg,P(d,R-46),String(d),{size:11,fill:'#2f7fc0'})}
+    txt(svg,G(C.x,C.y+20),'mavi (iç) ölçek sağdaki 0’dan · turuncu (dış) ölçek soldaki 0’dan başlar',{size:11,fill:'var(--ink2)'});
+    lineSV(svg,G(C.x-R-10,C.y),G(C.x+R+10,C.y),'#2f7fc0',1);
+    dotSV(svg,C,'var(--ink)',4);
+    const baseDeg=st.base==='sag'?0:180;
+    let armDeg;if(st.mode==='olc'){armDeg=st.base==='sag'?st.th:180-st.th}else{armDeg=st.arm}
+    lineSV(svg,C,P(baseDeg,R+5),'var(--ink)',3.5);lineSV(svg,C,P(armDeg,R+5),'var(--bad)',3.5);
+    const shown=st.mode==='olc'?st.th:(st.base==='sag'?st.arm:180-st.arm);
+    const a1=Math.min(baseDeg,armDeg),a2=Math.max(baseDeg,armDeg);
+    if(shown>0){const p1=P(a1,46),p2=P(a2,46);svg.append(sv('path',{d:`M${p1.x},${p1.y} A46,46 0 0 0 ${p2.x},${p2.y}`,fill:'none',stroke:'var(--bad)','stroke-width':2}))}
+    if(st.mode==='ciz'){const hd=P(armDeg,R-14);svg.append(sv('circle',{cx:hd.x,cy:hd.y,r:10,fill:'var(--bad)',stroke:'#fff','stroke-width':2,style:'cursor:grab'}))}
+  }
+  let drag=false;
+  svg.addEventListener('pointerdown',e=>{if(st.mode!=='ciz')return;drag=true;svg.setPointerCapture(e.pointerId);mv(e)});
+  svg.addEventListener('pointermove',e=>{if(drag)mv(e)});svg.addEventListener('pointerup',()=>drag=false);
+  function mv(e){const p=svgPt(svg,e);let a=Math.atan2(C.y-p.y,p.x-C.x)/RAD;if(a<0)a=a<-90?180:0;a=Math.round(a/5)*5;st.arm=Math.max(0,Math.min(180,a));draw();live.textContent=`Şu anki açı: ${st.base==='sag'?st.arm:180-st.arm}° (${type(st.base==='sag'?st.arm:180-st.arm)})`}
+  const live=el('p',{class:'mono'});
+  function newQ(){
+    panel.innerHTML='';st.base=Math.random()<.5?'sag':'sol';
+    if(st.mode==='olc'){st.th=5*Math.floor(Math.random()*33+2);
+      const inp=el('input',{type:'text',inputmode:'numeric',style:'width:90px;font-family:var(--f-mono)'});const fb=el('div',{class:'fb hidden'});
+      const go=()=>{const x=parseInt(inp.value,10);if(isNaN(x))return;if(x===st.th){fb.className='fb ok';fb.innerHTML=`<b>Doğru: ${st.th}°</b> — ${type(st.th)}. Açının kolu ${st.base==='sag'?'sağdaki 0’dan, yani iç ölçekten':'soldaki 0’dan, yani dış ölçekten'} başlıyor.`;st.olcOk++;tOlc.set(st.olcOk);GC('aci/olc')}
+        else{fb.className='fb bad';fb.innerHTML=x===180-st.th?'<b>Diğer ölçeği okudun.</b> Açının kırmızı olmayan kolu hangi taraftaki 0’da? O 0’dan başlayan ölçeği oku.':'<b>Tekrar bak.</b> Önce açının dar mı, geniş mi olduğunu tahmin et; sonra doğru ölçeği oku.'}};
+      inp.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+      panel.append(el('h3',{},'Kırmızı kol ile siyah kol arasındaki açı kaç derece?'),el('div',{class:'row'},inp,'°',el('button',{class:'btn sm',type:'button',onclick:go},'Kontrol et'),el('button',{class:'btn ghost sm',type:'button',onclick:newQ},'Yeni açı')),fb)}
+    else{st.target=5*Math.floor(Math.random()*35+1);st.arm=st.base==='sag'?0:180;
+      const fb=el('div',{class:'fb hidden'});
+      panel.append(el('h3',{},`Kırmızı kolu sürükleyerek ${st.target}°’lik bir açı oluştur.`),live,el('div',{class:'row'},el('button',{class:'btn sm',type:'button',onclick:()=>{const a=st.base==='sag'?st.arm:180-st.arm;if(a===st.target){fb.className='fb ok';fb.innerHTML=`<b>Doğru.</b> ${st.target}° bir ${type(st.target)}dır.`;st.cizOk++;tCiz.set(st.cizOk)}else{fb.className='fb bad';fb.innerHTML=a===180-st.target?'<b>Ters ölçek!</b> Siyah kolun olduğu taraftaki 0’dan saymaya başla.':`<b>Şu an ${a}°.</b> Biraz daha ${a<st.target?'aç':'kapat'}.`}}},'Kontrol et'),el('button',{class:'btn ghost sm',type:'button',onclick:newQ},'Yeni hedef')),fb);
+      live.textContent='Şu anki açı: 0°'}
+    panel.append(el('div',{style:'height:10px'}),el('table',{class:'tbl'},el('tr',{},el('th',{},'Açı'),el('th',{},'Ölçü')),...[['Dar açı','0° ile 90° arası'],['Dik açı','90°'],['Geniş açı','90° ile 180° arası'],['Doğru açı','180°'],['Tam açı','360°']].map(r=>el('tr',{},...r.map(c=>el('td',{},c))))));
+    draw();
+  }
+  const tc=el('div',{class:'card'},el('h2',{},'Görevler'));const tl=el('div',{class:'tasks'});tc.append(tl);v.append(tc);
+  tl.append(tOlc.box,tCiz.box,
+    makeTask('aci',{id:'a3',text:'Ölçüsü 90°’den büyük, 180°’den küçük olan açıya ne ad verilir?',options:['Geniş açı','Dar açı','Dik açı','Doğru açı'],correct:0,expl:'Dar açı < 90° = dik açı < geniş açı < 180° = doğru açı.'},3),
+    makeTask('aci',{id:'a4',text:'Saat tam 3’te akrep ile yelkovan arasındaki küçük açı hangisidir?',options:['Dik açı (90°)','Dar açı','Geniş açı','Doğru açı'],correct:0,expl:'Kadranın dörtte biri: 360° ÷ 4 = 90°.'},4),
+    makeTask('aci',{id:'a5',text:'Bir açının kollarını uzatırsak ölçüsü ne olur?',options:['Değişmez.','Büyür.','Küçülür.','İki katına çıkar.'],correct:0,expl:'Açı ölçüsü kolların uzunluğuna değil, kolların arasındaki açıklığa bağlıdır.'},5),
+    makeTask('aci',{id:'a6',text:'İletkiyle ölçerken hangisi doğrudur?',options:['İletkinin merkezi açının köşesine, 0 çizgisi bir kola gelmelidir.','İletki açının üzerine istenen biçimde konabilir.','Her zaman dış ölçek okunur.','Yalnızca dar açılar ölçülebilir.'],correct:0,expl:'Sonra 0’dan başlayan ölçekte diğer kolun gösterdiği sayı okunur.'},6),
+  );
+  newQ();
+})();
+
+/* =====================================================================
+   3) DOĞRULARIN OLUŞTURDUĞU AÇILAR — MAT.5.3.4
+   ===================================================================== */
+(function(){
+  const v=views.dogru;
+  const st={mode:'iki',a:60,seenIki:new Set(),seenPar:new Set(),tri:[G(160,260),G(420,250),G(250,80)],triSeen:new Set()};
+  v.append(el('div',{class:'card'},el('h2',{},'Doğrular ve Açılar ',el('span',{class:'kod'},'MAT.5.3.4')),
+    el('p',{class:'lead'},'İki ya da üç doğrunun düzlemdeki durumunu değiştir. Aynı renkteki açılar eşit ölçülüdür. Hangi açılar eşit, hangilerinin toplamı 180°?')));
+  const g=el('div',{class:'grid2'});v.append(g);
+  const left=el('div',{class:'card'}),right=el('div',{class:'card'});g.append(left,right);
+  const W=560,H=340;const svg=sv('svg',{viewBox:`0 0 ${W} ${H}`,class:'stage',style:'touch-action:none'});
+  const ctl=el('div');const read=el('div');
+  const mode=segChips([['iki','İki kesişen doğru'],['par','Paralel iki doğru ve bir kesen'],['uc','Üç doğru: üçgen']],st.mode,k=>{st.mode=k;build()});
+  left.append(mode,el('div',{style:'height:8px'}),svg);right.append(ctl,read);
+  const C1='#c0301d',C2='#2f7fc0';
+  function angLabel(gp,V,dirA,dirB,val,col,r=34){const A=gadd(V,dirA),B=gadd(V,dirB);const mid=arcSV(gp,V,A,B,r,col,3);txt(gp,G(V.x+(r+18)*Math.cos(mid),V.y+(r+18)*Math.sin(mid)),fmtD(val),{size:12,bold:true,fill:col})}
+  function build(){ctl.innerHTML='';
+    if(st.mode!=='uc'){const o=el('output');const r=el('input',{type:'range',min:10,max:170,step:5,value:st.a});r.addEventListener('input',()=>{st.a=+r.value;o.textContent=st.a+'°';draw()});o.textContent=st.a+'°';
+      ctl.append(el('div',{class:'ctl'},el('label',{},st.mode==='iki'?'İkinci doğrunun eğimi (a açısı)':'Kesenin eğimi (a açısı)',o),r))}
+    else ctl.append(el('p',{class:'hint'},'Üçgenin köşelerini sürükle. Her kenar bir doğrunun parçasıdır.'));
+    draw()}
+  let dragI=-1;
+  svg.addEventListener('pointerdown',e=>{if(st.mode!=='uc')return;const p=svgPt(svg,e);dragI=st.tri.findIndex(q=>gdist(q,p)<22);if(dragI>=0)svg.setPointerCapture(e.pointerId)});
+  svg.addEventListener('pointermove',e=>{if(dragI<0)return;const p=svgPt(svg,e);st.tri[dragI]=G(Math.min(W-30,Math.max(30,Math.round(p.x/10)*10)),Math.min(H-30,Math.max(30,Math.round(p.y/10)*10)));draw()});
+  svg.addEventListener('pointerup',()=>{if(dragI>=0){st.triSeen.add(st.tri.map(p=>p.x+','+p.y).join(';'));dragI=-1;draw()}});
+  function draw(){
+    svg.innerHTML='';gridBg(svg,W,H);read.innerHTML='';
+    const a=st.a,b=180-a;
+    const dir=d=>G(Math.cos(d*RAD),-Math.sin(d*RAD));
+    if(st.mode==='iki'){
+      const V=G(280,170);lineSV(svg,gadd(V,gmul(dir(0),300)),gadd(V,gmul(dir(180),300)),'var(--ink)',2.5);lineSV(svg,gadd(V,gmul(dir(a),300)),gadd(V,gmul(dir(a+180),300)),'var(--ink)',2.5);
+      angLabel(svg,V,dir(0),dir(a),a,C1);angLabel(svg,V,dir(a),dir(180),b,C2);angLabel(svg,V,dir(180),dir(a+180),a,C1);angLabel(svg,V,dir(a+180),dir(360),b,C2);
+      st.seenIki.add(a);
+      read.append(el('dl',{class:'read'},el('dt',{},'Kırmızı açılar (ters açılar)'),el('dd',{},`${a}° ve ${a}°`),el('dt',{},'Mavi açılar (ters açılar)'),el('dd',{},`${b}° ve ${b}°`),el('dt',{},'Komşu iki açının toplamı'),el('dd',{},`${a}° + ${b}° = 180°`),el('dt',{},'Dört açının toplamı'),el('dd',{},'360° (tam açı)')),
+        el('p',{class:'hint'},a===90?'Doğrular dik kesişiyor: dört açı da 90°.':'Karşılıklı (ters) açılar eşit; yan yana (komşu) açıların toplamı 180°: bütünler açılar.'));
+    }else if(st.mode==='par'){
+      const y1=110,y2=240;lineSV(svg,G(20,y1),G(540,y1),'var(--ink)',2.5);lineSV(svg,G(20,y2),G(540,y2),'var(--ink)',2.5);
+      txt(svg,G(530,y1-12),'d₁',{size:12});txt(svg,G(530,y2-12),'d₂',{size:12});
+      const k=Math.cos(a*RAD)/Math.sin(a*RAD);const V1=G(280+(175-y1)*k,y1),V2=G(280+(175-y2)*k,y2);
+      lineSV(svg,gadd(V1,gmul(dir(a),200)),gadd(V2,gmul(dir(a+180),200)),'var(--accent2)',2.5);
+      [V1,V2].forEach(V=>{angLabel(svg,V,dir(0),dir(a),a,C1,28);angLabel(svg,V,dir(a),dir(180),b,C2,28);angLabel(svg,V,dir(180),dir(a+180),a,C1,28);angLabel(svg,V,dir(a+180),dir(360),b,C2,28)});
+      st.seenPar.add(a);
+      read.append(el('dl',{class:'read'},el('dt',{},'Kırmızı açılar'),el('dd',{},`4 tane, hepsi ${a}°`),el('dt',{},'Mavi açılar'),el('dd',{},`4 tane, hepsi ${b}°`),el('dt',{},'Bir kırmızı + bir mavi'),el('dd',{},'180°')),
+        el('p',{class:'hint'},'d₁ ∥ d₂: kesen iki paralel doğruyla aynı açıları oluşturur. 8 açı yalnızca iki farklı ölçüde olur.'));
+    }else{
+      const [A,B,Cc]=st.tri;[[A,B],[B,Cc],[Cc,A]].forEach(([p,q])=>{const d=gsub(q,p);const u=gmul(d,1/glen(d));lineSV(svg,gadd(p,gmul(u,-600)),gadd(p,gmul(u,600)),'var(--line)',1.5);lineSV(svg,p,q,'var(--ink)',2.5)});
+      const angs=[gang(A,B,Cc),gang(B,A,Cc),gang(Cc,A,B)];const cols=['#c0301d','#2f7fc0','#12715a'];
+      [[A,B,Cc],[B,Cc,A],[Cc,A,B]].forEach(([V,P1,P2],i)=>{const mid=arcSV(svg,V,P1,P2,30,cols[i],3);txt(svg,G(V.x+50*Math.cos(mid),V.y+50*Math.sin(mid)),fmtD(angs[i]),{size:12,bold:true,fill:cols[i]})});
+      ['A','B','C'].forEach((n,i)=>{const p=st.tri[i];svg.append(sv('circle',{cx:p.x,cy:p.y,r:9,fill:'var(--accent)',stroke:'#fff','stroke-width':2,style:'cursor:grab'}))});
+      const s=angs.map(x=>Math.round(x));let tot=s[0]+s[1]+s[2];if(tot!==180){s[2]+=180-tot}
+      read.append(el('dl',{class:'read'},el('dt',{},'İç açılar'),el('dd',{},`${s[0]}° + ${s[1]}° + ${s[2]}°`),el('dt',{},'Toplam'),el('dd',{},el('b',{},'180°'))),el('p',{class:'hint'},'Üç doğru ardışık kesişince bir üçgen oluşur. Üçgeni nasıl değiştirirsen değiştir, iç açılarının toplamı 180°.'));
+    }
+    TL.forEach(x=>x._tick&&x._tick());
+  }
+  const TL=[
+    {id:'d1',text:'<b>İki kesişen doğru</b> modunda a açısını en az <b>3 farklı</b> değere getir. Karşılıklı açıları karşılaştır.',check:()=>st.seenIki.size>=4,status:()=>'',why:{q:'Kesişen iki doğrunun oluşturduğu açılar için hangisi doğrudur?',options:['Karşılıklı (ters) açılar eşittir; komşu açıların toplamı 180°’dir.','Dört açı her zaman eşittir.','Komşu açılar her zaman eşittir.'],correct:0,expl:'Ters açılar eşittir; komşu açılar bütünlerdir (toplamları 180°).'}},
+    {id:'d2',text:'İki doğruyu <b>dik</b> kesiştir.',check:()=>st.mode==='iki'&&st.a===90,status:()=>'a = 90°',why:{q:'Dik kesişen iki doğru kaç dik açı oluşturur?',options:['4','2','1','Hiç'],correct:0,expl:'Biri 90° olunca komşusu 180° − 90° = 90°, ters açıları da 90° olur.'}},
+    {id:'d3',text:'<b>Paralel iki doğru ve bir kesen</b> modunda kesenin eğimini en az <b>3 farklı</b> değere getir.',check:()=>st.seenPar.size>=4,status:()=>'',why:{q:'Kesen iki paralel doğruyla kaç farklı ölçüde açı oluşturur (kesen dik değilken)?',options:['2 farklı ölçüde; ikisinin toplamı 180°','8 farklı ölçüde','4 farklı ölçüde','Hepsi 90°'],correct:0,expl:'Paralel doğrular kesenle aynı açıları yapar: 8 açının 4’ü a, 4’ü 180° − a ölçüsündedir.'}},
+    {id:'d4',text:'<b>Üç doğru</b> modunda üçgeni <b>3 farklı</b> biçime getir; iç açıların toplamını izle.',check:()=>st.triSeen.size>=3,status:()=>'',why:{q:'Ne fark ettin?',options:['Üçgenin iç açılarının ölçüleri toplamı her zaman 180°’dir.','Üçgen büyüdükçe toplam artar.','Toplam her zaman 360°’dir.'],correct:0,expl:'Bu, bütün üçgenler için geçerli bir genellemedir.'}},
+    {id:'d5',text:'Kesişen iki doğrunun oluşturduğu açılardan biri 65°’dir. Diğer üç açının ölçüleri nedir?',options:['65°, 115°, 115°','65°, 65°, 65°','115°, 115°, 115°','25°, 65°, 25°'],correct:0,expl:'Ters açısı 65°; komşuları 180° − 65° = 115°.'},
+    {id:'d6',text:'Tümler açıların ve bütünler açıların ölçüleri toplamı sırasıyla kaçtır?',options:['90° ve 180°','180° ve 90°','90° ve 360°','180° ve 360°'],correct:0,expl:'Tümler: toplamı 90°. Bütünler: toplamı 180°.'},
+    {id:'d7',text:'Bir üçgenin iki iç açısı 50° ve 60°’dir. Üçüncü açısı kaç derecedir?',options:['70°','110°','90°','80°'],correct:0,expl:'180° − (50° + 60°) = 70°.'},
+  ];
+  const tc=el('div',{class:'card'},el('h2',{},'Görevler'));const tl=el('div',{class:'tasks'});TL.forEach((t,i)=>tl.append(makeTask('dogru',t,i+1)));tc.append(tl);v.append(tc);
+  build();
+})();
+
+/* =====================================================================
+   4) ÇOKGENLER — MAT.5.3.5 · MAT.5.3.6
+   ===================================================================== */
+(function(){
+  const v=views.cokgen;
+  const NAMES={3:'Üçgen',4:'Dörtgen',5:'Beşgen',6:'Altıgen',7:'Yedigen',8:'Sekizgen'};
+  const st={n:4,pts:[],lines:true,seen:{},triSums:new Set(),cross:false,rhomb:false,fiveLines:false};
+  const reg=n=>{st.pts=[];for(let i=0;i<n;i++){const a=-Math.PI/2+i*2*Math.PI/n;st.pts.push(G(Math.round((280+130*Math.cos(a))/10)*10,Math.round((175+130*Math.sin(a))/10)*10))}};
+  reg(st.n);
+  v.append(el('div',{class:'card'},el('h2',{},'Çokgen Atölyesi ',el('span',{class:'kod'},'MAT.5.3.5 · 5.3.6')),
+    el('p',{class:'lead'},'Köşe sayısını seç, köşeleri sürükle. “Kenarları doğru olarak göster” açıkken çokgenin, ardışık kesişen doğruların sınırladığı kapalı şekil olduğunu gör.')));
+  const g=el('div',{class:'grid2'});v.append(g);
+  const left=el('div',{class:'card'}),right=el('div',{class:'card'});g.append(left,right);
+  const W=560,H=350;const svg=sv('svg',{viewBox:`0 0 ${W} ${H}`,class:'stage',style:'touch-action:none'});
+  const nc=segChips([3,4,5,6,7,8].map(n=>[n,NAMES[n]]),st.n,k=>{st.n=k;reg(k);draw()});
+  const lc=el('label',{class:'row',style:'margin:6px 0'},(()=>{const c=el('input',{type:'checkbox'});c.checked=st.lines;c.addEventListener('change',()=>{st.lines=c.checked;draw()});return c})(),'Kenarları doğru olarak göster');
+  left.append(nc,lc,svg,el('div',{class:'row',style:'margin-top:6px'},el('button',{class:'btn ghost sm',type:'button',onclick:()=>{reg(st.n);draw()}},'Düzgün çokgene dön')));
+  const read=el('div');right.append(read);
+  let di=-1;
+  svg.addEventListener('pointerdown',e=>{const p=svgPt(svg,e);di=st.pts.findIndex(q=>gdist(q,p)<22);if(di>=0)svg.setPointerCapture(e.pointerId)});
+  svg.addEventListener('pointermove',e=>{if(di<0)return;const p=svgPt(svg,e);st.pts[di]=G(Math.min(W-20,Math.max(20,Math.round(p.x/10)*10)),Math.min(H-20,Math.max(20,Math.round(p.y/10)*10)));draw()});
+  svg.addEventListener('pointerup',()=>{if(di>=0){di=-1;if(st.n===3&&!st.cross)st.triSums.add(st.pts.map(p=>p.x+','+p.y).join(';'));draw()}});
+  const segX=(a,b,c,d)=>{const o=(p,q,r)=>Math.sign((q.x-p.x)*(r.y-p.y)-(q.y-p.y)*(r.x-p.x));return o(a,b,c)*o(a,b,d)<0&&o(c,d,a)*o(c,d,b)<0};
+  function draw(){
+    svg.innerHTML='';gridBg(svg,W,H);
+    const P=st.pts,n=P.length;
+    let cross=false;for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){if(j===i+1||(i===0&&j===n-1))continue;if(segX(P[i],P[(i+1)%n],P[j],P[(j+1)%n]))cross=true}
+    st.cross=cross;
+    if(st.lines)for(let i=0;i<n;i++){const a=P[i],b=P[(i+1)%n];const d=gsub(b,a);const u=gmul(d,1/glen(d));lineSV(svg,gadd(a,gmul(u,-700)),gadd(a,gmul(u,700)),'var(--accent2)',1.2,'6 5')}
+    svg.append(sv('polygon',{points:P.map(p=>p.x+','+p.y).join(' '),fill:cross?'rgba(192,48,29,.10)':'rgba(47,127,192,.12)',stroke:'var(--ink)','stroke-width':3,'stroke-linejoin':'round'}));
+    const area2=P.reduce((s,p,i)=>s+(p.x*P[(i+1)%n].y-P[(i+1)%n].x*p.y),0);
+    const sides=P.map((p,i)=>gdist(p,P[(i+1)%n])/40);
+    const angs=P.map((p,i)=>{const a=P[(i-1+n)%n],b=P[(i+1)%n];let t=gang(p,a,b);const cr=(p.x-a.x)*(b.y-p.y)-(p.y-a.y)*(b.x-p.x);if(Math.sign(cr)!==Math.sign(area2)&&cr!==0)t=360-t;return t});
+    P.forEach((p,i)=>{txt(svg,G(p.x,p.y-18),String.fromCharCode(65+i),{bold:true});svg.append(sv('circle',{cx:p.x,cy:p.y,r:8,fill:'var(--accent)',stroke:'#fff','stroke-width':2,style:'cursor:grab'}))});
+    if(!cross)P.forEach((p,i)=>{const a=P[(i-1+n)%n],b=P[(i+1)%n];const c=gmul(gadd(gsub(a,p),gsub(b,p)),.5);const L=glen(c)||1;let u=gmul(c,1/L);if(angs[i]>180)u=gmul(u,-1);txt(svg,gadd(p,gmul(u,30)),fmtD(angs[i]),{size:11,fill:'#c0301d'})});
+    const eqS=Math.max(...sides)-Math.min(...sides)<0.06,eqA=Math.max(...angs)-Math.min(...angs)<1.5;
+    if(n===4&&eqS&&!eqA&&!cross)st.rhomb=true;
+    if(n===5&&st.lines&&!cross)st.fiveLines=true;
+    read.innerHTML='';
+    if(cross){read.append(el('div',{class:'fb bad',html:'<b>Kenarlar kesişiyor.</b> Bu şekil bir çokgen değildir: kenarlar yalnızca köşelerde birleşmeli.'}))}
+    else{read.append(el('h3',{},NAMES[n]+(eqS&&eqA?' (düzgün)':'')));
+      const dl=el('dl',{class:'read'});const row=(k,x)=>dl.append(el('dt',{},k),el('dd',{html:x}));
+      row('Kenar sayısı',n);row('Köşe sayısı',n);row('Açı sayısı',n);
+      row('Kenarlar',eqS?'hepsi eş':'eş değil');row('Açılar',eqA?'hepsi eş':'eş değil');
+      row('Düzgün mü?',eqS&&eqA?'<b>Evet</b>: kenarlar ve açılar eş':'<b>Hayır</b>');
+      if(n===3)row('İç açılar toplamı','<b>180°</b>');
+      read.append(dl,el('h3',{style:'margin-top:8px'},'Kenar uzunlukları'),el('p',{class:'mono',style:'margin:0'},P.map((p,i)=>`|${String.fromCharCode(65+i)}${String.fromCharCode(65+(i+1)%n)}| = ${fmt(sides[i],1)}`).join('  ·  ')))}
+    TL.forEach(x=>x._tick&&x._tick());
+  }
+  const TL=[
+    {id:'k1',text:'“Kenarları doğru olarak göster” açıkken bir <b>beşgen</b> oluştur ve doğruları izle.',check:()=>st.fiveLines,status:()=>'',why:{q:'Çokgen için hangisi doğrudur?',options:['Ardışık kesişen en az üç doğrunun sınırladığı kapalı şekildir.','İki doğrunun kesişmesiyle oluşur.','Kenarları eğri olabilir.'],correct:0,expl:'Her kenar bir doğrunun parçasıdır; son doğru ilk doğruyla kesişince şekil kapanır.'}},
+    {id:'k2',text:'Bir <b>dörtgende</b> bütün kenarları eş yap ama açılar eş <b>olmasın</b>.',check:()=>st.rhomb,status:()=>'Kenarlar eş, açılar farklı.',why:{q:'Bu dörtgen düzgün çokgen midir?',options:['Hayır; düzgün çokgende hem kenarlar hem açılar eş olmalıdır.','Evet; kenarları eş olduğu için.','Evet; dört kenarı olduğu için.'],correct:0,expl:'Kare düzgün dörtgendir; kenarları eş ama açıları farklı olan dörtgen düzgün değildir.'}},
+    {id:'k3',text:'Üçgen seç ve köşeleri sürükleyerek <b>3 farklı üçgen</b> oluştur. İç açılara bak.',check:()=>st.triSums.size>=3,status:()=>'',why:{q:'Hangisi doğrudur?',options:['Her üçgenin iç açılarının toplamı 180°’dir.','Büyük üçgenlerin iç açıları toplamı daha büyüktür.','İç açıların toplamı üçgene göre değişir.'],correct:0,expl:'Bu, üçgen için genellemedir.'}},
+    {id:'k4',text:'Köşeleri sürükleyerek <b>kenarları kesişen</b> bir şekil oluştur.',check:()=>st.cross,status:()=>'',why:{q:'Bu şekil neden çokgen değildir?',options:['Kenarları köşeler dışında da kesişiyor.','Köşe sayısı çok fazla.','Kenarları eş değil.'],correct:0,expl:'Çokgenin kenarları yalnızca uç noktalarında (köşelerde) birleşir.'}},
+    {id:'k5',text:'Bir çokgenin köşe, kenar ve açı sayıları için hangisi doğrudur?',options:['Üçü de eşittir.','Kenar sayısı köşe sayısından fazladır.','Açı sayısı kenar sayısının iki katıdır.','Hiçbir ilişki yoktur.'],correct:0,expl:'Örneğin beşgenin 5 kenarı, 5 köşesi ve 5 açısı vardır.'},
+    {id:'k6',text:'Çevresi 42 cm olan düzgün altıgenin bir kenarı kaç cm’dir?',options:['7 cm','6 cm','8 cm','12 cm'],correct:0,expl:'Düzgün altıgenin 6 kenarı eştir: 42 ÷ 6 = 7 cm.'},
+    {id:'k7',text:'Hangisi çokgen değildir?',options:['Çember','Kare','Üçgen','Beşgen'],correct:0,expl:'Çember doğru parçalarından oluşmaz.'},
+  ];
+  const tc=el('div',{class:'card'},el('h2',{},'Görevler'));const tl=el('div',{class:'tasks'});TL.forEach((t,i)=>tl.append(makeTask('cokgen',t,i+1)));tc.append(tl);v.append(tc);
+  draw();
+})();
+
+/* =====================================================================
+   5) ÇEMBERLE ÜÇGEN İNŞASI — MAT.5.3.7
+   ===================================================================== */
+(function(){
+  const v=views.cember;
+  const st={ab:5,r1:5,r2:5,seen:{},touched:false};
+  v.append(el('div',{class:'card'},el('h2',{},'Pergel Laboratuvarı ',el('span',{class:'kod'},'MAT.5.3.7')),
+    el('p',{class:'lead'},'A ve B merkezli iki çember çiz. Çemberler kesişirse kesişim noktası C ile ABC üçgeni oluşur: |AC| birinci yarıçapa, |BC| ikinci yarıçapa eşittir.')));
+  const g=el('div',{class:'grid2'});v.append(g);
+  const left=el('div',{class:'card'}),right=el('div',{class:'card'});g.append(left,right);
+  const W=560,H=340,U=28,A=G(170,250);
+  const svg=sv('svg',{viewBox:`0 0 ${W} ${H}`,class:'stage'});left.append(svg);
+  const mk=(lab,key,min,max)=>{const o=el('output');const r=el('input',{type:'range',min,max,step:1,value:st[key]});r.addEventListener('input',()=>{st[key]=+r.value;st.touched=true;draw()});const c=el('div',{class:'ctl'},el('label',{},lab,o),r);c._s=()=>{r.value=st[key];o.textContent=st[key]+' birim'};return c};
+  const cs=[mk('|AB| uzunluğu','ab',2,8),mk('A merkezli çemberin yarıçapı (pergel açıklığı)','r1',1,9),mk('B merkezli çemberin yarıçapı','r2',1,9)];
+  const read=el('div');right.append(...cs,read);
+  const kind=()=>{const{ab,r1,r2}=st;if(r1+r2<=ab||Math.abs(r1-r2)>=ab)return null;if(ab===r1&&r1===r2)return 'eskenar';if(ab===r1||ab===r2||r1===r2)return 'ikiz';return 'cesit'};
+  const KN={eskenar:'eşkenar üçgen',ikiz:'ikizkenar üçgen',cesit:'çeşitkenar üçgen'};
+  function draw(){
+    cs.forEach(c=>c._s());svg.innerHTML='';gridBg(svg,W,H,U);
+    const B=G(A.x+st.ab*U,A.y),R1=st.r1*U,R2=st.r2*U;
+    svg.append(sv('circle',{cx:A.x,cy:A.y,r:R1,fill:'none',stroke:'#2f7fc0','stroke-width':2}),sv('circle',{cx:B.x,cy:B.y,r:R2,fill:'none',stroke:'#9a5d00','stroke-width':2}));
+    const k=kind();read.innerHTML='';
+    lineSV(svg,A,B,'var(--ink)',3);
+    if(k){const d=st.ab*U;const x=(R1*R1-R2*R2+d*d)/(2*d);const h=Math.sqrt(Math.max(0,R1*R1-x*x));const C=G(A.x+x,A.y-h),C2=G(A.x+x,A.y+h);
+      svg.append(sv('polygon',{points:`${A.x},${A.y} ${B.x},${B.y} ${C.x},${C.y}`,fill:'rgba(192,48,29,.12)',stroke:'#c0301d','stroke-width':3,'stroke-linejoin':'round'}));
+      dotSV(svg,C,'#c0301d',6);dotSV(svg,C2,'var(--ink2)',4);txt(svg,G(C.x,C.y-16),'C',{bold:true});
+      txt(svg,G((A.x+C.x)/2-14,(A.y+C.y)/2),String(st.r1),{bold:true,fill:'#2f7fc0'});txt(svg,G((B.x+C.x)/2+14,(B.y+C.y)/2),String(st.r2),{bold:true,fill:'#9a5d00'});
+      st.seen[k]=true;
+      read.append(el('dl',{class:'read'},el('dt',{},'|AB|'),el('dd',{},st.ab+' birim'),el('dt',{},'|AC| = 1. yarıçap'),el('dd',{},st.r1+' birim'),el('dt',{},'|BC| = 2. yarıçap'),el('dd',{},st.r2+' birim'),el('dt',{},'Üçgen'),el('dd',{},el('b',{},KN[k]))))}
+    else{st.seen.yok=true;read.append(el('div',{class:'fb info',html:'<b>Çemberler iki noktada kesişmiyor.</b> Üçüncü köşe bulunamadığı için üçgen oluşmaz.'}))}
+    txt(svg,G(A.x-12,A.y+16),'A',{bold:true});txt(svg,G(B.x+12,B.y+16),'B',{bold:true});dotSV(svg,A,'var(--ink)');dotSV(svg,B,'var(--ink)');
+    TL.forEach(x=>x._tick&&x._tick());
+  }
+  const TL=[
+    {id:'p1',text:'Bir <b>eşkenar üçgen</b> inşa et.',check:()=>st.touched&&kind()==='eskenar',status:()=>`|AB| = r₁ = r₂ = ${st.ab}`,why:{q:'Eşkenar üçgen için pergel açıklığı ne olmalı?',options:['|AB| kadar; iki çember de aynı açıklıkla çizilir.','|AB|’nin yarısı kadar.','İki çember farklı açıklıkla çizilir.'],correct:0,expl:'Üç kenar da |AB|’ye eşit olur.'}},
+    {id:'p2',text:'Eşkenar olmayan bir <b>ikizkenar üçgen</b> inşa et.',check:()=>st.touched&&kind()==='ikiz',status:()=>'',why:{q:'Üçgen neden ikizkenar oldu?',options:['İki kenarın uzunluğu eşit: ya iki yarıçap eşit ya da bir yarıçap |AB|’ye eşit.','Çemberler aynı merkezli.','Üç kenar da farklı.'],correct:0,expl:'Yarıçaplar eşitse |AC| = |BC| olur.'}},
+    {id:'p3',text:'Bir <b>çeşitkenar üçgen</b> inşa et.',check:()=>st.touched&&kind()==='cesit',status:()=>'',why:{q:'Çeşitkenar üçgen için hangisi doğrudur?',options:['|AB|, birinci yarıçap ve ikinci yarıçap birbirinden farklıdır.','İki yarıçap eşittir.','Yarıçaplardan biri |AB|’ye eşittir.'],correct:0,expl:'Üçgenin kenarları |AB|, r₁ ve r₂’dir.'}},
+    {id:'p4',text:'Çemberler <b>kesişmesin</b>.',check:()=>st.touched&&!kind(),status:()=>'',why:{q:'Bu durumda ne olur?',options:['Üçüncü köşe bulunamaz, üçgen oluşmaz.','Eşkenar üçgen oluşur.','İki üçgen oluşur.'],correct:0,expl:'Üçüncü köşe, iki çemberin kesişim noktasıdır.'}},
+    {id:'p5',text:'Merkezi O, yarıçapı 4 cm olan çember üzerindeki bir K noktası için |OK| kaç cm’dir?',options:['4 cm','8 cm','2 cm','Bilinemez'],correct:0,expl:'Çember üzerindeki her nokta merkezden yarıçap kadar uzaktadır.'},
+    {id:'p6',text:'|AB| = 6 cm. A merkezli 6 cm ve B merkezli 4 cm yarıçaplı çemberlerin kesişim noktası C ise ABC üçgeni hangisidir?',options:['İkizkenar üçgen','Eşkenar üçgen','Çeşitkenar üçgen','Üçgen oluşmaz'],correct:0,expl:'|AB| = |AC| = 6 cm, |BC| = 4 cm: iki kenar eşit.'},
+  ];
+  const tc=el('div',{class:'card'},el('h2',{},'Görevler'));const tl=el('div',{class:'tasks'});TL.forEach((t,i)=>tl.append(makeTask('cember',t,i+1)));tc.append(tl);v.append(tc);
+  draw();
+})();
+
+/* ---------------- yapılandırma ---------------- */
+const CFG={
+  sinif:5,kaynak:'Kaynak: MEB 5. sınıf Matematik 1. dönem ortak yazılı konu soru dağılım tablosu.',
+  K:{a:'Temel çizimler ve araçlar (5.3.1)',b:'Çizimlerin özellikleri (5.3.2)',c:'Açı ölçme (5.3.3)',d:'Doğruların oluşturduğu açılar (5.3.4)',e:'Çokgen ve doğrular (5.3.5)',f:'Çokgenlerin özellikleri (5.3.6)',g:'Çemberle üçgen inşası (5.3.7)'},
+  KST:{a:'cizim',b:'cizim',c:'aci',d:'dogru',e:'cokgen',f:'cokgen',g:'cember'},
+  SENS:['Senaryo 1','Senaryo 2','Senaryo 3','Senaryo 4','Senaryo 5'],
+  SEN:[['MAT.5.3.1','Çizim için araç ve teknoloji',1,1,1,1,1],['MAT.5.3.2','Temel çizimlerin özellikleri',1,1,0,1,1],['MAT.5.3.3','Açı ölçme',1,1,2,2,2],['MAT.5.3.4','İki–üç doğrunun oluşturduğu açılar',1,1,2,1,2],['MAT.5.3.5','Çokgen: ardışık kesişen doğrular',1,1,1,1,1],['MAT.5.3.6','Çokgenlerin özellikleri',1,2,1,0,0],['MAT.5.3.7','Kesişen çemberlerle üçgen inşası',1,0,0,0,0]],
+  senNote:'1. yazılının beş senaryosu var. <b>Senaryo 1</b>, yedi kazanımın hepsini kapsayan tek senaryodur; bu applet yedi kazanımın tamamını çalıştırır.',
+  ORDER:'Önerilen sıra: Çizim Atölyesi → İletki → Doğrular ve Açılar → Çokgenler → Pergel → Karma Tur. Bütün senaryolarda en çok soru açı ölçme ve doğruların oluşturduğu açılardan gelir.',
+  DESC:{cizim:'Nokta, doğru parçası, ışın, doğru, çember ve dikme çiz; araçları eşleştir.',aci:'İletkiyle açı ölç ve istenen açıyı oluştur; doğru ölçeği okumayı öğren.',dogru:'Kesişen ve paralel doğruların oluşturduğu açıları, üçgenin iç açılarını incele.',cokgen:'Çokgeni ardışık kesişen doğrular olarak gör; kenar ve açı özelliklerini keşfet.',cember:'Kesişen iki çemberle eşkenar, ikizkenar ve çeşitkenar üçgen inşa et.',karma:'Senaryo provası ya da geniş tur; güven işaretiyle zayıf noktalarını gör.'},
+  SINAV:['“Açıklayınız” gördüğünde: sonuç + çünkü + kavram yaz.','Doğru parçası [AB]: 2 uç · ışın [AB: 1 başlangıç noktası · doğru: uç yok.','Cetvel: uzunluk · gönye: dik açı · pergel: çember · iletki: açı ölçüsü.','İletkinin merkezi köşeye, 0 çizgisi bir kola; kolun başladığı taraftaki 0’dan oku.','Dar < 90° = dik < geniş < 180° = doğru açı · tam açı 360°.','Kesişen iki doğruda ters açılar eşit, komşu açılar bütünler (180°).','Çokgen: ardışık kesişen en az 3 doğrunun sınırladığı kapalı şekil · düzgün çokgen: kenarlar ve açılar eş · üçgende iç açılar toplamı 180°.','Kesişen iki çemberde |AC| = r₁, |BC| = r₂: yarıçaplara göre eşkenar, ikizkenar ya da çeşitkenar üçgen.'],
+  CHECK:['Nokta, doğru parçası, ışın, doğru, çember ve dikmeyi uygun araçla çizebiliyorum.','Doğru parçası, ışın ve doğrunun farkını gösterimleriyle açıklayabiliyorum.','İletkiyle açı ölçüp istenen ölçüde açı çizebiliyorum.','Kesişen ve paralel doğruların oluşturduğu açılardan eş ve bütünler olanları bulabiliyorum.','Çokgenleri kenar, köşe ve açılarıyla tanıyıp düzgün olanları ayırt edebiliyorum.','Pergel ile eşkenar, ikizkenar ve çeşitkenar üçgen inşa edebiliyorum.'],
+  PLANS:{s1:{label:'Senaryo 1 (7)',plan:{a:1,b:1,c:1,d:1,e:1,f:1,g:1}},s2:{label:'Senaryo 2 (7)',plan:{a:1,b:1,c:1,d:1,e:1,f:2}},s3:{label:'Senaryo 3 (7)',plan:{a:1,c:2,d:2,e:1,f:1}},s4:{label:'Senaryo 4 (6)',plan:{a:1,b:1,c:2,d:1,e:1}},s5:{label:'Senaryo 5 (7)',plan:{a:1,b:1,c:2,d:2,e:1}},genis:{label:'Geniş tur (12)',plan:{a:2,b:1,c:2,d:2,e:1,f:2,g:2}}},
+  BANK:[
+    ['a','Bir doğruya dikme çizmek için en uygun araç hangisidir?',['Gönye','Pergel','İletki','Açıölçer olmayan cetvel'],'Gönyenin dik açılı köşesi dikme çizmeyi sağlar.'],
+    ['a','Yarıçapı 3 cm olan bir çember çizmek için pergelin açıklığı kaç cm olmalıdır?',3,'Pergel açıklığı yarıçapa eşittir.','cm'],
+    ['a','Bir açının ölçüsünü bulmak için hangi araç kullanılır?',['İletki','Pergel','Gönye','Cetvel'],'İletki açıları derece cinsinden ölçer.'],
+    ['b','Hangisinin uzunluğu ölçülebilir?',['Doğru parçası','Işın','Doğru','Hiçbiri'],'Işın ve doğru sınırsız uzar.'],
+    ['b','[KL] ile [LK] için hangisi doğrudur?',['Aynı doğru parçasıdır.','Farklı doğru parçalarıdır.','Biri ışındır.','İkisi de doğrudur.'],'Doğru parçası için uç noktaların sırası önemli değildir.'],
+    ['b','A, B ve C noktaları aynı doğru üzerinde değilse bu noktalardan ikişer ikişer kaç doğru geçer?',3,'AB, BC ve AC doğruları.'],
+    ['c','İletkinin dış ölçeğinde 130 okunan bir açının iç ölçekteki karşılığı kaçtır?',50,'İki ölçekteki sayıların toplamı 180’dir.'],
+    ['c','Ölçüsü 180° olan açıya ne ad verilir?',['Doğru açı','Tam açı','Dik açı','Geniş açı'],'Doğru açı bir doğru boyunca açılır.'],
+    ['c','Hangisi bir geniş açının ölçüsü olabilir?',['135°','90°','45°','180°'],'Geniş açı 90° ile 180° arasındadır.'],
+    ['c','Saat tam 6’da akrep ile yelkovan arasındaki açı hangisidir?',['Doğru açı (180°)','Dik açı','Dar açı','Tam açı'],'Akrep 6’da, yelkovan 12’de: zıt yönler.'],
+    ['d','Kesişen iki doğrunun oluşturduğu bir açı 40° ise bu açının komşusu kaç derecedir?',140,'Komşu açılar bütünlerdir: 180 − 40.','°'],
+    ['d','Kesişen iki doğrunun oluşturduğu bir açı 72° ise ters açısı kaç derecedir?',72,'Ters açılar eşittir.','°'],
+    ['d','Paralel iki doğruyu kesen bir doğrunun oluşturduğu açılardan biri 110°’dir. Diğer açılardan biri hangisi olabilir?',['70°','100°','20°','90°'],'Açılar ya 110° ya da 180° − 110° = 70°’dir.'],
+    ['d','Bir üçgenin iki açısı 90° ve 35° ise üçüncü açısı kaç derecedir?',55,'180 − 90 − 35 = 55.','°'],
+    ['e','En az kaç doğru ardışık kesişerek kapalı bir şekil oluşturabilir?',3,'Üç doğru bir üçgen oluşturur.'],
+    ['e','Ardışık kesişen 6 doğrunun oluşturduğu çokgenin adı nedir?',['Altıgen','Beşgen','Sekizgen','Dörtgen'],'Her doğrudan bir kenar oluşur.'],
+    ['e','Hangisi çokgen olarak yorumlanamaz?',['İki ucu açık kırık çizgi','Kare','Üçgen','Düzgün altıgen'],'Çokgen kapalı bir şekildir.'],
+    ['f','Düzgün beşgenin bir kenarı 9 cm ise çevresi kaç cm’dir?',45,'5 × 9 = 45.','cm'],
+    ['f','Hangisi düzgün dörtgendir?',['Kare','Dikdörtgen','Kenarları eş ama açıları farklı dörtgen','Yamuk'],'Düzgün çokgende kenarlar ve açılar eştir.'],
+    ['f','Bir sekizgenin kaç köşesi vardır?',8,'Kenar, köşe ve açı sayıları eşittir.'],
+    ['g','|AB| = 5 cm. A ve B merkezli, yarıçapları 5 cm olan iki çemberin kesişim noktası C ise ABC üçgeni nedir?',['Eşkenar üçgen','İkizkenar ama eşkenar değil','Çeşitkenar üçgen','Dik üçgen'],'|AB| = |AC| = |BC| = 5 cm.'],
+    ['g','|AB| = 7 cm; A merkezli 5 cm ve B merkezli 5 cm yarıçaplı çemberlerin kesişim noktası C ise ABC üçgeni nedir?',['İkizkenar üçgen','Eşkenar üçgen','Çeşitkenar üçgen','Üçgen oluşmaz'],'|AC| = |BC| = 5 cm.'],
+    ['g','|AB| = 6 cm; A merkezli 4 cm ve B merkezli 5 cm yarıçaplı çemberlerin kesişim noktası C ise ABC üçgeninin çevresi kaç cm’dir?',15,'6 + 4 + 5 = 15.','cm'],
+  ],
+};
+/* =====================================================================
+   KARMA TUR (senaryoya göre)
+   ===================================================================== */
+(function(){
+  const v=views.karma;regTask('karma','k-tur');
+  const {K,KST,BANK,PLANS}=CFG;
+  let Q=[],qi=0,res=[];
+  const area=el('div');
+  v.append(el('div',{class:'card'},el('h2',{},'Karma Tur'),el('p',{class:'lead'},'Bütün istasyonlardan karışık sorular. Senaryo provası, sınavdaki konu dağılımını izler. Her sorudan önce ne kadar emin olduğunu seç: önce, emin olup yanlış yaptığın konuları çalış.'),area));
+  const curPlan=()=>PLANS[S.sen]?S.sen:'genis';
+  const start=()=>{const P=PLANS[curPlan()].plan;Q=[];for(const[k,n]of Object.entries(P))Q.push(...shuffle(BANK.filter(b=>b[0]===k)).slice(0,n));qi=0;res=[];ask()};
+  const intro=()=>{area.innerHTML='';
+    area.append(el('p',{class:'hint',style:'margin:0 0 6px'},'Tur türü:'),segChips(Object.entries(PLANS).map(([k,p])=>[k,p.label]),curPlan(),k=>{S.sen=k==='genis'?null:k;save()}),el('div',{style:'height:8px'}));
+    if(S.karma)area.append(el('p',{class:'hint'},`Son turun: ${S.karma.score} / ${S.karma.total}.`));
+    area.append(el('button',{class:'btn',type:'button',onclick:start},S.karma?'Yeni tur başlat':'Turu başlat'))};
+  views.karma._intro=intro;
+  const ask=()=>{area.innerHTML='';const q=Q[qi];let conf=null;
+    const confRow=el('div',{class:'conf'},'Ne kadar eminsin?',...[['e','Eminim'],['b','Biraz'],['t','Tahmin']].map(([k,t])=>el('button',{class:'chip',type:'button','aria-pressed':'false',onclick:e=>{conf=k;confRow.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));e.currentTarget.setAttribute('aria-pressed','true');ansBox.classList.remove('hidden')}},t)));
+    const fb=el('div',{class:'fb hidden'});const ansBox=el('div',{class:'body hidden'});
+    const next=el('button',{class:'btn hidden',type:'button',onclick:()=>{qi++;qi<Q.length?ask():finish()}},qi<Q.length-1?'Sonraki soru':'Sonucu gör');
+    const answer=ok=>{res.push({k:q[0],ok,conf,q:q[1]});fb.className='fb '+(ok?'ok':'bad');fb.innerHTML=(ok?'<b>Doğru.</b> ':'<b>Yanlış.</b> ')+q[3];next.classList.remove('hidden');confRow.querySelectorAll('button').forEach(b=>b.disabled=true)};
+    if(Array.isArray(q[2])){const order=shuffle(q[2].map((o,i)=>i));const bs=order.map(i=>el('button',{class:'opt',type:'button',onclick:()=>{bs.forEach(b=>b.disabled=true);const ok=i===0;bs[order.indexOf(i)].classList.add(ok?'right':'wrong');if(!ok)bs[order.indexOf(0)].classList.add('right');answer(ok)}},q[2][i]));ansBox.append(...bs)}
+    else{const inp=el('input',{type:'text',inputmode:'decimal',style:'width:110px;font-family:var(--f-mono)'});const go=()=>{const val=parseQ(inp.value);if(!isFinite(val))return;b.disabled=true;inp.disabled=true;const ok=Math.abs(val-q[2])<1e-6;inp.style.borderColor=ok?'var(--ok)':'var(--bad)';answer(ok)};const b=el('button',{class:'btn sm',type:'button',onclick:go},'Yanıtla');inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!b.disabled)go()});ansBox.append(el('div',{class:'row'},inp,q[4]?el('span',{},q[4]):null,b))}
+    area.append(el('div',{class:'qcard'},el('p',{class:'mono'},`Soru ${qi+1} / ${Q.length} · ${K[q[0]]}`),el('p',{style:'font-size:1.05rem'},el('b',{},q[1])),confRow,ansBox,fb,next))};
+  const finish=()=>{area.innerHTML='';const score=res.filter(r=>r.ok).length;S.karma={score,total:res.length,at:Date.now()};markDone('k-tur');save();GC('karma/'+curPlan()+'/'+score+'-'+res.length);
+    area.append(el('p',{style:'font-size:1.1rem'},el('b',{},`Sonuç: ${score} / ${res.length}`)));
+    for(const k of Object.keys(K)){const rs=res.filter(r=>r.k===k);if(!rs.length)continue;const p=rs.filter(r=>r.ok).length/rs.length;area.append(el('div',{class:'kbar'},el('span',{},K[k]),el('span',{class:'bar'},el('i',{style:`width:${p*100}%;background:${p>=.99?'var(--ok)':p>=.5?'var(--warn)':'var(--bad)'}`})),el('span',{class:'mono'},`${rs.filter(r=>r.ok).length}/${rs.length}`)))}
+    const cw=res.filter(r=>!r.ok&&r.conf==='e');
+    if(cw.length)area.append(el('div',{class:'fb bad',html:'<b>Emin olup yanlış yaptıkların</b> (önce bunları çalış):<br>'+cw.map(r=>'• '+r.q).join('<br>')}));
+    const weak=[...new Set(res.filter(r=>!r.ok).map(r=>KST[r.k]))];
+    if(weak.length)area.append(el('p',{},'Tekrar etmen önerilen istasyonlar: ',...weak.map(w=>el('button',{class:'chip',type:'button',onclick:()=>show(w)},STATIONS.find(s=>s.id===w).ad))));
+    else area.append(el('div',{class:'fb ok',html:'<b>Harika!</b> Bütün soruları doğru yaptın.'}));
+    area.append(el('div',{style:'height:8px'}),el('button',{class:'btn',type:'button',onclick:intro},'Yeni tur'))};
+  intro();
+})();
+
+/* =====================================================================
+   0) HARİTA
+   ===================================================================== */
+let resetArm=false;
+function renderHarita(){
+  const v=views.harita;v.innerHTML='';
+  const n=CFG.SENS.length;
+  const tbl=el('table',{class:'tbl sen'});
+  const hl=i=>(S.sen==='s'+(i+1)||n===1)?'c hl':'c';
+  tbl.append(el('tr',{},el('th',{},'Kazanım'),...CFG.SENS.map((s,i)=>el('th',{class:hl(i)},s))));
+  CFG.SEN.forEach(r=>tbl.append(el('tr',{},el('td',{},el('span',{class:'kod'},r[0]),' ',r[1]),...r.slice(2).map((c,i)=>el('td',{class:hl(i)},c||'–')))));
+  tbl.append(el('tr',{},el('td',{},el('b',{},'Toplam soru')),...CFG.SENS.map((s,i)=>el('td',{class:hl(i)},el('b',{},String(CFG.SEN.reduce((a,r)=>a+(r[i+2]||0),0)))))));
+  const chips=segChips([...CFG.SENS.map((s,i)=>['s'+(i+1),s]),['x','Bilmiyorum']],S.sen||'x',k=>{S.sen=k==='x'?null:k;save();renderHarita();views.karma._intro&&views.karma._intro()});
+  v.append(el('div',{class:'grid2'},
+    el('div',{class:'card'},el('h2',{},'Sınavda ne var?'),el('p',{class:'lead',html:CFG.senNote}),
+      ...(n>1?[el('p',{class:'hint',style:'margin:0 0 6px'},'Okulunun senaryosunu biliyorsan seç; Karma Tur buna göre ayarlanır:'),chips]:[]),el('div',{style:'height:8px;overflow-x:auto'}),el('div',{style:'overflow-x:auto'},tbl),
+      el('p',{class:'hint',style:'margin:8px 0 0'},CFG.kaynak||('Kaynak: MEB '+CFG.sinif+'. sınıf Fen Bilimleri 1. dönem ortak yazılı konu soru dağılım tablosu.'))),
+    el('div',{class:'card'},el('h2',{},'Nereden başlamalı?'),el('p',{class:'lead'},CFG.ORDER))));
+  const grid=el('div',{class:'stations'});
+  STATIONS.slice(1).forEach(s=>{const ts=TASKS[s.id]||[];const d=ts.filter(t=>S.done[t]).length;
+    grid.append(el('div',{class:'card st'},el('h3',{},s.ad),el('span',{class:'kod',style:'align-self:flex-start'},s.kod),el('p',{class:'hint'},CFG.DESC[s.id]),el('div',{class:'ring'},el('span',{class:'bar'},el('i',{style:`width:${ts.length?d/ts.length*100:0}%`})),`${d}/${ts.length}`),el('button',{class:'btn sm',type:'button',onclick:()=>show(s.id)},d?'Devam et':'Başla')))});
+  v.append(el('div',{style:'height:14px'}),grid,el('div',{style:'height:14px'}));
+  const two=el('div',{class:'grid2'});
+  two.append(el('div',{class:'card'},el('h3',{},'Cebimdeki '+CFG.SINAV.length+' cümle'),el('ol',{class:'rules'},...CFG.SINAV.map(t=>el('li',{},t)))));
+  const ck=el('div',{class:'card'},el('h3',{},'Kendimi kontrol ediyorum'));
+  CFG.CHECK.forEach((t,i)=>{const cb=el('input',{type:'checkbox',id:'ck'+i,style:'width:18px;height:18px;accent-color:var(--ok);flex:none'});cb.checked=!!S.check[i];cb.addEventListener('change',()=>{S.check[i]=cb.checked;save()});ck.append(el('label',{class:'row',for:'ck'+i,style:'align-items:flex-start;margin:4px 0;cursor:pointer;flex-wrap:nowrap'},cb,el('span',{},t)))});
+  const rb=el('button',{class:'btn ghost sm',type:'button',onclick:()=>{if(!resetArm){resetArm=true;rb.textContent='Emin misin? Bütün ilerleme silinir.';rb.style.borderColor='var(--bad)';rb.style.color='var(--bad)';setTimeout(()=>{if(resetArm){resetArm=false;rb.textContent='İlerlemeyi sıfırla';rb.style.borderColor='';rb.style.color=''}},4000);return}
+    S={done:{},karma:null,check:{},sen:null};save();location.reload()}},'İlerlemeyi sıfırla');
+  ck.append(el('div',{style:'height:8px'}),rb);
+  two.append(ck);v.append(two);
+}
+function updateProgress(){
+  let all=0,d=0;STATIONS.slice(1).forEach(s=>{const ts=TASKS[s.id]||[];const dd=ts.filter(t=>S.done[t]).length;all+=ts.length;d+=dd;const c=$('#tc-'+s.id);if(c)c.textContent=ts.length?`${dd}/${ts.length}`:''});
+  $('#totTxt').textContent=`${d} / ${all} görev`;$('#totBar').style.width=(all?d/all*100:0)+'%';
+}
+renderHarita();updateProgress();
+try{const t=sessionStorage.getItem(KEY+'-tab');if(t&&views[t])show(t)}catch(e){}
+})();
+</script>
+<script data-goatcounter="https://sevilunaldogansegem.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
