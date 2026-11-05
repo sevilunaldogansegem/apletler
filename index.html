@@ -15,23 +15,24 @@
    konular  : etiketler (arama ve filtrelemede kullanılır)
    kazanim  : MEB öğrenme çıktısı kodu (yoksa "")
    eklendi  : YYYY-AA-GG (son 30 gün içindekiler "Yeni" etiketi alır)
+   sinav    : (isteğe bağlı) yazılı sınav tarihi, YYYY-AA-GG. Yaklaşan sınavlar ana sayfanın en üstünde, en yakın tarih önce olacak şekilde listelenir; sınav günü ve sonrası "geçmiş" sayılır ve sona düşer.
    anahtar  : (isteğe bağlı) görünmeyen ek arama kelimeleri
    ================================================================ */
 const APPLETLER = [
   { dosya:"fen-genel-tekrar-5.html", ad:"5. Sınıf Fen Bilimleri, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:5, ders:"Fen Bilimleri", alan:"Sınav hazırlığı", dil:"tr",
     konular:["Ay’ın özellikleri","dönme ve dolanma","Ay’ın evreleri","Güneş, Dünya ve Ay modeli","hacimsel büyüklük"],
     aciklama:"Gök taşı ve sıcaklık simülasyonu, Ay’ın dönme–dolanma modeli, evre laboratuvarı (sürükle, adlandır, konum bul, sırala), Güneş–Dünya–Ay animasyonunu düzeltme ve karışık bir tekrar turu.",
-    kazanim:"FB.5.1.2 · 5.1.3 · 5.1.4", eklendi:"2026-10-31",
+    kazanim:"FB.5.1.2 · 5.1.3 · 5.1.4", eklendi:"2026-10-31", sinav:"2026-11-03",
     anahtar:"ortak yazılı oyss senaryo 2 krater atmosfer yeni ay ilk dördün dolunay son dördün hilal şişkin ay 29,5 gün 27 gün 8 saat" },
   { dosya:"fen-genel-tekrar-6.html", ad:"6. Sınıf Fen Bilimleri, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:6, ders:"Fen Bilimleri", alan:"Sınav hazırlığı", dil:"tr",
     konular:["Güneş sistemi","gezegenler","Güneş tutulması","Ay tutulması","bileşke kuvvet","dengelenmiş kuvvet","sürat ve hız","eşeyli ve eşeysiz üreme"],
     aciklama:"Gezegen laboratuvarı, tutulma simülasyonu, kuvvet ve hareket deneyleri, yürüyüşle sürat–hız, üreme kartları ve senaryo provalı karma tur.",
-    kazanim:"FB.6.1.1 · 6.1.3 · 6.2.1–6.2.3 · 6.3.1", eklendi:"2026-11-02",
+    kazanim:"FB.6.1.1 · 6.1.3 · 6.2.1–6.2.3 · 6.3.1", eklendi:"2026-11-02", sinav:"2026-11-03",
     anahtar:"ortak yazılı oyss senaryo 1 merkür venüs dünya mars jüpiter satürn uranüs neptün asteroit karasal gazsal uydu halka yeni ay dolunay newton yer değiştirme alınan yol vejetatif bölünme tomurcuklanma rejenerasyon" },
   { dosya:"fen-genel-tekrar-7.html", ad:"7. Sınıf Fen Bilimleri, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:7, ders:"Fen Bilimleri", alan:"Sınav hazırlığı", dil:"tr",
     konular:["uzay teknolojileri","uzay kirliliği","yıldızların yaşamı","iş","kinetik enerji","potansiyel enerji"],
     aciklama:"Uzay araçları, uzay kirliliği, yıldızların yaşamı, iş ve enerji: simülasyonlu istasyonlar, görevler ve karışık bir tekrar turu.",
-    kazanim:"FB.7.1.1 · 7.1.3 · 7.1.4 · 7.2.1 · 7.2.2", eklendi:"2026-10-29",
+    kazanim:"FB.7.1.1 · 7.1.3 · 7.1.4 · 7.2.1 · 7.2.2", eklendi:"2026-10-29", sinav:"2026-11-03",
     anahtar:"ortak yazılı oyss senaryo 3 teleskop uydu sonda mekik süpernova beyaz cüce joule" },
   { dosya:"fen-kapsamli-tekrar-8.html", ad:"8. Sınıf Fen Bilimleri, 1. Dönem 1. Yazılı Sınav - Kapsamlı Tekrar", sinif:8, ders:"Fen Bilimleri", alan:"Sınav hazırlığı", dil:"tr",
     konular:["mevsimlerin oluşumu","DNA","DNA eşlenmesi","kalıtım","fenotip ve genotip","çaprazlama","değişkenler"],
@@ -46,32 +47,32 @@ const APPLETLER = [
   { dosya:"mat-genel-tekrar-5.html", ad:"5. Sınıf Matematik, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:5, ders:"Matematik", alan:"Sınav hazırlığı", dil:"tr",
     konular:["temel geometrik çizimler","ışın ve doğru","açı ölçme","iletki","kesişen ve paralel doğrular","çokgenler","çember ile üçgen inşası"],
     aciklama:"Çizim atölyesi, iletki laboratuvarı, doğruların oluşturduğu açılar, çokgen atölyesi, pergelle üçgen inşası ve senaryo provalı karma tur.",
-    kazanim:"MAT.5.3.1–5.3.7", eklendi:"2026-11-03",
+    kazanim:"MAT.5.3.1–5.3.7", eklendi:"2026-11-03", sinav:"2026-11-05",
     anahtar:"ortak yazılı oyss senaryo 1 2 3 4 5 doğru parçası dikme gönye pergel dar açı dik açı geniş açı ters açı bütünler tümler düzgün çokgen eşkenar ikizkenar çeşitkenar" },
   { dosya:"mat-genel-tekrar-6.html", ad:"6. Sınıf Matematik, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:6, ders:"Matematik", alan:"Sınav hazırlığı", dil:"tr",
     konular:["çarpanlar ve katlar","bölünebilme kuralları","asal sayılar","asal çarpanlar","ortak kat ve ortak bölen","deneysel olasılık","ondalık gösterim"],
     aciklama:"Dikdörtgen atölyesi, bölünebilme dedektifi, Eratosthenes kalburu ve bölen merdiveni, ortak kat–bölen, olasılık deneyleri, basamak tablosu ve sınav provalı karma tur.",
-    kazanim:"MAT.6.1.1–6.1.5 · MAT.6.6.1", eklendi:"2026-11-03",
+    kazanim:"MAT.6.1.1–6.1.5 · MAT.6.6.1", eklendi:"2026-11-03", sinav:"2026-11-11",
     anahtar:"ülke geneli ortak sınav göreli sıklık kalbur asal çarpanlarına ayırma basamak değeri yuvarlama onda birler yüzde birler" },
   { dosya:"mat-genel-tekrar-7.html", ad:"7. Sınıf Matematik, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:7, ders:"Matematik", alan:"Sınav hazırlığı", dil:"tr",
     konular:["doğal, tam ve rasyonel sayılar","mutlak değer","ondalık açılım","devirli ondalık","karşılaştırma ve sıralama","rasyonel sayılarla işlemler","problem çözme"],
     aciklama:"Sayı kümeleri kart oyunu, mutlak değer, bölme makinesi, sıralama atölyesi, işlem makinesi, gerçek yaşam problemleri ve senaryo provalı karma tur.",
-    kazanim:"MAT.7.1.1–7.1.4", eklendi:"2026-11-03",
+    kazanim:"MAT.7.1.1–7.1.4", eklendi:"2026-11-03", sinav:"2026-11-05",
     anahtar:"ortak yazılı oyss senaryo 1 2 3 4 sonlu devirli işaret kuralı kesir ondalık" },
   { dosya:"sosyal-genel-tekrar-5.html", ad:"5. Sınıf Sosyal Bilgiler, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:5, ders:"Sosyal Bilgiler", alan:"Sınav hazırlığı", dil:"tr",
     konular:["gruplar ve roller","hak ve sorumluluk","kültürel özelliklere saygı","yardımlaşma ve dayanışma","sosyal sorumluluk projesi","göreceli konum"],
     aciklama:"Grup–rol ayrımı, hak ve sorumluluklar, kültür ögeleri, yardımlaşma kurumları, şehir krokisinde yön bulma, il bulmacası, yazılı provaları ve senaryo provalı karma tur.",
-    kazanim:"SB.5.1.1–5.1.3 · SB.5.2.1", eklendi:"2026-11-04",
+    kazanim:"SB.5.1.1–5.1.3 · SB.5.2.1", eklendi:"2026-11-04", sinav:"2026-11-06",
     anahtar:"ortak yazılı oyss senaryo 3 sosyal grup rol aile okul kulüp kültür imece ahilik vakıf sadaka taşı afad kızılay tema lösev yeşilay ana yön ara yön kuzeydoğu il komşu" },
   { dosya:"sosyal-genel-tekrar-6.html", ad:"6. Sınıf Sosyal Bilgiler, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:6, ders:"Sosyal Bilgiler", alan:"Sınav hazırlığı", dil:"tr",
     konular:["zaman içinde değişen roller","kültürel bağlar ve millî değerler","toplumsal sorunlar","müzakere","kıtalar ve okyanuslar","mutlak ve göreceli konum"],
     aciklama:"Hayat çizgisinde değişen roller, kültürel bağlar, müzakere masası, dünya haritasında kıta–okyanus bulma, paralel–meridyen laboratuvarı ve senaryo provalı karma tur.",
-    kazanim:"SB.6.1.1–6.1.3 · SB.6.2.1", eklendi:"2026-11-04",
+    kazanim:"SB.6.1.1–6.1.3 · SB.6.2.1", eklendi:"2026-11-04", sinav:"2026-11-06",
     anahtar:"ortak yazılı oyss senaryo 2 sosyal doğuştan sonradan rol dil bayrak istiklal marşı israf göç kirlilik bağımlılık paralel meridyen ekvator 666 km 76 dakika mavi vatan boğazlar komşu" },
   { dosya:"sosyal-genel-tekrar-7.html", ad:"7. Sınıf Sosyal Bilgiler, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:7, ders:"Sosyal Bilgiler", alan:"Sınav hazırlığı", dil:"tr",
     konular:["etkili iletişim","ben dili ve sen dili","fırsat eşitliği","özel gereksinimli bireyler","millî meseleler","küreselleşme"],
     aciklama:"Ben dili dönüştürücü, iletişim engelleri, erişilebilir sokak simülasyonu, millî meseleler zaman çizelgesi, küreselleşmenin günlük izleri ve senaryo provalı karma tur.",
-    kazanim:"SB.7.1.1–7.1.3 · SB.7.2.1", eklendi:"2026-11-04",
+    kazanim:"SB.7.1.1–7.1.3 · SB.7.2.1", eklendi:"2026-11-04", sinav:"2026-11-06",
     anahtar:"ortak yazılı oyss senaryo 3 sosyal empati beden dili etkin dinleme rampa kılavuz yüzey işaret dili kaynaştırma çanakkale millî mücadele kıbrıs 15 temmuz 6 şubat deprem küresel köy salgın ticaret" },
   { dosya:"ifade-atolyesi-5.html", ad:"İfade Atölyesi 5", sinif:5, ders:"Matematik", alan:"Geometri", dil:"tr",
     konular:["nokta ve doğru","çember","açılar","paralel ve dik doğrular","dörtgenler","köşegenler","üçgen"],
@@ -118,6 +119,8 @@ li>div{min-width:0}
 .d{color:var(--mute);font-size:.92rem;margin:2px 0 0}
 .badge{font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:2px;background:var(--acc-bg);color:var(--acc)}
 .badge.new{background:var(--new-bg);color:var(--new)}
+.badge.exam.soon{background:var(--new-bg);color:var(--new)}
+.badge.exam.past{background:var(--soft);color:var(--mute)}
 .act{display:flex;gap:6px;flex:none}
 .btn{border:1px solid var(--acc);background:var(--acc);color:var(--bg);font:inherit;font-size:.88rem;font-weight:700;padding:6px 12px;border-radius:8px;text-decoration:none;cursor:pointer;white-space:nowrap}
 .btn.ghost{background:transparent;color:var(--acc)}
@@ -159,6 +162,15 @@ const sira=d=>{const k=DERS_SIRASI.indexOf(d);return k<0?99:k};
 const byDers=(x,y)=>sira(x)-sira(y)||x.localeCompare(y,'tr');
 const byItem=(x,y)=>y.eklendi.localeCompare(x.eklendi)||(x.dil==='tr'?0:1)-(y.dil==='tr'?0:1)||x.ad.localeCompare(y.ad,'tr');
 const GRADES=[...new Set(items.map(a=>a.sinif))].sort((a,b)=>a-b);
+const AYLAR=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const _n=new Date(),_t0=new Date(_n.getFullYear(),_n.getMonth(),_n.getDate());
+const TODAY=_n.getFullYear()+'-'+String(_n.getMonth()+1).padStart(2,'0')+'-'+String(_n.getDate()).padStart(2,'0');
+/* 0: yaklaşan sınav (bugünden sonra), 1: geçmiş sınav (sınav günü dahil), 2: tarihsiz */
+const grp=a=>!a.sinav?2:a.sinav>TODAY?0:1;
+const byExam=(x,y)=>{const a=grp(x),b=grp(y);if(a!==b)return a-b;if(a===0)return x.sinav.localeCompare(y.sinav);if(a===1)return y.sinav.localeCompare(x.sinav);return 0};
+const examBadge=a=>{if(!a.sinav)return'';const [y,m,d]=a.sinav.split('-').map(Number);const diff=Math.round((new Date(y,m-1,d)-_t0)/864e5);
+  const lab=diff===0?' · Bugün':diff===1?' · Yarın':'';
+  return `<span class="badge exam${diff===1?' soon':diff<=0?' past':''}">Sınav: ${d} ${AYLAR[m-1]}${lab}</span>`};
 
 const st={q:'',sinif:null,ders:null};
 try{const u=new URLSearchParams(location.search);st.q=u.get('q')||'';const s=+u.get('sinif');st.sinif=GRADES.includes(s)?s:null;const d=u.get('ders');if(d&&st.sinif){const m=items.find(a=>slug(a.ders)===d);st.ders=m?m.ders:null}}catch(e){}
@@ -168,7 +180,7 @@ qEl.value=st.q;
 
 function row(a,where){
   const li=document.createElement('li');
-  li.innerHTML=`<div>${where?`<p class="where">${a.sinif}. sınıf · ${esc(a.ders)}</p>`:''}<div class="t"><a href="${esc(a.dosya)}">${esc(a.ad)}</a>${isNew(a)?'<span class="badge new">Yeni</span>':''}${a.dil==='en'?'<span class="badge" lang="en">English</span>':''}</div><p class="d"${a.dil==='en'?' lang="en"':''}>${esc(a.aciklama)}</p></div>
+  li.innerHTML=`<div>${where?`<p class="where">${a.sinif}. sınıf · ${esc(a.ders)}</p>`:''}<div class="t"><a href="${esc(a.dosya)}">${esc(a.ad)}</a>${examBadge(a)}${isNew(a)?'<span class="badge new">Yeni</span>':''}${a.dil==='en'?'<span class="badge" lang="en">English</span>':''}</div><p class="d"${a.dil==='en'?' lang="en"':''}>${esc(a.aciklama)}</p></div>
   <div class="act"><a class="btn" href="${esc(a.dosya)}">Aç</a><button type="button" class="btn ghost">Linki kopyala</button></div>`;
   li.querySelector('button').onclick=e=>copy(base+a.dosya,e.currentTarget);
   return li;
@@ -180,12 +192,14 @@ function render(){
   L.innerHTML='';
   if(st.q){
     const terms=norm(st.q).split(/\s+/).filter(Boolean);
-    const res=items.filter(a=>terms.every(t=>a.hay.includes(t))).sort((x,y)=>x.sinif-y.sinif||byDers(x.ders,y.ders)||byItem(x,y));
+    const res=items.filter(a=>terms.every(t=>a.hay.includes(t))).sort((x,y)=>byExam(x,y)||x.sinif-y.sinif||byDers(x.ders,y.ders)||byItem(x,y));
     if(!res.length){L.innerHTML='<div class="empty">Bu aramaya uyan applet yok.</div>';return}
     const h=document.createElement('h3');h.textContent=res.length+' sonuç';L.append(h,list(res,true));return;
   }
   if(!st.sinif){
-    const g=document.createElement('div');g.className='pick';
+    const up=items.filter(a=>grp(a)===0).sort((x,y)=>byExam(x,y)||x.sinif-y.sinif||byDers(x.ders,y.ders));
+    if(up.length){const hu=document.createElement('h3');hu.textContent='Yaklaşan sınavlar';L.append(hu,list(up,true));const hs=document.createElement('h3');hs.textContent='Sınıfa göre';L.appendChild(hs)}
+    const g=document.createElement('div');g.className='pick';g.style.marginTop='0';
     for(const s of GRADES){const arr=items.filter(a=>a.sinif===s);const b=document.createElement('button');b.type='button';b.className='tile';
       b.innerHTML=`<b>${s}. sınıf</b><span>${[...new Set(arr.map(a=>a.ders))].sort(byDers).map(esc).join(' · ')}</span>`;
       b.onclick=()=>go(s);g.appendChild(b)}
@@ -194,9 +208,9 @@ function render(){
   const back=document.createElement('button');back.type='button';back.className='back';back.textContent='← Tüm sınıflar';back.onclick=()=>go(null);
   const h=document.createElement('h2');h.textContent=st.sinif+'. sınıf';L.append(back,h);
   const inG=items.filter(a=>a.sinif===st.sinif&&(!st.ders||a.ders===st.ders));
-  for(const d of [...new Set(inG.map(a=>a.ders))].sort(byDers)){
-    const h3=document.createElement('h3');h3.textContent=d;L.append(h3,list(inG.filter(a=>a.ders===d).sort(byItem),false));
-  }
+  const secs=[...new Set(inG.map(a=>a.ders))].map(d=>({d,arr:inG.filter(a=>a.ders===d).sort((x,y)=>byExam(x,y)||byItem(x,y))}));
+  secs.sort((p,q)=>byExam(p.arr[0],q.arr[0])||byDers(p.d,q.d));
+  for(const {d,arr} of secs){const h3=document.createElement('h3');h3.textContent=d;L.append(h3,list(arr,false))}
 }
 function update(){
   $('clr').hidden=!st.q;
