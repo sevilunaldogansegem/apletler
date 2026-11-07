@@ -17,6 +17,7 @@
    eklendi  : YYYY-AA-GG (son 30 gün içindekiler "Yeni" etiketi alır)
    sinav    : (isteğe bağlı) yazılı sınav tarihi, YYYY-AA-GG. Yaklaşan sınavlar ana sayfanın en üstünde, en yakın tarih önce olacak şekilde listelenir; sınav günü ve sonrası "geçmiş" sayılır ve sona düşer.
    anahtar  : (isteğe bağlı) görünmeyen ek arama kelimeleri
+   kilitli  : (isteğe bağlı) true ise applet sınava 2 günden az kalana kadar açılmaz; "Aç / Linki kopyala" yerine "Yakında" görünür. Sınavdan bir gün önce kendiliğinden açılır (sinav alanı gerekir).
    ================================================================ */
 const APPLETLER = [
   { dosya:"fen-genel-tekrar-5.html", ad:"5. Sınıf Fen Bilimleri, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:5, ders:"Fen Bilimleri", alan:"Sınav hazırlığı", dil:"tr",
@@ -52,7 +53,7 @@ const APPLETLER = [
   { dosya:"mat-genel-tekrar-6.html", ad:"6. Sınıf Matematik, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:6, ders:"Matematik", alan:"Sınav hazırlığı", dil:"tr",
     konular:["çarpanlar ve katlar","bölünebilme kuralları","asal sayılar","asal çarpanlar","ortak kat ve ortak bölen","deneysel olasılık","ondalık gösterim"],
     aciklama:"Dikdörtgen atölyesi, bölünebilme dedektifi, Eratosthenes kalburu ve bölen merdiveni, ortak kat–bölen, olasılık deneyleri, basamak tablosu ve sınav provalı karma tur.",
-    kazanim:"MAT.6.1.1–6.1.5 · MAT.6.6.1", eklendi:"2026-11-03", sinav:"2026-11-11",
+    kazanim:"MAT.6.1.1–6.1.5 · MAT.6.6.1", eklendi:"2026-11-03", sinav:"2026-11-11", kilitli:true,
     anahtar:"ülke geneli ortak sınav göreli sıklık kalbur asal çarpanlarına ayırma basamak değeri yuvarlama onda birler yüzde birler" },
   { dosya:"mat-genel-tekrar-7.html", ad:"7. Sınıf Matematik, 1. Dönem 1. Yazılı Sınav - Genel Tekrar", sinif:7, ders:"Matematik", alan:"Sınav hazırlığı", dil:"tr",
     konular:["doğal, tam ve rasyonel sayılar","mutlak değer","ondalık açılım","devirli ondalık","karşılaştırma ve sıralama","rasyonel sayılarla işlemler","problem çözme"],
@@ -129,7 +130,7 @@ li{display:flex;align-items:center;justify-content:space-between;gap:16px;paddin
 li:first-child{border-top:0}
 li>div{min-width:0}
 .where{font-size:.8rem;color:var(--mute);margin:0}
-.t a{font-weight:700;color:var(--fg);text-decoration:none}
+.t a,.t .ttl{font-weight:700;color:var(--fg);text-decoration:none}
 .t a:hover{color:var(--acc);text-decoration:underline}
 .d{color:var(--mute);font-size:.92rem;margin:2px 0 0}
 .badge{font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:2px;background:var(--acc-bg);color:var(--acc)}
@@ -140,6 +141,7 @@ li>div{min-width:0}
 .btn{border:1px solid var(--acc);background:var(--acc);color:var(--bg);font:inherit;font-size:.88rem;font-weight:700;padding:6px 12px;border-radius:8px;text-decoration:none;cursor:pointer;white-space:nowrap}
 .btn.ghost{background:transparent;color:var(--acc)}
 .btn.done{border-color:var(--ok);color:var(--ok)}
+.btn.soon{background:transparent;color:var(--mute);border-color:currentColor;border-style:dashed;cursor:default;opacity:.85}
 .tile:focus-visible,.btn:focus-visible,.back:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 .empty{padding:28px 16px;text-align:center;color:var(--mute);border:1px dashed var(--line);border-radius:12px;margin-top:20px}
 footer{color:var(--mute);font-size:.85rem;padding:32px 0}
@@ -183,7 +185,10 @@ const TODAY=_n.getFullYear()+'-'+String(_n.getMonth()+1).padStart(2,'0')+'-'+Str
 /* 0: yaklaşan sınav (bugünden sonra), 1: geçmiş sınav (sınav günü dahil), 2: tarihsiz */
 const grp=a=>!a.sinav?2:a.sinav>TODAY?0:1;
 const byExam=(x,y)=>{const a=grp(x),b=grp(y);if(a!==b)return a-b;if(a===0)return x.sinav.localeCompare(y.sinav);if(a===1)return y.sinav.localeCompare(x.sinav);return 0};
-const examBadge=a=>{if(!a.sinav)return'';const [y,m,d]=a.sinav.split('-').map(Number);const diff=Math.round((new Date(y,m-1,d)-_t0)/864e5);
+const daysTo=a=>{const [y,m,d]=a.sinav.split('-').map(Number);return Math.round((new Date(y,m-1,d)-_t0)/864e5)};
+/* kilitli applet: sınava 2 günden az kalana kadar kapalı */
+const isLocked=a=>!!a.kilitli&&!!a.sinav&&daysTo(a)>=2;
+const examBadge=a=>{if(!a.sinav)return'';const [y,m,d]=a.sinav.split('-').map(Number);const diff=daysTo(a);
   const lab=diff===0?' · Bugün':diff===1?' · Yarın':'';
   return `<span class="badge exam${diff===1?' soon':diff<=0?' past':''}">Sınav: ${d} ${AYLAR[m-1]}${lab}</span>`};
 
@@ -195,9 +200,10 @@ qEl.value=st.q;
 
 function row(a,where){
   const li=document.createElement('li');
-  li.innerHTML=`<div>${where?`<p class="where">${a.sinif}. sınıf · ${esc(a.ders)}</p>`:''}<div class="t"><a href="${esc(a.dosya)}">${esc(a.ad)}</a>${examBadge(a)}${isNew(a)?'<span class="badge new">Yeni</span>':''}${a.dil==='en'?'<span class="badge" lang="en">English</span>':''}</div><p class="d"${a.dil==='en'?' lang="en"':''}>${esc(a.aciklama)}</p></div>
-  <div class="act"><a class="btn" href="${esc(a.dosya)}">Aç</a><button type="button" class="btn ghost">Linki kopyala</button></div>`;
-  li.querySelector('button').onclick=e=>copy(base+a.dosya,e.currentTarget);
+  const lk=isLocked(a);
+  li.innerHTML=`<div>${where?`<p class="where">${a.sinif}. sınıf · ${esc(a.ders)}</p>`:''}<div class="t">${lk?`<span class="ttl">${esc(a.ad)}</span>`:`<a href="${esc(a.dosya)}">${esc(a.ad)}</a>`}${examBadge(a)}${isNew(a)?'<span class="badge new">Yeni</span>':''}${a.dil==='en'?'<span class="badge" lang="en">English</span>':''}</div><p class="d"${a.dil==='en'?' lang="en"':''}>${esc(a.aciklama)}</p></div>
+  <div class="act">${lk?'<button type="button" class="btn soon" disabled aria-disabled="true" title="Sınava yaklaşınca açılacak">Yakında</button>':`<a class="btn" href="${esc(a.dosya)}">Aç</a><button type="button" class="btn ghost">Linki kopyala</button>`}</div>`;
+  if(!lk)li.querySelector('button').onclick=e=>copy(base+a.dosya,e.currentTarget);
   return li;
 }
 function list(arr,where){const ul=document.createElement('ul');arr.forEach(a=>ul.appendChild(row(a,where)));return ul}
