@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>7. Sınıf Türkçe, 1. Dönem 1. Yazılı Sınav - Genel Tekrar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Türkçe Genel Tekrar — istasyonlu bireysel çalışma appleti.
+   Renkler: defter kâğıdı, bordo mürekkep, mavi kalem. */
+:root{
+  --bg:#f1efea; --panel:#fffdf9; --paper:#fffefc; --ink:#24202a; --ink2:#615a68; --line:#ddd6cc; --soft:#ebe5dc;
+  --accent:#7b2d3b; --accent2:#2c5f8a; --accent-ink:#ffffff; --sea:#cfe6ec; --sea2:#9fcbd6;
+  --ok:#12715a; --okbg:#dff3ec; --bad:#c0301d; --badbg:#fde6e1; --warn:#9a5d00; --warnbg:#fff1d6;
+  --c1:#f2c48d; --c2:#bfe0a6; --c3:#f4a9a0; --c4:#c9b8ec; --c5:#a8d4f0; --c6:#f6e08a; --c7:#e7ecf2;
+  --f-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif; --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#14120f; --panel:#1e1b16; --paper:#191612; --ink:#f1ebe0; --ink2:#b8ab97; --line:#3a332a; --soft:#2a251e;
+  --accent:#f08a9b; --accent2:#7fb6e6; --accent-ink:#14120f; --sea:#16323a; --sea2:#245460;
+  --ok:#52d1a6; --okbg:#10332b; --bad:#ff8672; --badbg:#3b1b17; --warn:#f2b552; --warnbg:#3a2b0d;
+  --c1:#8a6332; --c2:#4f7a3c; --c3:#8e4a42; --c4:#5e4f8a; --c5:#36658a; --c6:#857228; --c7:#4b525c; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.45;padding-inline:16px;padding-block:16px 48px}
+.wrap{max-width:1180px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{background:#fff;border-radius:10px;padding:6px 10px;display:flex;align-items:center}
+.logo img{height:40px;width:auto;display:block}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.02em;margin:0;line-height:1.05;text-wrap:balance}
+h1 .h1b{display:block;font-size:.55em;font-weight:600;color:var(--ink2);margin-top:4px;letter-spacing:0}
+.sub{margin:4px 0 0;color:var(--ink2);max-width:62ch;font-size:.95rem}
+.total{font-family:var(--f-mono);font-size:.85rem;color:var(--ink2);display:flex;align-items:center;gap:10px}
+.total .bar{width:140px;height:10px;border-radius:99px;background:var(--soft);overflow:hidden;border:1px solid var(--line)}
+.total .bar i{display:block;height:100%;background:var(--ok);width:0}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.tab{flex:0 0 auto;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-weight:700;padding:9px 14px;border-radius:10px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.tab small{font-family:var(--f-mono);font-weight:500;font-size:.75rem;color:var(--ink2)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tab[aria-selected="true"] small{color:var(--bg);opacity:.8}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.tab:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.card{background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:14px;min-width:0}
+.card+.card{margin-top:14px}
+.grid2{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:14px;align-items:start}
+.grid2>.card+.card{margin-top:0}
+.grid2+.card,.card+.grid2,.grid2+.grid2{margin-top:14px}
+@media (max-width:900px){.grid2{grid-template-columns:minmax(0,1fr)}}
+h2{font-family:var(--f-display);font-size:1.2rem;margin:0 0 6px;letter-spacing:-.01em}
+h3{font-family:var(--f-display);font-size:1.02rem;margin:0 0 6px}
+.lead{margin:0 0 10px;color:var(--ink2);font-size:.95rem}
+.kod{font-family:var(--f-mono);font-size:.75rem;color:var(--ink2);background:var(--soft);padding:2px 7px;border-radius:6px}
+.btn{border:1.5px solid var(--accent);background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;padding:8px 14px;border-radius:10px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.sm{padding:5px 10px;font-size:.88rem}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:.86rem;padding:5px 10px;border-radius:999px;cursor:pointer}
+.chip:hover{border-color:var(--accent2)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.seg{display:flex;gap:4px;flex-wrap:wrap;margin:12px 0}
+.ctl{display:flex;flex-direction:column;gap:2px;margin-bottom:8px}
+.ctl label{font-size:.85rem;color:var(--ink2);display:flex;justify-content:space-between;gap:8px}
+.ctl label output{font-family:var(--f-mono);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--accent);height:28px}
+input[type=number],input[type=text],select,textarea{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:6px 8px}
+input[type=number]{width:100px;font-family:var(--f-mono)}
+select{max-width:100%}
+textarea{width:100%;min-height:110px;resize:vertical;line-height:1.5}
+svg{display:block;max-width:100%;height:auto}
+.stage{background:var(--paper);border:1.5px solid var(--line);border-radius:10px;width:100%}
+.tasks{display:flex;flex-direction:column;gap:8px}
+.task{border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel)}
+.task.done{border-color:var(--ok);background:var(--okbg)}
+.task .head{display:flex;gap:8px;align-items:flex-start}
+.task .num{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-mono);font-size:.78rem;background:var(--soft);color:var(--ink2)}
+.task.done .num{background:var(--ok);color:var(--panel)}
+.task p{margin:0}
+.task .body{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.src{background:var(--soft);border-left:4px solid var(--accent2);border-radius:8px;padding:9px 12px;font-size:.94rem;margin:0}
+.src cite{display:block;font-style:normal;font-size:.8rem;color:var(--ink2);margin-top:4px}
+.roman{margin:4px 0 0;padding-left:0;list-style:none}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-size:.92rem;padding:7px 10px;border-radius:9px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--accent2)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt:disabled{cursor:default}
+.optgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:6px}
+.fb{font-size:.9rem;padding:8px 10px;border-radius:9px}
+.fb.ok{background:var(--okbg);color:var(--ok)}
+.fb.bad{background:var(--badbg);color:var(--bad)}
+.fb.info{background:var(--warnbg);color:var(--warn)}
+.fb b{color:inherit}
+.status{font-size:.85rem;color:var(--ink2);font-style:italic}
+.hint{font-size:.85rem;color:var(--ink2)}
+.stations{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.stations .card+.card{margin-top:0}
+.st{display:flex;flex-direction:column;gap:6px}
+.st .ring{display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.82rem;color:var(--ink2)}
+.st .ring .bar{flex:1;height:8px;border-radius:99px;background:var(--soft);overflow:hidden}
+.st .ring .bar i{display:block;height:100%;background:var(--ok)}
+.rules{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.tbl{border-collapse:collapse;width:100%;font-size:.92rem}
+.tbl th,.tbl td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:middle}
+.tbl th{background:var(--soft)}
+.tbl td.ok{background:var(--okbg)}
+.tbl td.bad{background:var(--badbg)}
+.qcard{display:flex;flex-direction:column;gap:8px}
+.conf{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:.85rem;color:var(--ink2)}
+.kbar{display:grid;grid-template-columns:minmax(120px,260px) 1fr auto;gap:8px;align-items:center;font-size:.9rem;margin:4px 0}
+.kbar .bar{height:12px;border-radius:99px;background:var(--soft);overflow:hidden;border:1px solid var(--line)}
+.kbar .bar i{display:block;height:100%}
+.olist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.olist li{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--paper)}
+.olist li.ok{border-color:var(--ok);background:var(--okbg)}
+.olist li.bad{border-color:var(--bad);background:var(--badbg)}
+.olist li .tx{flex:1}
+.olist li .dt{font-family:var(--f-mono);font-size:.8rem;color:var(--ok)}
+.olist li button{border:1.5px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;width:32px;height:30px;cursor:pointer;font:inherit}
+.checks label{display:flex;gap:8px;align-items:flex-start;margin:4px 0;cursor:pointer}
+.checks input{width:18px;height:18px;flex:none;accent-color:var(--ok);margin-top:2px}
+.model{background:var(--okbg);border-radius:10px;padding:10px 12px;font-size:.94rem}
+.model b{color:var(--ok)}
+.meter3{display:grid;grid-template-columns:110px 1fr 40px;gap:8px;align-items:center;font-size:.88rem;margin:4px 0}
+.meter3 .bar{height:12px;border-radius:99px;background:var(--soft);overflow:hidden;border:1px solid var(--line)}
+.meter3 .bar i{display:block;height:100%;transition:width .3s}
+.pill{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--soft);color:var(--ink2);margin:2px 4px 2px 0}
+.hot{cursor:pointer}
+.hot:hover .ring2{stroke:var(--accent2);stroke-width:3}
+footer{color:var(--ink2);font-size:.82rem;text-align:center;margin-top:8px}
+.hidden{display:none !important}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.mono{font-family:var(--f-mono)}
+@media (max-width:560px){.kbar{grid-template-columns:1fr}.meter3{grid-template-columns:90px 1fr 36px}}
+details summary{margin:4px 0;cursor:pointer;font-weight:700}
+.hright{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.ig{display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 6px;border:1.5px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);text-decoration:none;font-weight:700;font-size:.88rem}
+.ig:hover{border-color:#d62976;color:#d62976}
+.ig svg{display:block;flex:none}
+@media (max-width:560px){.hright{align-items:flex-start}.ig span{font-size:.8rem}}
+.segem-foot{line-height:1.55;font-size:.8rem;margin-top:12px}
+.pick{line-height:2.05;font-size:1rem;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;margin:0}
+.tok{font:inherit;color:inherit;background:none;border:0;border-bottom:1.5px dotted var(--line);border-radius:5px;padding:1px 2px;margin:0;cursor:pointer;line-height:1.5}
+.tok:hover:not(:disabled){background:var(--soft)}
+.tok.on{background:var(--warnbg);color:var(--warn);border-bottom-color:var(--warn)}
+.tok.ok{background:var(--okbg);color:var(--ok);border-bottom-color:var(--ok)}
+.tok.bad{background:var(--badbg);color:var(--bad);border-bottom-color:var(--bad)}
+.tok.miss{outline:2px dashed var(--ok);outline-offset:1px}
+.tok:disabled{cursor:default}
+.fill{line-height:2.2;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px}
+.fill select{font-family:var(--f-mono);padding:1px 4px;margin:0 3px;min-width:52px}
+.fill select.ok{border-color:var(--ok);background:var(--okbg)}
+.fill select.bad{border-color:var(--bad);background:var(--badbg)}
+.tbl td.c{text-align:center;font-family:var(--f-mono)}
+.tbl td.z{color:var(--line)}
+u{text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--accent2)}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo"><img alt="Özel Sevil Ünal Doğan Sosyal Etkinlik ve Gelişim Merkezi" src="data:image/png;base64,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"></div>
+    <div>
+      <h1>7. Sınıf Türkçe<span class="h1b">1. Dönem 1. Yazılı Sınav - Genel Tekrar</span></h1>
+      <p class="sub">Kelime tahmini, metni anlama, metin yapısı, yazım–noktalama ve yazılı anlatım: sınav öncesi bireysel çalışma. Önce dene, sonra metinden kanıtını göster.</p>
+    </div>
+  </div>
+  <div class="hright">
+    <a class="ig" href="https://www.instagram.com/sevilunaldogansegem/" target="_blank" rel="noopener" data-goatcounter-click="instagram" title="SEGEM Instagram sayfası" aria-label="Özel Sevil Ünal Doğan SEGEM Instagram sayfası">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><defs><linearGradient id="igG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".3" stop-color="#fa7e1e"/><stop offset=".6" stop-color="#d62976"/><stop offset=".85" stop-color="#962fbf"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#igG)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="#fff"/></svg>
+      <span>@sevilunaldogansegem</span></a>
+    <div class="total"><span id="totTxt">0 / 0 görev</span><span class="bar"><i id="totBar"></i></span></div>
+  </div>
+</header>
+<nav class="tabs" role="tablist" aria-label="İstasyonlar" id="tabs"></nav>
+<main id="views"></main>
+<footer class="segem-foot">Hazırlayan: Özel Sevil Ünal Doğan Sosyal Etkinlik ve Gelişim Merkezi<br>Kaynak: T.C. Millî Eğitim Bakanlığı, Türkiye Yüzyılı Maarif Modeli Türkçe Dersi Öğretim Programı (Ortaokul); MEB Türkçe 7 ders kitabı; MEB 7. sınıf Türkçe 1. dönem ortak yazılı sınavlar konu soru dağılım tablosu; MEB TEGM “Yazılıya Hazırlanıyorum” içeriği. Okuma metinleri bu çalışma için yazılmıştır.<br>İlerleme yalnızca bu tarayıcıda saklanır.<br>© 2026 Özel Sevil Ünal Doğan Sosyal Etkinlik ve Gelişim Merkezi. Tüm hakları saklıdır. Bu içeriğin tamamı ya da bir bölümü, yazılı izin alınmadan çoğaltılamaz, dağıtılamaz, değiştirilemez ve yayımlanamaz (5846 sayılı Fikir ve Sanat Eserleri Kanunu). Öğretim programı metinleri ve kazanım kodları MEB’e aittir.</footer>
+</div>
+<script>
+
+window.APP={
+key:'turkce7-genel-tekrar-v1', gc:'turkce7',
+stations:[
+  {id:'kelime',ad:'Kelime Dedektifi',kod:'T.O.7.4 · T.O.7.21'},
+  {id:'anlam',ad:'Metni Anlama',kod:'T.O.7.5 · 7.7 · 7.8'},
+  {id:'bilgi',ad:'Bilgilendirici Metin',kod:'T.O.7.14 · 7.15'},
+  {id:'yazim',ad:'Yazım ve Noktalama',kod:'T.Y.7.21'},
+  {id:'yazma',ad:'Yazılı Anlatım',kod:'T.Y.7.3 · 7.18'},
+],
+build:{},
+harita:{
+  lead:'Önerilen sıra: Kelime Dedektifi → Metni Anlama → Bilgilendirici Metin → Yazım ve Noktalama → Yazılı Anlatım → Karma Tur. Okulların seçebileceği altı senaryonun <b>hepsindeki</b> öğrenme çıktıları kapsandı; okulunun senaryosunu biliyorsan aşağıdaki tablodan hangi çıktıların sınavda olduğuna bak. Sınavda çoktan seçmeli soru beklenmez, cevabı sen yazacaksın. Bu yüzden her istasyonda bir “yazılı provası” var.',
+  desc:{kelime:'Bilmediğin kelimenin anlamını metindeki ipuçlarından tahmin et; gerçek–mecaz anlamı ve söz varlığı unsurlarını ayır.',anlam:'Konu ile ana fikri ayır, metinde açıkça verilen bilgiyi bul, ipuçlarından gizli mesaja ulaş.',bilgi:'Sebep-sonuç, karşılaştırma/zıtlık, sıralı ve açıklayıcı metin yapılarını tanı; anahtar kelimeleri seç.',yazim:'İkilemelerin yazımı, noktalı virgül ve üç noktanın görevleri, de/ki/mi’nin yazımı.',yazma:'Taslak hazırla, verilen ifadeler ve benzetmelerle metin tamamla, ikna edici ve bilgilendirici paragraf yaz.'},
+  dagilimBaslik:'Senaryolara göre soru dağılımı',
+  dagilimNot:'Kaynak: MEB, 7. sınıf Türkçe 1. dönem ortak yazılı sınavlar konu soru dağılım tablosu (1. ortak yazılı, Senaryo 1–6). Her sütun bir senaryodur; sayılar o çıktıdan gelecek soru sayısıdır.',
+  dagilimCols:['S1','S2','S3','S4','S5','S6'],
+  dagilim:[['T.O.7.4','Anlamını bilmediği kelimeyi tahmin etme',[1,0,1,1,1,1]],['T.O.7.5','Metnin yüzey anlamı',[1,1,2,2,2,2]],['T.O.7.7','Derin anlam: basit çıkarım',[0,1,1,1,0,0]],['T.O.7.8','Derin anlam: üst düzey çıkarım',[1,0,0,0,0,0]],['T.O.7.14','Metin yapısından önemli bilgiyi belirleme',[0,1,0,0,0,0]],['T.O.7.15','Anahtar kelimeleri belirleme',[0,1,0,0,0,0]],['T.O.7.21','Metinden hareketle söz varlığını geliştirme',[1,0,1,1,1,1]],['T.Y.7.3','Yazıda içerik ve yapı seçimleri',[1,1,1,0,1,0]],['T.Y.7.18','Yazıyı söz varlığıyla zenginleştirme',[1,0,0,1,0,1]],['T.Y.7.21','Yazım kuralları ve noktalama',[1,1,1,1,1,1]]],
+  sinav:['Kelime tahmininde iki şey yaz: <b>tahminin</b> ve seni bu tahmine götüren <b>metindeki ifade</b>. Gerekçesiz tahmin yarım puan alır.','<b>Konu</b> metnin neyden söz ettiğidir (kısa bir ifade). <b>Ana fikir</b> yazarın vermek istediği mesajdır (bir cümle).','“En az iki ipucuyla açıklayınız” diyorsa ipuçlarını metinden aynen al, sonra her birinin neyi gösterdiğini yaz.','Sebep-sonuç yapısının işaretleri: <i>çünkü, bu nedenle, bu yüzden, sonuç olarak, dolayısıyla</i>. Karşılaştırmanın işaretleri: <i>oysa, buna karşılık, benzer şekilde</i>.','İkilemeler ayrı yazılır, araya virgül ya da kısa çizgi girmez: <i>apar topar, hızlı hızlı</i>.','Noktalı virgül: tür ve takımları ayırır, virgüllü sıralı cümleleri ayırır, eş değer ögeli cümlede özneden sonra gelir. Üç nokta: eksik bırakılan cevap, pekiştirilen ünlem ve seslenme, okura bırakılan söz.','Yazılı anlatımda önce taslak: giriş–gelişme–sonuç. İstenen ifadelerin hepsini kullandığını kontrol et.'],
+  check:['Bilmediğim bir kelimenin anlamını metindeki ipucunu göstererek tahmin edebiliyorum.','Bir metnin konusunu ve ana fikrini ayrı ayrı yazabiliyorum.','Bir karakterin değişimini metinden en az iki ipucuyla açıklayabiliyorum.','Bir metnin yapısını (sebep-sonuç, karşılaştırma vb.) bulup üç anahtar kelime seçebiliyorum.','İkilemeleri doğru yazıyor; noktalı virgül ve üç noktanın görevlerini sayabiliyorum.','Giriş–gelişme–sonuç taslağı hazırlayıp istenen ifadeleri ve benzetmeleri kullanarak metin yazabiliyorum.']
+},
+karma:{
+  labels:{K:'Kelime ve söz varlığı (T.O.7.4, 7.21)',A:'Metni anlama (T.O.7.5, 7.7, 7.8)',B:'Metin yapısı ve anahtar kelime (T.O.7.14, 7.15)',Y:'Yazım ve noktalama (T.Y.7.21)',Z:'Yazılı anlatım (T.Y.7.3, 7.18)'},
+  st:{K:'kelime',A:'anlam',B:'bilgi',Y:'yazim',Z:'yazma'},
+  plan:{K:4,A:4,B:2,Y:4,Z:2},
+  bank:[
+    {k:'K',src:'Uzun yürüyüşten sonra çadıra vardığımızda dizlerimizde derman kalmamıştı; hepimiz kendimizi yere bıraktık.',q:'“Derman” kelimesi metinde hangi anlamda kullanılmıştır?',o:['Güç, kuvvet','Ağrı ve sızı','İstek ve heves','Hız, çabukluk'],e:'“Kendimizi yere bıraktık” ifadesi, yorgunluktan gücün tükendiğini gösterir.'},
+    {k:'K',src:'Yarışmada adı okunduğunda Elif’in yanakları kızardı; teşekkür ederken mahcup bir sesle konuştu, gözlerini yerden kaldıramadı.',q:'“Mahcup” kelimesinin anlamı aşağıdakilerden hangisidir?',o:['Utangaç','Öfkeli, kızgın','Yorgun, bitkin','Kararlı, azimli'],e:'Yanakların kızarması ve gözlerini yerden kaldıramaması utanmayı gösterir.'},
+    {k:'K',src:'Otobüs her gün aynı güzergâhı izler: önce çarşıya uğrar, sonra köprüden geçip hastanenin önünde durur.',q:'“Güzergâh” kelimesinin metindeki anlamı nedir?',o:['İzlenen yol','Bekleme yeri','Yolculuk ücreti','Varış saati'],e:'“Önce çarşı, sonra köprü, sonra hastane” sıralaması bir yolu anlatır.'},
+    {k:'K',q:'Aşağıdaki cümlelerin hangisinde altı çizili kelime mecaz anlamda kullanılmıştır?',o:['Bu haberle <u>yüreği</u> ağzına geldi.','Çocuğun <u>yüreği</u> çok hızlı atıyordu.','Doktor hastanın <u>yüreğini</u> dinledi.','Serçenin <u>yüreği</u> küçük olurmuş.'],e:'“Yüreği ağzına gelmek” deyimdir; yürek gerçek anlamından uzaklaşmıştır.'},
+    {k:'K',q:'Aşağıdakilerden hangisi bir atasözüdür?',o:['Damlaya damlaya göl olur.','Ağzı kulaklarına varmak','Hayırlı olsun, komşum!','Yavaş yavaş, adım adım'],e:'Atasözü, kalıplaşmış ve öğüt veren bir yargı bildirir.'},
+    {k:'K',q:'“Kulak kesilmek” deyiminin anlamı hangisidir?',o:['Dikkatle dinlemek','Söyleneni hiç duymamak','Yüksek sesle konuşmak','Söz dinlememek'],e:'Kulak kesilmek, bütün dikkatiyle dinlemektir.'},
+    {k:'K',src:'Fırtınadan sonra liman sükûnete kavuştu; dalgalar duruldu, martılar yeniden suyun üstüne kondu.',q:'Metne göre “sükûnet” ne demektir?',o:['Dinginlik','Kalabalık ve gürültü','Soğuk ve karanlık','Telaş ve heyecan'],e:'Dalgaların durulması ve martıların suya konması sakinliği gösterir.'},
+    {k:'A',src:'Arılar çiçekten çiçeğe dolaşırken bitkilerin tozlaşmasına yardım eder. Arı sayısı azalınca meyve ve sebze üretimi de düşer.',q:'Bu metnin konusu aşağıdakilerden hangisidir?',o:['Arıların bitkiler için önemi','Bal üretiminin aşamaları ve yerleri','Meyve ağaçlarının bakımı','Çiçeklerin renk çeşitleri'],e:'Konu, metnin neyden söz ettiğidir: arıların tozlaşmadaki rolü.'},
+    {k:'A',src:'Kitap okumak bize başka hayatları yaşama fırsatı verir. Bir romanın kahramanıyla yola çıkar, bir şehrin sokaklarında dolaşırız. Bu yüzden okuyan insan, yaşadığından çok daha fazla hayat biriktirir.',q:'Bu metnin ana fikri aşağıdakilerden hangisidir?',o:['Okumak insanın deneyimini artırır.','Romanlar çoğunlukla bir yolculuğu anlatır.','Şehirler en iyi sokaklarında gezilerek tanınır.','Kitap okumak insana çok zaman kaybettirir.'],e:'Ana fikir yazarın mesajıdır: okuyan kişi daha çok hayat biriktirir.'},
+    {k:'A',src:'Zil çaldığında Can çantasını çoktan toplamıştı. Kapıya ilk o koştu, merdivenleri ikişer ikişer indi.',q:'Bu metinden Can ile ilgili hangi çıkarım yapılabilir?',o:['Okuldan çıkmak için acele ediyor.','Derste çok sıkılıp sırasında uyuklamış.','Arkadaşlarıyla tartışmış.','Merdivenlerden korkuyor.'],e:'Çantayı önceden toplaması ve koşması acelesini gösterir.'},
+    {k:'A',src:'Dedem bahçedeki incir ağacını her sabah sular, yapraklarını tek tek silerdi. Ağaç meyve vermediği yıllarda bile onu kesmeyi hiç düşünmedi.',q:'Metne göre dedenin incir ağacına bakışı için ne söylenebilir?',o:['Ağaca gönülden bağlıdır.','Ağacın kesilmesini istemektedir.','Bahçe işlerinden hiç hoşlanmamaktadır.','Ağacı komşusuna satmayı düşünmektedir.'],e:'Meyve vermese de ağaca özenle bakması, ona gönülden bağlı olduğunu gösterir.'},
+    {k:'A',src:'Okulun ilk günü Defne kimseyle konuşmamıştı. Bir hafta sonra teneffüste ip atlayanların arasındaydı ve en yüksek kahkaha onunkiydi.',q:'Metinde Defne’nin hangi yönden değiştiği anlaşılmaktadır?',o:['Çekingenlikten uyuma','Neşeden üzüntüye','Başarıdan başarısızlığa','Meraktan ilgisizliğe'],e:'İlk gün kimseyle konuşmayan Defne, bir hafta sonra grubun içindedir.'},
+    {k:'A',src:'Kütüphane yeni kitaplar için bağış topluyor. Bağışlar cuma gününe kadar okul girişindeki kutuya bırakılabilir. Yıpranmış ve sayfaları eksik kitaplar kabul edilmeyecek.',q:'Metne göre hangisi söylenemez?',o:['Bağışlar sınıflarda toplanacak.','Bağış için son gün cumadır.','Yıpranmış kitaplar alınmayacak.','Bağış kutusu okul girişindedir.'],e:'Metinde bağışların okul girişindeki kutuya bırakılacağı söyleniyor; sınıflardan söz edilmiyor.'},
+    {k:'B',src:'Ormanlar azalınca yağmur suyu toprağa tutunamaz. Bu yüzden sel ve toprak kayması artar; dolayısıyla tarım alanları da zarar görür.',q:'Bu metinde hangi metin yapısı kullanılmıştır?',o:['Sebep-sonuç','Karşılaştırma/zıtlık','Sıralı-kronolojik','Öyküleyici'],e:'“Bu yüzden, dolayısıyla” sonuç bildirir; olaylar birbirinin sebebi olmuştur.'},
+    {k:'B',src:'Kaplumbağalar karada yavaş hareket eder; buna karşılık suda oldukça çevik yüzerler. Karada ağır gelen kabukları, suda onlara engel olmaz.',q:'Bu metnin yapısı hangisidir?',o:['Karşılaştırma/zıtlık','Sebep-sonuç','Sıralı-kronolojik','Açıklayıcı'],e:'“Buna karşılık” ifadesiyle kara ve sudaki hareket karşılaştırılmış.'},
+    {k:'B',src:'Çay bitkisi nemli ve yağışlı iklimleri sever. Türkiye’de çay en çok Doğu Karadeniz kıyılarında yetiştirilir. Taze yapraklar toplanır, soldurulur, kıvrılır ve kurutulur.',q:'Bu metnin anahtar kelimeleri hangi seçenekte birlikte verilmiştir?',o:['çay, iklim, Karadeniz','kıyı, taze, sever','nemli, toplanır, en çok','bitki, yetiştirilir, kıvrılır'],e:'Anahtar kelimeler metnin içeriğini özetleyen kelimelerdir.'},
+    {k:'B',q:'Aşağıdaki ifadelerden hangisi sebep-sonuç metin yapısının ipucu sözcüklerinden biri <u>değildir</u>?',o:['benzer şekilde','bu nedenle','sonuç olarak','dolayısıyla'],e:'“Benzer şekilde” karşılaştırma bildirir.'},
+    {k:'Y',q:'Aşağıdaki cümlelerin hangisinde ikilemenin yazımı <u>yanlıştır</u>?',o:['Eşyalarını apar-topar topladı.','Yavaş yavaş merdivene yürüdü.','Çoluk çocuk bahçeye çıktık.','Eğri büğrü bir yoldan geçtik.'],e:'İkilemeler arasına kısa çizgi konmaz: apar topar.'},
+    {k:'Y',q:'“Sepette elma, armut, ayva ( ) dolapta peynir, zeytin vardı.” Ayraçla gösterilen yere hangi işaret gelmelidir?',o:['Noktalı virgül (;)','Virgül (,)','İki nokta (:)','Üç nokta (...)'],e:'Virgüllerle ayrılmış tür ve takımlar noktalı virgülle ayrılır.'},
+    {k:'Y',src:'— Ödevini bitirdin mi?<br>— Ben…',q:'Bu konuşmada üç nokta hangi görevde kullanılmıştır?',o:['Eksik bırakılan cevabı gösterme','Ünlemi ve seslenmeyi pekiştirme','Tür ve takımları birbirinden ayırma','Alıntı cümlenin sonunu gösterme'],e:'Karşılıklı konuşmalarda eksik bırakılan cevaplarda üç nokta kullanılır.'},
+    {k:'Y',q:'Aşağıdaki cümlelerin hangisinde “de”nin yazımı <u>yanlıştır</u>?',o:['Kardeşimde bu kitabı okudu.','Okulda yeni bir kulüp açıldı.','Sen de bizimle gelir misin?','Akşam evde birlikte film izledik.'],e:'“Dahi” anlamındaki de bağlacı ayrı yazılır: kardeşim de.'},
+    {k:'Y',q:'Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?',o:['Bu kitabı okudunmu?','Biliyorum ki başaracaksın.','Yarın bize gelir misin?','Evdeki saksılar kurumuş.'],e:'Soru eki mi ayrı yazılır: okudun mu?'},
+    {k:'Y',q:'“Ali!.. Bana bakar mısın?” cümlesinde “!..” işaretinin görevi nedir?',o:['Seslenmeyi pekiştirmek','Sözü okura bırakmak','Cevabı eksik bırakmak','Sıralı cümleleri ayırmak'],e:'Ünlem ve seslenmeleri pekiştirmek için üç nokta (ünlemden sonra iki nokta) kullanılır.'},
+    {k:'Z',q:'Bilgilendirici bir metnin taslağında “giriş” bölümünde hangisi yer almalıdır?',o:['Konunun tanıtılması','Ayrıntılı örnekler','Metnin özeti ve çağrı','Kaynakların listesi'],e:'Girişte konu tanıtılır; gelişmede açıklanır, sonuçta toparlanır.'},
+    {k:'Z',q:'Aşağıdaki cümlelerin hangisinde benzetme vardır?',o:['Göl ayna gibi parlıyordu.','Göl sabah saatlerinde sakindi.','Gölün kıyısında söğütler vardı.','Gölde iki kayık gördük.'],e:'“Ayna gibi” sözüyle göl yüzeyi aynaya benzetilmiştir.'},
+    {k:'Z',q:'Okul bahçesine bank konmasını isteyen bir öğrencinin ikna edici paragrafında hangisi <u>bulunmamalıdır</u>?',o:['Kırıcı ifadeler','Açıkça belirtilen bir istek','İsteği destekleyen gerekçeler','Okuyucuya yönelik bir çağrı'],e:'İkna edici yazıda istek, gerekçe ve çağrı bulunur; kırıcı ifadeler ikna gücünü azaltır.'},
+  ]
+}
+};
+
+/* =====================================================================
+   1) KELİME DEDEKTİFİ — T.O.7.4 · T.O.7.21
+   ===================================================================== */
+APP.build.kelime=function(v,A,st){
+  const{el,card,grid2}=A;
+  A.intro(v,st,'Bilmediğin Kelimeyi Tahmin Et','Anlamını bilmediğin kelimenin çevresine bak: önceki ve sonraki cümleler, zıt ya da yakın anlamlı sözler, anlatılan durum sana ipucu verir. Sınavda tahminini <b>metindeki ipucuyla birlikte</b> yaz.');
+  const box=A.parts(v,[['a','1. Bağlamdan tahmin'],['b','2. İpucu avı'],['c','3. Gerçek mi, mecaz mı?'],['d','4. Söz varlığı']]);
+  box.a.append(grid2(
+    A.mcList('kelime','Altı çizili kelime ne demek?','Metni oku, ipucunu bul, sonra seç.',[
+      {id:'k-t1',src:'Yaşlı usta, işini aceleye getirmezdi. Bir kapı kolunu bile saatlerce eğeler, en küçük çiziği fark edip yeniden başlardı. Çırakları onun bu <u>titizliğine</u> hayrandı.',text:'“Titizlik” kelimesinin metindeki anlamı hangisidir?',options:['İşi büyük özenle yapma','Bir işi çabucak bitirme','İşini başkasına bırakma','Çalışırken sık sık dinlenme'],expl:'“Saatlerce eğelemek, en küçük çiziği fark etmek” özeni gösterir.'},
+      {id:'k-t2',src:'<u>Kafile</u>, sarp dağ yolunda ilerliyordu. Yük taşıyan atlar, yolcular ve rehberler uzun bir sıra hâlinde birbirini izliyordu.',text:'“Kafile” kelimesinin anlamı hangisidir?',options:['Birlikte yolculuk eden topluluk','Yük taşıyan hayvanlara verilen ad','Dağdaki dar ve tehlikeli yol','Yolculara yol gösteren kişi'],expl:'“Atlar, yolcular ve rehberler uzun bir sıra hâlinde” ifadesi bir topluluğu anlatıyor.'},
+      {id:'k-t3',src:'Deprem haberini alan gençler hiç <u>tereddüt</u> etmedi; o gece yola çıkıp sabaha karşı yardım çadırlarını kurmaya başladılar.',text:'“Tereddüt etmek” ne anlama gelir?',options:['Duraksamak','Bir işi bitirmek istemek','Yolda çok yorulmak','Haberi yanlış anlamak'],expl:'“Hiç tereddüt etmedi, o gece yola çıktı”: duraksamadan harekete geçtiler.'},
+      {id:'k-t4',src:'Hasta kedi günlerce yemek yemedi. Veterinerin verdiği ilaçtan sonra yavaş yavaş <u>toparlandı</u>, üçüncü gün bahçede koşmaya başladı.',text:'“Toparlanmak” kelimesi metinde hangi anlamdadır?',options:['İyileşip eski hâline dönmek','Eşyalarını bir araya getirmek','Bir yerden ayrılmaya hazırlanmak','Kendini büzüp küçültmek'],expl:'Hasta kedinin ilaçtan sonra koşmaya başlaması iyileşmeyi gösterir.'},
+    ]),
+    A.cluesTask('kelime','k-kart',{title:'Hızlı tahmin kartları',hint:'Karttaki cümlede koyu kelimenin anlamını seç. Tur en fazla 1 yanlışla biterse görev tamamlanır.',maxWrong:1,shuffleAnswers:true,
+      answers:['yorgun, güçsüz','cesur, yürekli','sabırsızlık','kalabalık','sessizlik','övünç'],
+      cards:[['Uzun yolculuktan sonra <b>bitap</b> düşen yolcular, hanın kapısında oturup soluklandı.','yorgun, güçsüz','“Oturup soluklandı” ipucu.'],['Yangına giren <b>gözüpek</b> itfaiyeci, mahsur kalan çocuğu kucağına alıp çıktı.','cesur, yürekli','Yangına girip çocuğu kurtarmak cesaret ister.'],['Sonucu beklerken <b>sabırsızlıktan</b> yerinde duramıyor, sürekli saate bakıyordu.','sabırsızlık','Yerinde duramamak ve saate bakmak ipucu.'],['Maç çıkışında stadyumun önünde büyük bir <b>izdiham</b> oluştu; insanlar yürüyemiyordu.','kalabalık','“İnsanlar yürüyemiyordu” ipucu.'],['Kar yağınca köyü derin bir <b>sükût</b> kapladı; ne bir ses ne bir ayak izi vardı.','sessizlik','“Ne bir ses” ipucu.'],['Millî takım kupayı kazanınca bütün ülke <b>iftihar</b> etti; insanlar sokaklarda bayrak salladı.','övünç','Kupa kazanılınca duyulan duygu: övünç, gurur.']]})
+  ));
+  box.b.append(grid2(
+    A.pickTask('kelime','k-avla',{title:'İpucu avı: “ihtiyar”',hint:'Aşağıdaki metinde <b>ihtiyar</b> kelimesinin “çok yaşlı” anlamına geldiğini gösteren <b>üç ipucu kelimeyi</b> seç, sonra kontrol et.',
+      text:'Köy meydanındaki çınar, köyün en ihtiyar ağacıydı. {Yüzyıllardır} orada duruyordu. {Dedelerimizin} çocukluğunu bile görmüştü. Gövdesi {kırışık} bir yüze benziyordu ve her bahar yine de yapraklanıyordu.',
+      ok:'Yüzyıllardır var olması, dedelerin çocukluğunu görmesi ve kırışık gövdesi “çok yaşlı” anlamını destekliyor.'}),
+    A.writeTask('kelime','k-yaz',{title:'Yazılı provası: tahmin + gerekçe',src:'Gemi limana yaklaştıkça yolcuların yüzündeki endişe yerini <u>ferahlığa</u> bıraktı. Günlerdir süren fırtına bitmişti; kimi gülüyor, kimi derin bir nefes alıyordu.',prompt:'Altı çizili kelimenin anlamını tahmin ediniz. Sizi bu tahmine götüren metin içi ifadeyi de yazınız.',
+      model:'“Ferahlık” rahatlama, içinin açılması demektir. Metinde endişenin yerini ferahlığa bırakması, fırtınanın bitmesi, yolcuların gülmesi ve derin nefes alması bu anlamı gösteriyor.',
+      checks:['Kelimenin anlamını kendi sözlerimle yazdım (rahatlama, iç açıklığı).','Metinden en az bir ipucu ifadeyi aynen aldım.','İpucunun tahminimi nasıl desteklediğini açıkladım.']})
+  ));
+  box.c.append(grid2(
+    A.sortTask('kelime','k-gm',{title:'Gerçek mi, mecaz mı?',hint:'Koyu kelimenin cümledeki anlamını seç.',cats:[['G','Gerçek anlam'],['M','Mecaz anlam']],
+      items:[['Kışın <b>soğuk</b> rüzgâr yüzümüzü yaktı.','G'],['Yeni komşumuz bize çok <b>soğuk</b> davrandı.','M'],['Bu dağın <b>zirvesine</b> iki saatte çıktık.','G'],['Başarısının <b>zirvesinde</b> emekli oldu.','M'],['Annem fırından <b>tatlı</b> bir kurabiye çıkardı.','G'],['Bebeğin <b>tatlı</b> gülüşü herkesi güldürdü.','M'],['Kar yağınca yollar <b>kapandı</b>.','G'],['Kırgınlıklar o gün sessizce <b>kapandı</b>.','M']],
+      ok:'Mecaz anlamda kelime, ilk (gerçek) anlamından uzaklaşır: soğuk davranmak “ilgisiz olmak”tır.'}),
+    A.mcList('kelime','Anlam ilişkileri',null,[
+      {id:'k-a1',text:'“Kitaplar, hayal gücümüzün kanatlarıdır.” cümlesinde “kanat” kelimesi neyi çağrıştırmaktadır?',options:['Hayalde özgürce uzaklara gitmeyi','Kuşların göç ettiği mevsimleri','Kitap kapaklarının renklerini','Okumanın yorucu bir iş olmasını'],expl:'Kanat uçmayı, uçmak da hayalde özgürce gezinmeyi çağrıştırır.'},
+      {id:'k-a2',text:'Aşağıdaki kelime çiftlerinden hangisi zıt anlamlıdır?',options:['cömert – cimri','yaşlı – ihtiyar','cevap – yanıt','okul – mektep'],expl:'Cömert ile cimri karşıt anlamlıdır; diğerleri eş anlamlıdır.'},
+    ])
+  ));
+  box.d.append(grid2(
+    A.sortTask('kelime','k-sv',{title:'Söz varlığı unsurları',hint:'Her ifadenin türünü seç.',cats:[['D','Deyim'],['A','Atasözü'],['I','İkileme'],['K','Kalıp söz']],
+      items:[['göz kulak olmak','D'],['etekleri zil çalmak','D'],['Bugünün işini yarına bırakma.','A'],['Sakla samanı, gelir zamanı.','A'],['eğri büğrü','I'],['yavaş yavaş','I'],['Geçmiş olsun!','K'],['Kolay gelsin!','K']],
+      ok:'Deyim çoğunlukla mecazlı bir kavram anlatır, atasözü öğüt veren bir yargıdır, ikileme kelime tekrarıdır, kalıp söz belli durumlarda söylenir.'}),
+    A.mcList('kelime','Deyim ve atasözü',null,[
+      {id:'k-d1',src:'Ayşe, sınav sonuçları açıklanınca sevinçten yerinde duramıyordu.',text:'Metindeki durumu en iyi anlatan deyim hangisidir?',options:['Etekleri zil çalmak','Kulaklarını tıkamak','Göze girmek','Burnundan solumak'],expl:'Etekleri zil çalmak, çok sevinmek demektir.'},
+      {id:'k-d2',text:'“Damlaya damlaya göl olur.” atasözü hangi durumda söylenir?',options:['Küçük birikimler büyüyünce','Bir iş birdenbire bitince','Yağmur hiç durmadan yağınca','Biri hep sözünü tutunca'],expl:'Atasözü, küçük birikimlerin zamanla büyüyeceğini anlatır.'},
+    ])
+  ));
+};
+
+/* =====================================================================
+   2) METNİ ANLAMA — T.O.7.5 · 7.7 · 7.8
+   ===================================================================== */
+APP.build.anlam=function(v,A,st){
+  const{el,card,grid2}=A;
+  A.intro(v,st,'Yüzey Anlamdan Derin Anlama','<b>Yüzey anlam</b> metinde açıkça yazandır: konu, ana fikir, verilen bilgiler. <b>Derin anlam</b> yazılmadan sezdirilendir: davranışlardan duyguya, ipuçlarından gizli mesaja ulaşırsın.');
+  const box=A.parts(v,[['a','1. Konu ve ana fikir'],['b','2. Metinde ne yazıyor?'],['c','3. Basit çıkarım'],['d','4. İpucundan mesaja']]);
+  const T1='Leylekler her sonbahar binlerce kilometrelik bir yolculuğa çıkar. Avrupa’dan Afrika’ya giderken denizin üstünden uzun süre uçamadıkları için İstanbul Boğazı gibi dar geçitleri kullanırlar. Bu yüzden eylül ayında İstanbul semalarında binlerce leylek görülür. Göç yolları üzerindeki sulak alanlar kurursa leylekler dinlenecek ve beslenecek yer bulamaz. Leyleklerin yolculuğu, doğadaki her halkanın birbirine bağlı olduğunu bize hatırlatır.';
+  box.a.append(grid2(
+    card(el('h3',{},'Metin: Leyleklerin yolculuğu'),A.srcBox(T1),el('p',{class:'hint',style:'margin-top:8px',html:'<b>Konu:</b> Metin neyden söz ediyor? (kısa bir ifade)<br><b>Ana fikir:</b> Yazar bize hangi mesajı veriyor? (bir cümle)<br><b>Yardımcı fikir:</b> Ana fikri destekleyen diğer bilgiler.'})),
+    A.sortTask('anlam','a-kaf',{title:'Konu mu, ana fikir mi, yardımcı fikir mi?',hint:'Metne göre her ifadeyi doğru gruba yerleştir.',cats:[['K','Konu'],['A','Ana fikir'],['Y','Yardımcı fikir']],
+      items:[['Leyleklerin göç yolculuğu','K'],['Doğadaki canlılar ve yaşam alanları birbirine bağlıdır.','A'],['Leylekler denizin üstünden uzun süre uçamaz.','Y'],['Eylülde İstanbul semalarında binlerce leylek görülür.','Y'],['Sulak alanlar kurursa leylekler dinlenecek yer bulamaz.','Y']],
+      ok:'Konu kısa bir ifadedir; ana fikir yazarın mesajıdır ve genellikle metnin sonunda toparlanır.'})
+  ));
+  box.b.append(grid2(
+    A.mcList('anlam','Metinde açıkça verilen bilgi',null,[
+      {id:'a-y1',src:'Kelime Köşesi’nde her kartın ön yüzünde bir deyim, arka yüzünde ise deyimin anlamı ve örnek bir cümle var. Kartı almak isteyen öğrenciler danışma masasına adını yazdırıyor ve kartı bir hafta içinde geri getiriyor.',text:'Metne göre kartların arka yüzünde hangi bilgiler bulunur?',options:['Deyimin anlamı ve örnek cümle','Deyimin kendisi ve yazarı','Öğrencinin adı ve sınıfı','Kartın teslim edileceği tarih'],expl:'Metinde arka yüzde “anlam ve örnek cümle” olduğu açıkça yazıyor.'},
+      {id:'a-y2',src:'(Aynı metin) Kartı almak isteyen öğrenciler danışma masasına adını yazdırıyor ve kartı bir hafta içinde geri getiriyor.',text:'Kart almak isteyen bir öğrenci ilk olarak ne yapmalıdır?',options:['Danışma masasına adını yazdırmalı','Kartı hemen sınıfa götürmeli','Önce öğretmeninden izin almalı','Kartın fotoğrafını çekip arkadaşlarına göndermeli'],expl:'Yönerge açık: önce danışma masasına ad yazdırılır.'},
+      {id:'a-y3',src:'Göbeklitepe, Şanlıurfa’da bulunan ve yaklaşık 12 bin yıllık olduğu düşünülen bir yerleşim alanıdır. Buradaki dikilitaşlar üzerinde tilki, yaban domuzu ve akbaba gibi hayvan kabartmaları vardır.',text:'Metne göre aşağıdakilerden hangisi <u>söylenemez</u>?',options:['Taşlarda yalnızca insan figürü vardır.','Göbeklitepe Şanlıurfa’da bulunur.','Dikilitaşlarda hayvan kabartmaları bulunur.','Alanın çok eski olduğu düşünülmektedir.'],expl:'Metin hayvan kabartmalarından söz ediyor; “yalnızca insan figürü” bilgisi metinde yok.'},
+    ]),
+    A.writeTask('anlam','a-yaz',{title:'Yazılı provası: konu ve ana fikir',src:T1,prompt:'Metnin konusunu ve ana fikrini ayrı ayrı yazınız.',
+      model:'Konu: Leyleklerin göç yolculuğu.<br>Ana fikir: Doğadaki canlılar ve yaşam alanları birbirine bağlıdır; sulak alanlar korunmazsa göç eden kuşlar da zarar görür.',
+      checks:['Konuyu kısa bir ifade olarak yazdım (cümle değil).','Ana fikri tam bir cümleyle, yazarın mesajı olarak yazdım.','Konu ile ana fikri karıştırmadım.']})
+  ));
+  box.c.append(grid2(
+    A.mcList('anlam','Davranıştan çıkarım',null,[
+      {id:'a-c1',src:'Düşman gemileri limana yaklaşırken kasaba sessizdi ama demirci o gece ocağını hiç söndürmedi. Sabah dükkândan çıkan köylülerin elinde orak ve tırpan yerine kılıçlar vardı.',text:'Bu metne göre kasaba halkı nasıl bir karar almıştır?',options:['Kasabayı savunmaya','Kasabayı terk edip kaçmaya','Gemilerle ticaret yapmaya','Hasat işini öne almaya'],expl:'Tarım aletleri yerine kılıç dövülmesi direnme kararını gösterir.'},
+      {id:'a-c2',src:'Ozan, sınav kâğıdını alınca önce yüzünü buruşturdu, sonra kâğıdı katlayıp çantasının en dibine itti. Eve dönünce de odasından çıkmadı.',text:'Ozan’ın davranışlarından hangisi çıkarılabilir?',options:['Notu beklediğinden düşük gelmiş','Sınavdan çok yüksek not almış','Sınav kâğıdını eve dönerken yolda kaybetmiş','En yakın arkadaşına küsmüş'],expl:'Yüz buruşturmak ve kâğıdı saklamak hayal kırıklığını gösterir.'},
+      {id:'a-c3',src:'Babaannem sofrayı kurarken her zaman bir tabak fazla koyardı. “Kapıyı çalan olur.” derdi. O tabak boş kaldığı akşam pek az olurdu.',text:'Bu metinden babaanne ile ilgili hangi çıkarım yapılabilir?',options:['Misafirperverdir.','Yemek yapmayı hiç sevmez.','Kalabalıktan hoşlanmaz.','Tabaklarını saymayı unutur.'],expl:'Her akşam misafir için tabak ayırması konukseverliğini gösterir.'},
+    ]),
+    A.cluesTask('anlam','a-duygu',{title:'Davranıştaki duygu',hint:'Karttaki davranış hangi duyguyu gösteriyor? Tur en fazla 1 yanlışla biterse görev tamam.',maxWrong:1,shuffleAnswers:true,
+      answers:['heyecan','kızgınlık','utanç','özlem','korku'],
+      cards:[['Elleri titriyor, kalbinin sesini kulaklarında duyuyordu; birazdan sahneye çıkacaktı.','heyecan','Sahneye çıkmadan önceki titreme heyecanı gösterir.'],['Kapıyı çarptı, çantasını yere fırlattı ve kimseyle konuşmadı.','kızgınlık','Kapı çarpmak, eşya fırlatmak öfke belirtisidir.'],['Yanlış cevabı herkes duyunca yanakları kızardı, başını önüne eğdi.','utanç','Yanak kızarması ve baş eğmek utancı gösterir.'],['Eski fotoğraflara bakarken gözleri doldu; köydeki evlerini düşünüyordu.','özlem','Geride kalan yeri düşünüp duygulanmak özlemdir.'],['Karanlık koridorda bir ses duyunca olduğu yerde kaskatı kesildi.','korku','Kaskatı kesilmek korku tepkisidir.']]})
+  ));
+  const T2='Ece her cuma okul kütüphanesindeki okuma grubuna katılırdı. Sınıfa yeni gelen Mert de o gün gruba geldi. Herkes okuyacağı bölümü seçerken Mert kitabın sayfalarını çeviriyor, kimseyle göz göze {gelmiyordu}. Sıra ona gelince “Ben sadece dinlesem olur mu?” diye sordu. Ece kendi seçtiği bölümü göstererek “Burada iki kişi konuşuyor, birlikte okuyalım mı?” dedi. Mert bir kelimede duraksayınca Ece araya girmedi, onun devam etmesini {bekledi}. Ertesi cuma Mert kütüphaneye herkesten önce geldi. Çantasından bir kitap çıkardı ve “Bu sefer bölümü {ben} seçtim.” dedi.';
+  box.d.append(grid2(
+    A.pickTask('anlam','a-ipucu',{title:'İpucu avı: Mert nasıl değişti?',hint:'Mert’in ilk günkü <b>çekingenliğini</b>, Ece’nin <b>sabırlı tutumunu</b> ve Mert’in <b>öz güven kazandığını</b> gösteren üç ipucunu seç.',
+      text:T2,ok:'“Göz göze gelmiyordu” çekingenliği, “bekledi” Ece’nin sabrını, “ben seçtim” Mert’in öz güvenini gösterir.'}),
+    A.writeTask('anlam','a-derin',{title:'Yazılı provası: üst düzey çıkarım',src:T2.replace(/[{}]/g,''),prompt:'Mert’in ilk günkü kaygılı hâlinden sıyrılıp öz güven kazanmasında Ece’nin tutumunun rolü nedir? Ece’nin davranışlarındaki örtük mesajları dikkate alarak Mert’in değişimini metinden en az iki ipucuyla açıklayınız.',
+      model:'İlk gün Mert kimseyle göz göze gelmiyor ve “Ben sadece dinlesem olur mu?” diyerek okumaktan kaçıyordu; bu, çekingen ve kaygılı olduğunu gösterir. Ece onu zorlamadan kendi seçtiği bölümü “birlikte okuyalım mı?” diyerek paylaştı; böylece Mert yalnız olmadığını hissetti. Mert duraksadığında Ece araya girmeyip onun devam etmesini bekledi; bu da “Sen bunu yapabilirsin.” mesajını veriyordu. Bu sabırlı ve destekleyici tutum sayesinde Mert ertesi hafta herkesten önce gelip “Bu sefer bölümü ben seçtim.” dedi; artık kendine güveniyordu.',
+      checks:['Mert’in ilk günkü hâlini metinden bir ipucuyla anlattım.','Ece’nin en az iki davranışını metinden aldım.','Her davranışın örtük mesajını (cesaret verme, sabır, güven) yazdım.','Mert’in değiştiğini gösteren son ipucunu (“ben seçtim”) kullandım.']})
+  ));
+};
+
+/* =====================================================================
+   3) BİLGİLENDİRİCİ METİN — T.O.7.14 · T.O.7.15
+   ===================================================================== */
+APP.build.bilgi=function(v,A,st){
+  const{el,card,grid2}=A;
+  A.intro(v,st,'Metin Yapısı ve Anahtar Kelimeler','Metin yapısı, bilgilerin nasıl düzenlendiğini gösterir. Bu yıl öğrendiğin <b>sebep-sonuç</b> yapısında olaylar nedenleri ve sonuçlarıyla anlatılır. <b>Anahtar kelimeler</b> metnin içeriğini en iyi özetleyen kelimelerdir.');
+  const box=A.parts(v,[['a','1. Metin yapısını tanı'],['b','2. İpucu sözcükler'],['c','3. Anahtar kelime'],['d','4. Yazılı provası']]);
+  box.a.append(grid2(
+    A.cluesTask('bilgi','b-yapi',{title:'Bu paragraf hangi yapıda?',hint:'Paragrafı oku, metin yapısını seç. Tur en fazla 1 yanlışla biterse görev tamam.',maxWrong:1,
+      answers:['Sebep-sonuç','Karşılaştırma/zıtlık','Sıralı-kronolojik','Açıklayıcı'],
+      cards:[['Atmosferdeki sera gazları artınca Dünya ısınır. Bu yüzden buzullar erir; buzullar eridikçe deniz seviyesi yükselir.','Sebep-sonuç','“Bu yüzden” ve sonuçların zincir hâlinde sıralanması.'],['Yunuslar da balinalar da denizde yaşar. Ancak yunuslar küçük ve hızlıdır; balinalar ise çok büyük ve ağır hareket eder.','Karşılaştırma/zıtlık','Benzerlik ve farklılık birlikte veriliyor: “ancak, ise”.'],['Önce hamur yoğrulur. Ardından bir saat dinlendirilir. Son olarak şekil verilip fırına konur.','Sıralı-kronolojik','“Önce, ardından, son olarak” işlem sırasını gösterir.'],['Mozaik, küçük taş, cam ya da seramik parçalarının yan yana getirilmesiyle yapılan bir süsleme sanatıdır. Duvar ve tabanlarda kullanılır.','Açıklayıcı','Bir kavram tanıtılıp açıklanıyor.'],['Okulda telefon kullanımı azaldığı için teneffüslerde öğrenciler daha çok oyun oynamaya başladı. Dolayısıyla arkadaşlıklar güçlendi.','Sebep-sonuç','“-dığı için, dolayısıyla” sebep ve sonucu bağlıyor.'],['1919’da Samsun’a çıkan Mustafa Kemal, ardından Amasya’ya geçti. Temmuzda Erzurum, eylülde Sivas Kongresi toplandı.','Sıralı-kronolojik','Olaylar zaman sırasıyla veriliyor.'],['Eskiden mektuplar günler sonra ulaşırdı. Oysa bugün bir mesaj saniyeler içinde dünyanın öbür ucuna gidiyor.','Karşılaştırma/zıtlık','“Eskiden … oysa bugün” zıtlık kuruyor.']]}),
+    card(el('h3',{},'Sebep-sonuç yapısının üç biçimi'),el('ol',{class:'rules'},el('li',{html:'<b>Çok sebep → bir sonuç:</b> Yağış az, sıcak fazla, su israf ediliyor → kuraklık.'}),el('li',{html:'<b>Bir sebep → çok sonuç:</b> Ormanlar azaldı → sel arttı, hayvanlar yuvasız kaldı, hava kirlendi.'}),el('li',{html:'<b>Sebep-sonuç zinciri:</b> Her sonuç bir sonrakinin sebebi olur: ısınma → buzulların erimesi → deniz seviyesinin yükselmesi.'})),el('p',{class:'hint',style:'margin-top:8px',html:'Sebep bildirenler: <i>çünkü, -dığı için, -den dolayı</i><br>Sonuç bildirenler: <i>bu yüzden, sonuç olarak, dolayısıyla, böylece</i>'}))
+  ));
+  box.b.append(grid2(
+    A.sortTask('bilgi','b-sinyal',{title:'İpucu sözcükler',hint:'Her ifadenin hangi metin yapısının işareti olduğunu seç.',cats:[['S','Sebep-sonuç'],['K','Karşılaştırma/zıtlık'],['R','Sıralı-kronolojik']],
+      items:[['bu yüzden','S'],['çünkü','S'],['dolayısıyla','S'],['oysa','K'],['buna karşılık','K'],['benzer şekilde','K'],['önce','R'],['ardından','R'],['son olarak','R']],
+      ok:'İpucu sözcükler metnin yapısını hızlıca anlamana yardım eder.'}),
+    A.mcList('bilgi','Yapıdan önemli bilgiye',null,[
+      {id:'b-o1',src:'Plastik atıklar denize ulaşınca küçük parçalara ayrılır. Bu parçaları yiyecek sanan balıklar zarar görür. Balık sayısı azalınca da balıkçılıkla geçinen kıyı köyleri zor duruma düşer.',text:'Bu metnin vermek istediği en önemli bilgi hangisidir?',options:['Plastikler zincirleme zarar verir.','Balıklar her şeyi yiyecek sanır.','Kıyı köylerinde balıkçılık yapılır.','Plastikler denizde hiç parçalanmaz.'],expl:'Sebep-sonuç zinciri: plastik → balıkların zarar görmesi → köylerin geçim sıkıntısı.'},
+      {id:'b-o2',src:'Milletler yalnızca orduları yenildiği için değil, birliklerini kaybettikleri için de yıkılmıştır. Buna karşılık imkânları kısıtlı olsa da birbirine kenetlenen milletler bağımsızlığını korumuştur.',text:'Bu metinde yazar hangi düşünceyi vurgulamak için karşılaştırma yapmıştır?',options:['Bir milleti birlik ayakta tutar.','Güçlü ordular her savaşı kazanır.','İmkânı az olan millet mutlaka yenilir.','Tarihte hiçbir millet yıkılmamıştır.'],expl:'“Buna karşılık” ile birliğini kaybedenler ve birbirine kenetlenenler karşılaştırılmış.'},
+    ])
+  ));
+  const T3='Deprem çantası, afet anında ilk 72 saat ihtiyaç duyabileceğimiz malzemeleri içeren bir çantadır. Çantada su, uzun süre bozulmayan yiyecekler, el feneri, düdük, ilk yardım malzemesi ve önemli belgelerin kopyaları bulunmalıdır. Çanta kapının yanı gibi kolay ulaşılabilecek bir yerde durmalıdır. İçindeki yiyecek ve suların son kullanma tarihleri yılda iki kez kontrol edilmelidir.';
+  box.c.append(grid2(
+    A.pickTask('bilgi','b-anahtar',{title:'Anahtar kelimeleri seç',hint:'Metnin içeriğini en iyi özetleyen <b>en az üç</b> kelime seç. Gereksiz kelime seçersen kırmızı olur.',mode:'subset',min:3,
+      text:'{Deprem} {çantası}, {afet} anında ilk 72 saat ihtiyaç duyabileceğimiz {malzemeleri} içeren bir çantadır. Çantada {su}, uzun süre bozulmayan {yiyecekler}, el {feneri}, {düdük}, {ilk} {yardım} malzemesi ve önemli {belgelerin} kopyaları bulunmalıdır. Çanta kapının yanı gibi kolay ulaşılabilecek bir yerde durmalıdır. İçindeki yiyecek ve suların son kullanma tarihleri yılda iki kez {kontrol} edilmelidir.',
+      ok:'“Deprem çantası, afet, malzeme, kontrol” gibi kelimeler metnin özünü taşır; “kapı, yan, kez” gibi kelimeler taşımaz.'}),
+    A.mcList('bilgi','Anahtar kelime mi?',null,[
+      {id:'b-a1',src:T3,text:'Bu metin için hangisi anahtar kelime grubu olarak <u>en uygun</u>dur?',options:['deprem çantası, afet, kontrol','kapının yanı, düdük, kopya','yılda iki kez, uzun süre','el feneri, kolay ulaşım, durmak'],expl:'Anahtar kelimeler metnin konusunu ve ana bilgisini yansıtmalıdır.'},
+      {id:'b-a2',text:'Anahtar kelime belirlerken hangisi yapılmalıdır?',options:['Konuyu taşıyan kelimeler seçilmeli','En uzun kelimeler seçilmeli','Yalnızca ilk cümleye bakılmalı','Bağlaçlar ve ekler seçilmeli'],expl:'Anahtar kelime, metnin içeriğini özetler; uzunluğu ya da yeri belirleyici değildir.'},
+    ])
+  ));
+  box.d.append(grid2(
+    A.writeTask('bilgi','b-yaz1',{title:'Yazılı provası: metin yapısı',src:'Şehirlerde ağaçlar azaldıkça yaz aylarında sıcaklık artıyor. Çünkü beton ve asfalt güneş ışığını emip havaya geri veriyor. Bu yüzden insanlar daha çok klima kullanıyor; dolayısıyla enerji tüketimi de yükseliyor.',prompt:'Metinde kullanılan metin yapısını yazınız. Bu yapıdan hareketle metnin vermek istediği en önemli bilgiyi kendi cümlelerinizle açıklayınız.',
+      model:'Metin yapısı: sebep-sonuç (sebep-sonuç zinciri). Ağaçların azalması sıcaklığı artırıyor, sıcaklık klima kullanımını, klima da enerji tüketimini artırıyor. En önemli bilgi: Şehirde ağaçların azalması zincirleme olarak enerji tüketimini de artırır; bu yüzden şehirlerde ağaçlar korunmalıdır.',
+      checks:['Metin yapısının adını doğru yazdım.','İpucu sözcüklerden en az birini gösterdim (çünkü, bu yüzden, dolayısıyla).','En önemli bilgiyi kendi cümlelerimle yazdım, metni kopyalamadım.']}),
+    A.writeTask('bilgi','b-yaz2',{title:'Yazılı provası: üç anahtar kelime',src:T3,prompt:'Metnin içeriğini en iyi yansıtan üç anahtar kelime belirleyiniz. Bu kelimelerin metnin konusuyla ilişkisini kısaca açıklayınız.',
+      model:'Anahtar kelimeler: deprem çantası, afet, kontrol. Metin, afet anında işe yarayacak deprem çantasının içinde neler olması gerektiğini ve çantanın düzenli kontrol edilmesi gerektiğini anlatıyor; bu üç kelime metnin özünü taşıyor.',
+      checks:['Üç kelimeyi de metnin konusunu taşıyan kelimelerden seçtim.','Kelimelerle metnin konusu arasındaki ilişkiyi bir iki cümleyle açıkladım.']})
+  ));
+};
+
+/* =====================================================================
+   4) YAZIM VE NOKTALAMA — T.Y.7.21
+   ===================================================================== */
+APP.build.yazim=function(v,A,st){
+  const{el,card,grid2}=A;
+  A.intro(v,st,'Yazım Kuralları ve Noktalama İşaretleri','Bu yıl öğrendiklerin: <b>ikilemelerin yazımı</b>, <b>noktalı virgül</b> ve <b>üç noktanın</b> görevleri. Önceki yıllardan: <b>de, ki, mi</b>’nin yazımı ve virgül.');
+  const box=A.parts(v,[['a','1. İkilemeler'],['b','2. Noktalı virgül ve üç nokta'],['c','3. İşareti yerleştir'],['d','4. de / ki / mi']]);
+  box.a.append(grid2(
+    A.pickTask('yazim','y-ikileme',{title:'Yanlış yazılan ikilemeleri bul',hint:'Metinde yazımı <b>yanlış</b> olan ikilemeleri seç (dört tane var).',
+      text:'Zil çalınca {apar-topar} sınıftan çıktık. Bahçede {!yavaş yavaş} yürüyen müdürümüzü görünce {hızlıhızlı} merdivenlere koştuk. {!Eğri büğrü} sıraların arasından geçerken {ufak, tefek} bir çocuk düştü. Herkes {koşa-koşa} yanına gitti. {!Çoluk çocuk} bütün okul onun iyi olduğunu görünce rahatladı.',
+      ok:'İkilemeler ayrı yazılır; araya virgül ya da kısa çizgi konmaz.',after:'Doğruları: <b>apar topar, hızlı hızlı, ufak tefek, koşa koşa</b>.'}),
+    card(el('h3',{},'İkilemelerin yazımı'),el('ol',{class:'rules'},el('li',{html:'İkilemeler <b>ayrı</b> yazılır: <i>yavaş yavaş, eğri büğrü, çoluk çocuk</i>.'}),el('li',{html:'Aralarına <b>virgül</b> ya da <b>kısa çizgi</b> konmaz: <s>apar-topar</s> → apar topar.'}),el('li',{html:'Pekiştirmeler ikileme değildir, <b>bitişik</b> yazılır: <i>masmavi, darmadağın, yepyeni</i>.'})),
+      A.mcList('yazim','Kontrol',null,[{id:'y-i1',text:'Aşağıdakilerin hangisinde yazım yanlışı vardır?',options:['Gürül-gürül akan bir dere vardı.','Masmavi, bulutsuz bir gökyüzü vardı tepemizde.','Yavaş yavaş akşam oluyordu.','Ufak tefek eşyaları topladık.'],expl:'İkileme ayrı ve çizgisiz yazılır: gürül gürül.'}]))
+  ));
+  box.b.append(grid2(
+    A.cluesTask('yazim','y-gorev',{title:'İşaret hangi görevde?',hint:'Cümledeki koyu işaretin görevini seç. Tur en fazla 1 yanlışla biterse görev tamam.',maxWrong:1,
+      answers:['Tür ve takımları ayırma (;)','Virgüllü sıralı cümleleri ayırma (;)','Özneden sonra, eş değer ögelerden önce (;)','Eksik bırakılan cevap (…)','Ünlem ve seslenmeyi pekiştirme (…)','Sözü okura bırakma (…)'],
+      cards:[['Sofrada elma, armut<b>;</b> peynir, zeytin<b>;</b> çay, süt vardı.','Tür ve takımları ayırma (;)','Meyveler, kahvaltılıklar ve içecekler ayrı takımlardır.'],['Kar yağdı, yollar kapandı<b>;</b> köydeki çocuklar kızaklarını çıkardı, tepeye koştu.','Virgüllü sıralı cümleleri ayırma (;)','İki grup sıralı cümle, kendi içinde virgülle ayrılmış.'],['Genç şair<b>;</b> Yunus Emre, Karacaoğlan ve Pir Sultan Abdal’dan ilham alıyordu.','Özneden sonra, eş değer ögelerden önce (;)','Özne “genç şair”, ardından virgülle ayrılmış eş değer ögeler geliyor.'],['— Kitabını getirdin mi?<br>— Şey<b>…</b>','Eksik bırakılan cevap (…)','Cevap tamamlanmamış.'],['Ayşe!<b>..</b> Buraya gel!','Ünlem ve seslenmeyi pekiştirme (…)','Ünlemden sonra iki nokta yeterlidir.'],['Kapıyı açtığında karşısında duranı görünce<b>…</b>','Sözü okura bırakma (…)','Sözün devamı okurun hayaline bırakılmış.'],['Bahçede güller, laleler, menekşeler<b>…</b> İçimiz huzurla doldu.','Sözü okura bırakma (…)','Sayılanların devamı okura bırakılmış.']]}),
+    card(el('h3',{},'Görevleri hatırla'),el('p',{html:'<b>Noktalı virgül (;)</b>'}),el('ol',{class:'rules'},el('li',{},'Virgüllerle ayrılmış tür ve takımları ayırır.'),el('li',{},'Ögeleri arasında virgül bulunan sıralı cümleleri ayırır.'),el('li',{},'İkiden fazla eş değer ögesi virgülle ayrılmış cümlede özneden sonra konabilir.')),el('p',{style:'margin-top:8px',html:'<b>Üç nokta (…)</b>'}),el('ol',{class:'rules'},el('li',{},'Karşılıklı konuşmada eksik bırakılan cevabı gösterir.'),el('li',{},'Ünlem ve seslenmeyi pekiştirir (ünlemden sonra iki nokta: !..).'),el('li',{},'Sözün geri kalanının okura bırakıldığını gösterir.')))
+  ));
+  box.c.append(
+    A.fillTask('yazim','y-fill',{title:'Uygun işareti seç',hint:'Her boşluğa gelmesi gereken noktalama işaretini seç.',choices:[',',';','…','.','?','!',':'],
+      text:'Pazar sabahı erkenden kalktık[[,]] kahvaltımızı yaptık[[;]] babam arabayı hazırladı[[,]] annem sepeti doldurdu. Sepette peynir, zeytin[[;]] elma, armut[[;]] su, ayran vardı. Yola çıkarken kardeşim seslendi[[:]]<br>— Anne!.. Topumu unuttum[[!]]<br>— Hangi topunu[[?]]<br>— Şey[[…]]<br>Annem gülümsedi[[.]] Kardeşimin hangi topu kastettiğini hepimiz biliyorduk.',
+      ok:'Noktalı virgül takımları ve virgüllü sıralı cümle gruplarını ayırdı; iki nokta konuşmayı başlattı; üç nokta eksik cevabı gösterdi.'})
+  );
+  box.d.append(grid2(
+    A.pickTask('yazim','y-dekimi',{title:'Yanlış yazılanları bul',hint:'Metinde <b>de, ki, mi</b> yazımı yanlış olan dört ifadeyi seç.',
+      text:'Yunus Emre {bilirdiki} tatlı dille çözülemeyecek sorun yoktur. Peki, biz onun öğütlerine kulak {veriyormuyuz}? Evet, {bizlerde} onun sözlerinden ders almalıyız. Okulumuzda her yıl onun şiirlerini okuyoruz. Duvardaki panoya da en sevdiğimiz dizeleri {astıkki} herkes okuyabilsin.',
+      ok:'Bağlaç olan ki ve de ayrı, soru eki mi ayrı yazılır.',after:'Doğruları: <b>bilirdi ki, veriyor muyuz, bizler de, astık ki</b>.'}),
+    A.sortTask('yazim','y-ek',{title:'Ek mi, bağlaç mı?',hint:'Koyu yazılan “de/da” ve “ki”nin türünü seç.',cats:[['E','Ek (bitişik)'],['B','Bağlaç (ayrı)']],
+      items:[['Kitap <b>masada</b> duruyor.','E'],['Sen <b>de</b> gel.','B'],['<b>Evdeki</b> çiçekler büyüdü.','E'],['Duydum <b>ki</b> yarışmayı kazanmışsın.','B'],['<b>Okulda</b> tiyatro var.','E'],['Ben <b>de</b> o kitabı okudum.','B']],
+      ok:'Çıkarınca anlam bozulmuyorsa bağlaçtır, ayrı yazılır. Bulunma eki -de ve sıfat yapan -ki bitişiktir.'})
+  ));
+};
+
+/* =====================================================================
+   5) YAZILI ANLATIM — T.Y.7.3 · T.Y.7.18
+   ===================================================================== */
+APP.build.yazma=function(v,A,st){
+  const{el,card,grid2}=A;
+  A.intro(v,st,'Plan Yap, Zenginleştir, Yaz','Sınavın en yüksek puanlı sorusu çoğunlukla yazılı anlatımdır. Önce <b>taslak</b> hazırla (giriş–gelişme–sonuç), sonra istenen ifadeleri, deyimleri ve <b>benzetmeleri</b> yerinde kullan.');
+  const box=A.parts(v,[['a','1. Taslak'],['b','2. Zenginleştir'],['c','3. Metni tamamla'],['d','4. Bilgilendirici / ikna']]);
+  box.a.append(grid2(
+    A.orderTask('yazma','z-taslak',{title:'Taslağı sırala',hint:'“Doğa sevgisi” konulu bilgilendirici metnin taslak maddelerini doğru sıraya koy.',
+      items:[['Doğanın insan için önemini tanıtan bir giriş cümlesi','Giriş'],['Ormanların, suyun ve havanın yaşamımızdaki yeri','Gelişme 1'],['Doğaya verilen zararlar ve bunların sonuçları','Gelişme 2'],['Doğayı korumak için yapılabilecekler','Gelişme 3'],['Okuru doğayı korumaya çağıran toparlayıcı bir sonuç','Sonuç']],
+      ok:'Giriş konuyu tanıtır, gelişme açıklar ve örneklendirir, sonuç toparlar.'}),
+    A.mcList('yazma','Yapı ve içerik',null,[
+      {id:'z-y1',text:'Arkadaşına notlarını düzenlemesi için öneriler vereceksin. Hangi paragraf türü en uygundur?',options:['Açıklayıcı','Betimleyici','Öyküleyici','Şiir'],expl:'Öneri ve bilgi vermek açıklayıcı anlatımın işidir.'},
+      {id:'z-y2',text:'Öyküleyici bir metinde olayın geliştiği, merakın en çok arttığı bölüm hangisidir?',options:['Düğüm','Serim','Çözüm','Başlık'],expl:'Serim: tanıtım, düğüm: olayın gelişip düğümlendiği yer, çözüm: sonuç.'},
+    ])
+  ));
+  box.b.append(grid2(
+    A.mcList('yazma','Benzetme ve söz varlığı',null,[
+      {id:'z-b1',text:'Aşağıdakilerin hangisinde benzetme yapılmıştır?',options:['Gözleri yıldız gibi parlıyordu.','Gözleri sabah biraz şişmişti.','Gözlerini kapatıp dinlendi.','Gözlüğünü masada unuttu.'],expl:'“Yıldız gibi” sözüyle gözler yıldıza benzetilmiştir.'},
+      {id:'z-b2',src:'Kar yağınca köy ………… bir sessizliğe gömüldü.',text:'Boşluğa hangisi getirilirse cümle bir benzetmeyle zenginleşir?',options:['pamuk gibi yumuşak','her zamanki gibi','birkaç saat sonra','o akşam hiç beklenmedik'],expl:'“Pamuk gibi yumuşak” bir benzetmedir.'},
+      {id:'z-b3',text:'“Vatan sağ olsun!” sözü hangi duyguyu en iyi yansıtır?',options:['Fedakârlık','Kıskançlık','Pişmanlık','Kayıtsızlık'],expl:'Bu söz, vatan için her şeyi göze almayı anlatır.'},
+    ]),
+    A.cluesTask('yazma','z-benzet',{title:'Benzetmeyi tamamla',hint:'Cümleye en uygun benzetmeyi seç. Tur en fazla 1 yanlışla biterse görev tamam.',maxWrong:1,shuffleAnswers:true,
+      answers:['kurşun gibi','buz gibi','aslan gibi','arı gibi','ipek gibi'],
+      cards:[['Uykusuz geçen geceden sonra göz kapakları <b>……</b> ağırdı.','kurşun gibi','Kurşun ağırlığıyla bilinir.'],['Kışın musluktan akan su <b>……</b> soğuktu.','buz gibi','Soğukluk için buz.'],['Askerler cephede <b>……</b> çarpıştı.','aslan gibi','Cesaret için aslan.'],['Annem sabahtan akşama <b>……</b> çalıştı.','arı gibi','Çalışkanlık için arı.'],['Kızın saçları <b>……</b> yumuşaktı.','ipek gibi','Yumuşaklık için ipek.']]})
+  ));
+  box.c.append(grid2(
+    A.writeTask('yazma','z-tamam',{title:'Yazılı provası: metni tamamla',src:'Cepheye cephane taşıyan kağnılar, gecenin karanlığında gıcırdayarak ilerliyordu. Kar yağıyor, rüzgâr insanın yüzünü bıçak gibi kesiyordu. Kafilenin en önünde yürüyen Zehra Ana, kucağındaki battaniyeyi açıp cephane sandıklarının üstüne örttü. Yol bitmek bilmiyordu ama…',prompt:'Metni Zehra Ana’nın kararlılığını ve Millî Mücadele ruhunu yansıtacak biçimde tamamlayınız. “fedakârlık, sarsılmaz irade, hürriyet, vatan sağ olsun” ifadelerini ve en az bir benzetmeyi kullanınız.',
+      model:'…Zehra Ana’nın adımları hiç yavaşlamadı. Ayakları donmuş, elleri taş gibi sertleşmişti ama yüreğinde sarsılmaz bir irade vardı. Yanındaki genç kadın “Battaniyeyi kendine sakla ana, üşüyeceksin.” deyince Zehra Ana gülümsedi: “Ben üşürsem vatan sağ olsun kızım. Bu cephane ulaşmazsa hürriyetimiz elden gider.” Kafile, karanlıkta parlayan bir yıldız gibi yoluna devam etti. Sabaha karşı cepheye vardıklarında askerler, bu fedakârlığın karşısında sessizce başlarını eğdi.',
+      checks:['Dört ifadenin hepsini (fedakârlık, sarsılmaz irade, hürriyet, vatan sağ olsun) anlamına uygun kullandım.','En az bir benzetme kullandım (… gibi).','Metni anlamlı bir sonla bitirdim, olay akışını sürdürdüm.','Yazım ve noktalama kurallarına dikkat ettim.']}),
+    card(el('h3',{},'Metin tamamlarken'),el('ol',{class:'rules'},el('li',{},'Verilen kesitteki kişileri, yeri ve zamanı koru; yeni bir hikâyeye başlama.'),el('li',{},'İstenen ifadeleri bir listeye yaz, kullandıkça üstünü çiz.'),el('li',{},'Benzetme için “gibi, kadar, sanki” kullan: yıldız gibi, kaya kadar sağlam.'),el('li',{},'Son cümlede düğümü çöz: kahraman amacına ulaştı mı?')))
+  ));
+  box.d.append(grid2(
+    A.writeTask('yazma','z-bilgi',{title:'Yazılı provası: taslak + bilgilendirici metin',prompt:'“Kitap okumanın faydaları” konulu bilgilendirici bir metin yazmayı planlayınız. Önce giriş, gelişme ve sonuç bölümlerinde neler yazacağınızı taslak hâlinde belirtiniz, sonra taslağa uygun metninizi yazınız.',
+      model:'<b>Taslak:</b> Giriş: Kitap okumanın her yaşta önemli bir alışkanlık olduğu. Gelişme: Kelime hazinesini geliştirmesi; hayal gücünü ve empatiyi güçlendirmesi; dikkat ve odaklanmayı artırması. Sonuç: Her gün kısa da olsa okumaya zaman ayırma çağrısı.<br><b>Metin:</b> Kitap okumak, her yaştan insan için en değerli alışkanlıklardan biridir. Okudukça yeni kelimeler öğrenir, duygu ve düşüncelerimizi daha zengin bir dille anlatırız. Kitaplar bizi başka hayatlara konuk eder; böylece hayal gücümüz gelişir, başkalarını daha iyi anlarız. Ayrıca bir kitabı sonuna kadar okumak dikkatimizi toplamayı öğretir. Bu yüzden her gün yirmi dakika bile olsa kitap okumaya zaman ayırmalıyız.',
+      checks:['Taslakta giriş, gelişme ve sonuç bölümlerini ayrı ayrı yazdım.','Metnim taslağa uygun sırayla ilerliyor.','Gelişmede en az iki faydayı açıkladım.','Sonuçta toparlayıcı bir cümle ya da çağrı var.']}),
+    A.writeTask('yazma','z-ikna',{title:'Yazılı provası: ikna edici paragraf',prompt:'Okulunuzda bir kitap kulübü kurulmasını istiyorsunuz. Okul müdürünüzü ikna etmek için en az iki gerekçe içeren bir paragraf yazınız.',
+      model:'Sayın Müdürüm, okulumuzda bir kitap kulübü kurulmasını istiyoruz. Böyle bir kulüp, okuma alışkanlığı olmayan arkadaşlarımızı da kitaplarla buluşturur çünkü insan bir grupla birlikte okurken daha istekli olur. Ayrıca okuduğumuz kitapları tartışmak, düşüncelerimizi saygılı bir dille anlatmayı öğretir. Kulüp, kütüphanemizdeki kitapların da daha çok okunmasını sağlar. Bu nedenle kulübün kurulmasına izin vermenizi rica ediyoruz.',
+      checks:['İsteğimi açıkça yazdım.','En az iki gerekçe verdim ve gerekçeleri “çünkü, ayrıca, bu nedenle” gibi ifadelerle bağladım.','Saygılı bir dil kullandım.','Paragrafı bir rica ya da çağrıyla bitirdim.']})
+  ));
+};
+</script>
+<script>
+(function(){
+"use strict";
+/* ---------------- yardımcılar ---------------- */
+const $=s=>document.querySelector(s);
+const el=(tag,attrs={},...kids)=>{const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs||{})){if(k==='class')e.className=v;else if(k==='html')e.innerHTML=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else if(v!==false&&v!=null)e.setAttribute(k,v===true?'':v)}for(const c of kids.flat()){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(c))}return e};
+const NS='http://www.w3.org/2000/svg';
+const sv=(tag,attrs={},txt)=>{const e=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(txt!=null)e.textContent=txt;return e};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const APP=window.APP;
+
+/* ---------------- kayıt ---------------- */
+const KEY=APP.key;
+let S={done:{},karma:null,check:{},write:{}};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+S.write=S.write||{};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}updateProgress()};
+/* anonim kullanım sayacı (GoatCounter; kişisel veri yok) */
+const GC=ev=>{try{const g=window.goatcounter;if(g&&g.count)g.count({path:APP.gc+'/'+ev,title:ev,event:true})}catch(e){}};
+const markDone=id=>{if(!S.done[id]){S.done[id]=true;save();GC('gorev/'+id)}};
+
+/* ---------------- istasyonlar ---------------- */
+const STATIONS=[{id:'harita',ad:'Harita',kod:''},...APP.stations,{id:'karma',ad:'Karma Tur',kod:'Hepsi'}];
+const TASKS={};
+const regTask=(st,id)=>{(TASKS[st]=TASKS[st]||[]);if(!TASKS[st].includes(id))TASKS[st].push(id)};
+const tabsEl=$('#tabs'),viewsEl=$('#views');const views={};
+STATIONS.forEach((s,i)=>{
+  tabsEl.append(el('button',{class:'tab',role:'tab','aria-selected':i===0?'true':'false','aria-controls':'v-'+s.id,id:'t-'+s.id,onclick:()=>show(s.id)},s.ad,el('small',{id:'tc-'+s.id},'')));
+  const v=el('section',{id:'v-'+s.id,role:'tabpanel','aria-labelledby':'t-'+s.id,class:i===0?'':'hidden'});
+  viewsEl.append(v);views[s.id]=v;
+});
+function show(id){
+  STATIONS.forEach(s=>{$('#t-'+s.id).setAttribute('aria-selected',String(s.id===id));views[s.id].classList.toggle('hidden',s.id!==id)});
+  try{sessionStorage.setItem(KEY+'-tab',id)}catch(e){}
+  if(id==='harita')renderHarita();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------------- bileşenler ---------------- */
+const card=(...k)=>el('div',{class:'card'},...k);
+const grid2=(a,b)=>el('div',{class:'grid2'},a,b);
+const fbSet=(fb,cls,html)=>{fb.className='fb '+cls;fb.innerHTML=html};
+const srcBox=(html,cite)=>el('blockquote',{class:'src'},el('span',{html}),cite?el('cite',{},cite):null);
+
+/* çoktan seçmeli görev: g={id,text,src?,cite?,options:[ilk doğru],expl,hint?} */
+function makeTask(st,g,n){
+  regTask(st,g.id);
+  const box=el('div',{class:'task'+(S.done[g.id]?' done':'')});
+  const head=el('div',{class:'head'},el('span',{class:'num'},String(n)),el('div',{},g.src?srcBox(g.src,g.cite):null,el('p',{html:g.text,style:g.src?'margin-top:6px':''})));
+  const body=el('div',{class:'body'});box.append(head,body);
+  const order=shuffle(g.options.map((o,i)=>i));const fb=el('div',{class:'fb hidden'});
+  const btns=order.map(i=>el('button',{class:'opt',type:'button',onclick:()=>{
+    const b=btns[order.indexOf(i)];
+    if(i===0){btns.forEach(x=>x.disabled=true);b.classList.add('right');fbSet(fb,'ok','<b>Doğru.</b> '+(g.expl||''));box.classList.add('done');markDone(g.id)}
+    else{b.classList.add('wrong');b.disabled=true;fbSet(fb,'bad','<b>Tekrar düşün.</b> '+(g.hint||'Metni ya da istasyondaki bilgileri yeniden incele.'))}
+  }},g.options[i]));
+  body.append(...btns,fb);
+  if(S.done[g.id]){btns.forEach(x=>x.disabled=true);btns[order.indexOf(0)].classList.add('right');fbSet(fb,'ok','<b>Tamamlandı.</b> '+(g.expl||''))}
+  return box;
+}
+function mcList(st,title,lead,list){
+  const c=card(el('h3',{},title),lead?el('p',{class:'hint'},lead):null);const t=el('div',{class:'tasks'});
+  list.forEach((g,i)=>t.append(makeTask(st,g,i+1)));c.append(t);return c;
+}
+/* sınıflandırma: cats=[[key,label]], items=[[metin,key]] */
+function sortTask(st,id,o){
+  regTask(st,id);
+  const c=card(el('h3',{},o.title),o.hint?el('p',{class:'hint'},o.hint):null);
+  const tb=el('table',{class:'tbl'});const sels=[];
+  shuffle(o.items).forEach(([t,a])=>{const s=el('select',{'aria-label':t},el('option',{value:''},'— seç —'),...o.cats.map(([k,l])=>el('option',{value:k},l)));s._a=a;sels.push(s);const td=el('td',{},s);s._td=td;tb.append(el('tr',{},el('td',{html:t}),td))});
+  const fb=el('div',{class:'fb hidden'});
+  const chk=el('button',{class:'btn sm',type:'button',onclick:()=>{let k=0;sels.forEach(s=>{const ok=s.value===s._a;s._td.className=s.value?(ok?'ok':'bad'):'';if(ok)k++});const all=k===sels.length;fbSet(fb,all?'ok':'bad',all?'<b>Hepsi doğru.</b> '+(o.ok||''):`<b>${k} / ${sels.length} doğru.</b> Kırmızı satırları yeniden düşün.`);if(all)markDone(id)}},'Kontrol et');
+  c.append(tb,el('div',{style:'height:8px'}),el('div',{class:'row'},chk,S.done[id]?el('span',{class:'pill'},'Tamamlandı'):null),fb);
+  return c;
+}
+/* ipucu kartları: cards=[[ipucu,cevap,açıklama]], answers=[...] — tur yanlışsız biterse görev tamam */
+function cluesTask(st,id,o){
+  regTask(st,id);
+  const c=card(el('h3',{},o.title),o.hint?el('p',{class:'hint'},o.hint):null);
+  const info=el('p',{class:'mono',style:'margin:4px 0'}),area=el('div');c.append(info,area);
+  const maxWrong=o.maxWrong||0;let order,qi,wrong;
+  const start=()=>{order=shuffle(o.cards).slice(0,o.n||o.cards.length);qi=0;wrong=0;ask()};
+  const inf=()=>{info.textContent=`Kart ${qi+1} / ${order.length} · yanlış: ${wrong}`};
+  const ask=()=>{area.innerHTML='';inf();const[q,a,ex]=order[qi];const fb=el('div',{class:'fb hidden'});
+    const opts=o.shuffleAnswers?shuffle(o.answers):o.answers;
+    const btns=opts.map(x=>el('button',{class:'opt',type:'button',onclick:e=>{const b=e.currentTarget;if(x===a){btns.forEach(bb=>bb.disabled=true);b.classList.add('right');fbSet(fb,'ok','<b>Doğru.</b> '+(ex||''));nx.classList.remove('hidden')}else{wrong++;inf();b.classList.add('wrong');b.disabled=true;fbSet(fb,'bad','<b>Değil.</b> '+(o.wrongHint||'Karttaki anahtar kelimeye dikkat et.'))}}},x));
+    const nx=el('button',{class:'btn hidden',type:'button',onclick:()=>{qi++;if(qi<order.length)ask();else{area.innerHTML='';const ok=wrong<=maxWrong;area.append(el('div',{class:'fb '+(ok?'ok':'info'),html:`<b>Tur bitti.</b> ${order.length} kartı ${wrong} yanlışla tamamladın. `+(ok?'Görev tamamlandı.':`Görevi tamamlamak için en fazla ${maxWrong} yanlışla bitir.`)}),el('div',{style:'height:8px'}),el('button',{class:'btn',type:'button',onclick:start},'Yeni tur'));if(ok)markDone(id)}}},'Sonraki kart');
+    area.append(el('div',{class:'src',style:'font-size:1.02rem'},el('b',{html:q})),el('div',{style:'height:8px'}),el('div',{class:'optgrid'},...btns),el('div',{style:'height:6px'}),fb,el('div',{style:'height:6px'}),nx)};
+  start();
+  if(S.done[id])c.insertBefore(el('span',{class:'pill'},'Tamamlandı'),info);
+  return c;
+}
+/* sıralama: items doğru sırada [[metin, etiket?]] */
+function orderTask(st,id,o){
+  regTask(st,id);
+  const c=card(el('h3',{},o.title),o.hint?el('p',{class:'hint'},o.hint):null);
+  let cur=shuffle(o.items.map((x,i)=>i));if(cur.every((x,i)=>x===i))cur.reverse();
+  const ul=el('ul',{class:'olist'});const fb=el('div',{class:'fb hidden'});let solved=false;
+  const draw=(marks)=>{ul.innerHTML='';cur.forEach((ix,p)=>{const[t,lab]=o.items[ix];const li=el('li',{class:marks?(ix===p?'ok':'bad'):''},el('span',{class:'mono',style:'width:22px;color:var(--ink2)'},String(p+1)),el('span',{class:'tx',html:t}),solved&&lab?el('span',{class:'dt'},lab):null,
+    solved?null:el('button',{type:'button','aria-label':'Yukarı taşı',onclick:()=>{if(p>0){[cur[p-1],cur[p]]=[cur[p],cur[p-1]];draw()}}},'↑'),
+    solved?null:el('button',{type:'button','aria-label':'Aşağı taşı',onclick:()=>{if(p<cur.length-1){[cur[p+1],cur[p]]=[cur[p],cur[p+1]];draw()}}},'↓'));ul.append(li)})};
+  const chk=el('button',{class:'btn sm',type:'button',onclick:()=>{const k=cur.filter((x,i)=>x===i).length;if(k===cur.length){solved=true;draw(true);fbSet(fb,'ok','<b>Sıralama doğru.</b> '+(o.ok||''));chk.disabled=true;markDone(id)}else{draw(true);fbSet(fb,'bad',`<b>${k} / ${cur.length} doğru yerde.</b> Yeşiller doğru; kırmızıları ↑ ↓ ile taşı.`)}}},'Kontrol et');
+  draw();c.append(ul,el('div',{style:'height:8px'}),chk,el('div',{style:'height:6px'}),fb);
+  if(S.done[id])c.insertBefore(el('span',{class:'pill'},'Daha önce tamamlandı'),ul);
+  return c;
+}
+/* yazılı provası: o={title,prompt,src?,model,checks:[]} */
+function writeTask(st,id,o){
+  regTask(st,id);
+  const c=card(el('h3',{},o.title||'Yazılı provası'),o.src?srcBox(o.src,o.cite):null,el('p',{html:'<b>'+o.prompt+'</b>',style:'margin:8px 0'}));
+  const ta=el('textarea',{placeholder:'Cevabını buraya yaz. Sonra örnek cevapla karşılaştır.','aria-label':'Cevabın'});ta.value=S.write[id]||'';
+  const btn=el('button',{class:'btn sm',type:'button'},'Örnek cevabı göster');
+  const out=el('div',{class:'hidden'});
+  const upd=()=>{btn.disabled=ta.value.trim().length<15};
+  ta.addEventListener('input',()=>{S.write[id]=ta.value;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}upd()});
+  const cbs=[];const fb=el('div',{class:'fb hidden'});
+  const checks=el('div',{class:'checks'},el('p',{class:'hint',style:'margin:8px 0 2px'},'Kendi cevabını kontrol et. Cevabında olanları işaretle:'));
+  o.checks.forEach((t,i)=>{const cb=el('input',{type:'checkbox',id:id+'-c'+i});cb.addEventListener('change',()=>{if(cbs.every(x=>x.checked)){fbSet(fb,'ok','<b>Tam puanlık cevap.</b> Bu cevabı sınavda da böyle yazabilirsin.');markDone(id)}else fbSet(fb,'info','Eksik maddeleri cevabına ekle; sonra işaretle.')});cbs.push(cb);checks.append(el('label',{for:id+'-c'+i},cb,el('span',{},t)))});
+  btn.onclick=()=>{out.classList.remove('hidden');btn.classList.add('hidden');GC('yazili/'+id)};
+  out.append(el('div',{class:'model',html:'<b>Örnek cevap:</b> '+o.model}),checks,fb);
+  c.append(ta,el('div',{style:'height:6px'}),el('div',{class:'row'},btn,S.done[id]?el('span',{class:'pill'},'Tamamlandı'):null),out);upd();
+  if(S.done[id]){out.classList.remove('hidden');btn.classList.add('hidden');cbs.forEach(x=>x.checked=true)}
+  return c;
+}
+/* kelime seçme: o={title,hint,text:'... {hedef} ...',mode:'all'|'subset',min,ok,after}
+   {…} içindekiler hedeftir, {!…} hedef olmayan tek parça. all: bütün hedefler; subset: hedeflerden en az min tanesi. Hedef dışı seçim olmamalı. */
+function pickTask(st,id,o){
+  regTask(st,id);
+  const c=card(el('h3',{},o.title),o.hint?el('p',{class:'hint',html:o.hint}):null);
+  const p=el('p',{class:'pick'});const toks=[];
+  const addTok=(t,tg)=>{const b=el('button',{type:'button',class:'tok','aria-pressed':'false'},t);b._t=tg;b.onclick=()=>{if(b.disabled)return;b.classList.toggle('on');b.classList.remove('bad','miss');b.setAttribute('aria-pressed',String(b.classList.contains('on')))};toks.push(b);p.append(b)};
+  o.text.split(/(\{[^}]+\})/).forEach(part=>{
+    if(!part)return;
+    if(part[0]==='{'){const s=part.slice(1,-1);if(s[0]==='!')addTok(s.slice(1),false);else addTok(s,true);return}
+    part.split(/(\s+)/).forEach(w=>{
+      if(!w)return;if(/^\s+$/.test(w)){p.append(' ');return}
+      const m=w.match(/^([«“"(‘'—–-]*)(.*?)([.,;:!?…»”")’']*)$/u);
+      if(!m||!m[2]){p.append(w);return}
+      if(m[1])p.append(m[1]);addTok(m[2],false);if(m[3])p.append(m[3]);
+    });
+  });
+  const nT=toks.filter(t=>t._t).length;const need=o.mode==='subset'?(o.min||1):nT;
+  const fb=el('div',{class:'fb hidden'});let tries=0;
+  const chk=el('button',{class:'btn sm',type:'button',onclick:()=>{
+    tries++;const on=toks.filter(t=>t.classList.contains('on'));const good=on.filter(t=>t._t).length,extra=on.filter(t=>!t._t);
+    extra.forEach(t=>{t.classList.add('bad')});
+    if(!extra.length&&good>=need){toks.forEach(t=>{t.disabled=true;if(t._t&&(o.mode!=='subset'||t.classList.contains('on')))t.classList.add('ok')});fbSet(fb,'ok','<b>Doğru.</b> '+(o.ok||''));if(o.after)fb.append(el('div',{html:o.after,style:'margin-top:6px'}));chk.disabled=true;markDone(id);return}
+    let msg=o.mode==='subset'?`<b>${good} uygun seçim</b> (en az ${need} gerekli).`:`<b>${good} / ${nT} hedef bulundu.</b>`;
+    if(extra.length)msg+=' Kırmızılar hedef değil; seçimi kaldır.';
+    if(tries>=3&&o.mode!=='subset'){toks.filter(t=>t._t&&!t.classList.contains('on')).forEach(t=>t.classList.add('miss'));msg+=' Kesik çizgili olanlara bir daha bak.'}
+    fbSet(fb,'bad',msg);
+  }},'Kontrol et');
+  c.append(p,el('div',{style:'height:8px'}),el('div',{class:'row'},chk,S.done[id]?el('span',{class:'pill'},'Daha önce tamamlandı'):null),fb);
+  return c;
+}
+/* boşluk doldurma: o={title,hint,text:'… [[,]] … [[a|b|c]] …',choices:[…],ok}
+   [[doğru]] → o.choices; [[doğru|diğer|…]] → kendi seçenekleri (karışık sırada) */
+function fillTask(st,id,o){
+  regTask(st,id);
+  const c=card(el('h3',{},o.title),o.hint?el('p',{class:'hint',html:o.hint}):null);
+  const p=el('div',{class:'fill'});const sels=[];
+  o.text.split(/(\[\[[^\]]+\]\])/).forEach(part=>{
+    const m=part.match(/^\[\[(.+)\]\]$/);
+    if(!m){if(part)p.append(el('span',{html:part}));return}
+    const alts=m[1].split('|');const opts=alts.length>1?shuffle(alts):o.choices;
+    const s=el('select',{'aria-label':'Boşluk '+(sels.length+1)},el('option',{value:''},'…'),...opts.map(x=>el('option',{value:x},x)));
+    s._a=alts[0];s.onchange=()=>s.classList.remove('ok','bad');sels.push(s);p.append(s);
+  });
+  const fb=el('div',{class:'fb hidden'});
+  const chk=el('button',{class:'btn sm',type:'button',onclick:()=>{let k=0;sels.forEach(s=>{const ok=s.value===s._a;s.classList.remove('ok','bad');if(s.value)s.classList.add(ok?'ok':'bad');if(ok)k++});
+    if(k===sels.length){fbSet(fb,'ok','<b>Hepsi doğru.</b> '+(o.ok||''));sels.forEach(s=>s.disabled=true);chk.disabled=true;markDone(id)}else fbSet(fb,'bad',`<b>${k} / ${sels.length} doğru.</b> Kırmızı ya da boş kalan yerleri yeniden düşün.`)}},'Kontrol et');
+  c.append(p,el('div',{style:'height:8px'}),el('div',{class:'row'},chk,S.done[id]?el('span',{class:'pill'},'Daha önce tamamlandı'):null),fb);
+  return c;
+}
+/* parça seçici */
+function parts(v,list){
+  const seg=el('div',{class:'seg',role:'group'});v.append(seg);const box={};
+  list.forEach(([k,t],i)=>{seg.append(el('button',{class:'chip',type:'button','aria-pressed':i===0?'true':'false',onclick:e=>{seg.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed','false'));e.currentTarget.setAttribute('aria-pressed','true');list.forEach(([kk])=>box[kk].classList.toggle('hidden',kk!==k))}},t));box[k]=el('div',{class:i===0?'':'hidden'});v.append(box[k])});
+  return box;
+}
+function intro(v,st,title,lead){v.append(card(el('h2',{},title+' ',st.kod?el('span',{class:'kod'},st.kod):null),el('p',{class:'lead',html:lead})))}
+
+const API={el,sv,$,shuffle,pick,card,grid2,fbSet,srcBox,makeTask,mcList,sortTask,cluesTask,orderTask,writeTask,pickTask,fillTask,parts,intro,markDone,regTask,S,save,GC,show};
+
+/* ---------------- istasyon içerikleri ---------------- */
+APP.stations.forEach(st=>{try{APP.build[st.id](views[st.id],API,st)}catch(e){console.error(st.id,e);views[st.id].append(card(el('p',{},'Bu istasyon yüklenemedi.')))}});
+
+/* ---------------- KARMA TUR ---------------- */
+(function(){
+  const v=views.karma;regTask('karma','k-tur');const K=APP.karma.labels,KST=APP.karma.st,BANK=APP.karma.bank,PLAN=APP.karma.plan;
+  const total=Object.values(PLAN).reduce((a,b)=>a+b,0);
+  let Q=[],qi=0,res=[];const area=el('div');
+  v.append(card(el('h2',{},'Karma Tur'),el('p',{class:'lead'},`Bütün istasyonlardan karışık ${total} soru. Soru sayıları sınav senaryosundaki ağırlığa göre ayarlandı. Her sorudan önce ne kadar emin olduğunu seç: en çok, emin olup yanlış yaptığın konuları çalışman gerekir.`),area));
+  const start=()=>{Q=[];for(const[k,n]of Object.entries(PLAN))Q.push(...shuffle(BANK.filter(b=>b.k===k)).slice(0,n));Q=shuffle(Q);qi=0;res=[];ask()};
+  const introK=()=>{area.innerHTML='';if(S.karma)area.append(el('p',{class:'hint'},`Son turun: ${S.karma.score} / ${S.karma.total}.`));area.append(el('button',{class:'btn',type:'button',onclick:start},S.karma?'Yeni tur başlat':'Turu başlat'))};
+  const ask=()=>{area.innerHTML='';const q=Q[qi];let conf=null;
+    const ansBox=el('div',{class:'body hidden',style:'display:flex;flex-direction:column;gap:6px'});const fb=el('div',{class:'fb hidden'});
+    const confRow=el('div',{class:'conf'},'Ne kadar eminsin?',...[['e','Eminim'],['b','Biraz'],['t','Tahmin']].map(([k,t])=>el('button',{class:'chip',type:'button','aria-pressed':'false',onclick:e=>{conf=k;confRow.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));e.currentTarget.setAttribute('aria-pressed','true');ansBox.classList.remove('hidden')}},t)));
+    const next=el('button',{class:'btn hidden',type:'button',onclick:()=>{qi++;qi<Q.length?ask():finish()}},qi<Q.length-1?'Sonraki soru':'Sonucu gör');
+    const order=shuffle(q.o.map((x,i)=>i));
+    const bs=order.map(i=>el('button',{class:'opt',type:'button',onclick:()=>{bs.forEach(b=>b.disabled=true);const ok=i===0;bs[order.indexOf(i)].classList.add(ok?'right':'wrong');if(!ok)bs[order.indexOf(0)].classList.add('right');res.push({k:q.k,ok,conf,q:q.q});fbSet(fb,ok?'ok':'bad',(ok?'<b>Doğru.</b> ':'<b>Yanlış.</b> ')+q.e);next.classList.remove('hidden');confRow.querySelectorAll('button').forEach(b=>b.disabled=true)}},q.o[i]));
+    ansBox.append(...bs);
+    area.append(el('div',{class:'qcard'},el('p',{class:'mono',style:'margin:0'},`Soru ${qi+1} / ${Q.length} · ${K[q.k]}`),q.src?srcBox(q.src,q.cite):null,el('p',{style:'font-size:1.05rem;margin:0'},el('b',{html:q.q})),confRow,ansBox,fb,next))};
+  const finish=()=>{area.innerHTML='';const score=res.filter(r=>r.ok).length;S.karma={score,total:res.length,at:Date.now()};markDone('k-tur');save();GC('karma/'+score+'-'+res.length);
+    area.append(el('p',{style:'font-size:1.1rem'},el('b',{},`Sonuç: ${score} / ${res.length}`)));
+    for(const k of Object.keys(PLAN)){const rs=res.filter(r=>r.k===k);if(!rs.length)continue;const p=rs.filter(r=>r.ok).length/rs.length;area.append(el('div',{class:'kbar'},el('span',{},K[k]),el('span',{class:'bar'},el('i',{style:`width:${p*100}%;background:${p>=.99?'var(--ok)':p>=.5?'var(--warn)':'var(--bad)'}`})),el('span',{class:'mono'},`${rs.filter(r=>r.ok).length}/${rs.length}`)))}
+    const cf=res.filter(r=>!r.ok&&r.conf==='e');
+    if(cf.length)area.append(el('div',{class:'fb bad',html:'<b>Emin olup yanlış yaptıkların</b> (önce bunları çalış):<br>'+cf.map(r=>'• '+r.q).join('<br>')}));
+    const weak=[...new Set(res.filter(r=>!r.ok).map(r=>KST[r.k]))];
+    if(weak.length)area.append(el('p',{},'Tekrar etmen önerilen istasyonlar: ',...weak.map(w=>el('button',{class:'chip',type:'button',onclick:()=>show(w)},STATIONS.find(s=>s.id===w).ad))));
+    else area.append(el('div',{class:'fb ok',html:'<b>Harika!</b> Bütün soruları doğru yaptın.'}));
+    area.append(el('div',{style:'height:8px'}),el('button',{class:'btn',type:'button',onclick:start},'Yeni tur'))};
+  introK();
+})();
+
+/* ---------------- HARİTA ---------------- */
+function renderHarita(){
+  const H=APP.harita;const v=views.harita;v.innerHTML='';
+  v.append(card(el('h2',{},'Nereden başlamalı?'),el('p',{class:'lead',html:H.lead})));
+  const grid=el('div',{class:'stations'});
+  STATIONS.slice(1).forEach(s=>{const ts=TASKS[s.id]||[];const d=ts.filter(t=>S.done[t]).length;
+    grid.append(el('div',{class:'card st'},el('h3',{},s.ad),el('span',{class:'kod',style:'align-self:flex-start'},s.kod),el('p',{class:'hint'},H.desc[s.id]||''),el('div',{class:'ring'},el('span',{class:'bar'},el('i',{style:`width:${ts.length?d/ts.length*100:0}%`})),`${d}/${ts.length}`),el('button',{class:'btn sm',type:'button',onclick:()=>show(s.id)},d?'Devam et':'Başla')))});
+  v.append(grid);
+  const cols=H.dagilimCols||['Soru'];
+  const tb=el('table',{class:'tbl'},el('tr',{},el('th',{},'Öğrenme çıktısı'),el('th',{},'Konu'),...cols.map(x=>el('th',{style:'text-align:center'},x))));
+  H.dagilim.forEach(([k,t,n])=>tb.append(el('tr',{},el('td',{class:'mono',style:'white-space:nowrap'},k),el('td',{},t),...[].concat(n).map(x=>el('td',{class:'c'+(x?'':' z')},x?String(x):'–')))));
+  v.append(el('div',{style:'height:14px'}),card(el('h3',{},H.dagilimBaslik),el('p',{class:'hint',html:H.dagilimNot}),el('div',{style:'overflow-x:auto'},tb)));
+  const two=el('div',{class:'grid2',style:'margin-top:14px'});
+  two.append(card(el('h3',{},`Cebimdeki ${H.sinav.length} cümle`),el('ol',{class:'rules'},...H.sinav.map(t=>el('li',{html:t})))));
+  const ck=card(el('h3',{},'Kendimi kontrol ediyorum'));
+  H.check.forEach((t,i)=>{const cb=el('input',{type:'checkbox',id:'ck'+i,style:'width:18px;height:18px;accent-color:var(--ok);flex:none'});cb.checked=!!S.check[i];cb.addEventListener('change',()=>{S.check[i]=cb.checked;save()});ck.append(el('label',{class:'row',for:'ck'+i,style:'align-items:flex-start;margin:4px 0;cursor:pointer;flex-wrap:nowrap'},cb,el('span',{},t)))});
+  ck.append(el('div',{style:'height:8px'}),el('button',{class:'btn ghost sm',type:'button',onclick:()=>{if(confirm('Bütün ilerleme silinsin mi?')){S={done:{},karma:null,check:{},write:{}};save();location.reload()}}},'İlerlemeyi sıfırla'));
+  two.append(ck);v.append(two);
+}
+function updateProgress(){
+  let all=0,d=0;STATIONS.slice(1).forEach(s=>{const ts=TASKS[s.id]||[];const dd=ts.filter(t=>S.done[t]).length;all+=ts.length;d+=dd;const c=$('#tc-'+s.id);if(c)c.textContent=ts.length?`${dd}/${ts.length}`:''});
+  $('#totTxt').textContent=`${d} / ${all} görev`;$('#totBar').style.width=(all?d/all*100:0)+'%';
+}
+renderHarita();updateProgress();
+try{const t=sessionStorage.getItem(KEY+'-tab');if(t&&views[t])show(t)}catch(e){}
+})();
+
+</script>
+<script data-goatcounter="https://sevilunaldogansegem.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
