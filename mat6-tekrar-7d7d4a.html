@@ -147,6 +147,22 @@ footer{color:var(--ink2);font-size:.82rem;text-align:center;margin-top:8px}
 .tbl .hl{background:var(--warnbg);font-weight:700}
 .tbl select{max-width:100%}
 .segem-foot{line-height:1.55;font-size:.8rem;margin-top:12px}
+.dbanner{display:flex;align-items:center;gap:12px;flex-wrap:wrap;width:100%;text-align:left;font:inherit;color:var(--ink);cursor:pointer;
+  border:1.5px solid var(--warn);background:linear-gradient(100deg,var(--warnbg),var(--panel));border-radius:14px;padding:10px 14px}
+.dbanner:hover{box-shadow:0 2px 0 var(--warn)}
+.dbanner .ic{font-size:1.7rem;line-height:1;flex:none}
+.dbanner .tx{flex:1 1 260px;min-width:0}
+.dbanner .tx b{font-family:var(--f-display);font-size:1.05rem;display:block}
+.dbanner .tx span{font-size:.88rem;color:var(--ink2)}
+.dbanner .meter{flex:0 1 220px;display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.82rem;color:var(--ink2)}
+.dbanner .meter .bar{flex:1;height:10px;border-radius:99px;background:var(--soft);overflow:hidden;border:1px solid var(--line)}
+.dbanner .meter .bar i{display:block;height:100%;background:var(--warn);transition:width .4s}
+.dbanner .go{flex:none;font-weight:700;color:var(--warn)}
+.dbanner.open{border-color:var(--ok);background:linear-gradient(100deg,var(--okbg),var(--panel))}
+.dbanner.open .go{color:var(--ok)}
+.dbanner.open .ic{animation:dpop 1.6s ease-in-out 2}
+@keyframes dpop{0%,100%{transform:scale(1)}50%{transform:scale(1.25) rotate(-8deg)}}
+@media (prefers-reduced-motion: reduce){.dbanner.open .ic{animation:none}}
 </style>
 </head>
 <body>
@@ -166,6 +182,12 @@ footer{color:var(--ink2);font-size:.82rem;text-align:center;margin-top:8px}
     <div class="total"><span id="totTxt">0 / 0 görev</span><span class="bar"><i id="totBar"></i></span></div>
   </div>
 </header>
+<button type="button" class="dbanner" id="denemeBanner" aria-label="Deneme sınavı">
+  <span class="ic" id="dbIc">🔒</span>
+  <span class="tx"><b id="dbT">Deneme sınavı seni bekliyor!</b><span id="dbS">Görevlerin %75’ini doğru tamamla, gerçek sınav biçimindeki deneme sınavının kilidi açılsın.</span></span>
+  <span class="meter" id="dbM"><span class="bar"><i id="dbBar"></i></span><span id="dbN">0/0</span></span>
+  <span class="go" id="dbGo">Nasıl açılır? →</span>
+</button>
 <nav class="tabs" role="tablist" aria-label="İstasyonlar" id="tabs"></nav>
 <main id="views"></main>
 <footer class="segem-foot">Hazırlayan: Özel Sevil Ünal Doğan Sosyal Etkinlik ve Gelişim Merkezi<br>Kaynak: T.C. Millî Eğitim Bakanlığı, Türkiye Yüzyılı Maarif Modeli Ortaokul Matematik Dersi Öğretim Programı; MEB ÖDSGM ülke geneli ortak yazılı sınav kılavuzu (2026-2027).<br>İlerleme yalnızca bu tarayıcıda saklanır.<br>© 2026 Özel Sevil Ünal Doğan Sosyal Etkinlik ve Gelişim Merkezi. Tüm hakları saklıdır. Bu içeriğin tamamı ya da bir bölümü, yazılı izin alınmadan çoğaltılamaz, dağıtılamaz, değiştirilemez ve yayımlanamaz (5846 sayılı Fikir ve Sanat Eserleri Kanunu). Öğretim programı metinleri ve kazanım kodları MEB’e aittir.</footer>
@@ -680,7 +702,7 @@ const CFG={
     area.append(el('div',{class:'qcard'},el('p',{class:'mono'},`Soru ${qi+1} / ${Q.length} · ${K[q[0]]}`),el('p',{style:'font-size:1.05rem'},el('b',{},q[1])),confRow,ansBox,fb,next))};
   const finish=()=>{area.innerHTML='';const score=res.filter(r=>r.ok).length;S.karma={score,total:res.length,at:Date.now()};const pass=score>=Math.ceil(res.length*0.7);if(pass)markDone('k-tur');save();GC('karma/'+curPlan()+'/'+score+'-'+res.length);
     area.append(el('p',{style:'font-size:1.1rem'},el('b',{},`Sonuç: ${score} / ${res.length}`)));
-    if(!S.done['k-tur'])area.append(el('p',{class:'hint'},`Karma Tur görevinin tamamlanmış sayılması için en az ${Math.ceil(res.length*0.7)} doğru gerekir. Yeni bir tur deneyebilirsin.`));
+    if(!S.done['k-tur'])area.append(el('p',{class:'hint'},`Bu turu görev olarak saymak için ${res.length} sorudan en az ${Math.ceil(res.length*0.7)} tanesini doğru yanıtlaman gerekiyor. Yeni bir tur deneyebilirsin.`));
     for(const k of Object.keys(K)){const rs=res.filter(r=>r.k===k);if(!rs.length)continue;const p=rs.filter(r=>r.ok).length/rs.length;area.append(el('div',{class:'kbar'},el('span',{},K[k]),el('span',{class:'bar'},el('i',{style:`width:${p*100}%;background:${p>=.99?'var(--ok)':p>=.5?'var(--warn)':'var(--bad)'}`})),el('span',{class:'mono'},`${rs.filter(r=>r.ok).length}/${rs.length}`)))}
     const cw=res.filter(r=>!r.ok&&r.conf==='e');
     if(cw.length)area.append(el('div',{class:'fb bad',html:'<b>Emin olup yanlış yaptıkların</b> (önce bunları çalış):<br>'+cw.map(r=>'• '+r.q).join('<br>')}));
@@ -708,7 +730,7 @@ function renderDeneme(){
     const kalan=c.need-c.d;
     card.append(el('div',{class:'fb info',html:`<b>🔒 Kilitli.</b> Deneme sınavı, görevlerin en az %${Math.round(DENEME_ORAN*100)}’ini doğru yanıtlayarak tamamlayınca açılır.`}),
       el('div',{class:'kbar',style:'margin-top:10px'},el('span',{},'Tamamlanan görev'),el('span',{class:'bar'},el('i',{style:`width:${c.need?Math.min(1,c.d/c.need)*100:0}%`})),el('span',{class:'mono'},`${c.d} / ${c.need}`)),
-      el('p',{class:'hint'},`Açılması için ${kalan} görev daha tamamlamalısın. Karma Tur görevi için turda en az %70 doğru gerekir.`),
+      el('p',{class:'hint'},`Açılması için ${kalan} görev daha tamamlamalısın. Karma Tur da görevlerden biri sayılır: turdaki soruların en az %70’ini doğru yanıtlarsan bu görev tamamlanır.`),
       el('button',{class:'btn',type:'button',onclick:()=>show('harita')},'Haritaya dön'));
   }else{
     card.append(el('div',{class:'fb ok',html:'<b>Tebrikler, deneme sınavı açıldı!</b>'}),
@@ -763,9 +785,16 @@ function renderHarita(){
 function updateProgress(){
   let all=0,d=0;TSTATIONS.forEach(s=>{const ts=TASKS[s.id]||[];const dd=ts.filter(t=>S.done[t]).length;all+=ts.length;d+=dd;const c=$('#tc-'+s.id);if(c)c.textContent=ts.length?`${dd}/${ts.length}`:''});
   $('#totTxt').textContent=`${d} / ${all} görev`;$('#totBar').style.width=(all?d/all*100:0)+'%';
+  const db=$('#denemeBanner');if(db){const need=Math.ceil(all*DENEME_ORAN),ac=all>0&&d>=need;db.classList.toggle('open',ac);
+    $('#dbIc').textContent=ac?'🎉':'🔒';
+    $('#dbT').textContent=ac?'Deneme sınavın açıldı!':`Deneme sınavına ${need-d} görev kaldı!`;
+    $('#dbS').textContent=ac?'Gerçek sınav biçiminde hazırlandı. İndir, 40 dakikada çöz, sonra cevap anahtarıyla puanla.':`Görevlerin %${Math.round(DENEME_ORAN*100)}’ini doğru tamamla, gerçek sınav biçimindeki deneme sınavının kilidi açılsın.`;
+    $('#dbM').classList.toggle('hidden',ac);$('#dbBar').style.width=(need?Math.min(1,d/need)*100:0)+'%';$('#dbN').textContent=`${Math.min(d,need)}/${need}`;
+    $('#dbGo').textContent=ac?'Sınava git →':'Nasıl açılır? →'}
   const dt=$('#tc-deneme');if(dt)dt.textContent=all&&d>=Math.ceil(all*DENEME_ORAN)?'':'🔒';
   if(views.deneme&&!views.deneme.classList.contains('hidden'))renderDeneme();
 }
+$('#denemeBanner').addEventListener('click',()=>{GC('deneme/banner');show('deneme')});
 renderHarita();updateProgress();
 try{const t=sessionStorage.getItem(KEY+'-tab');if(t&&views[t])show(t)}catch(e){}
 })();
